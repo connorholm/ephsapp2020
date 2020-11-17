@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91DB167625641DCA0060D3C8 /* progressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167525641DCA0060D3C8 /* progressView.swift */; };
+		91DB167C25641E040060D3C8 /* DayProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167B25641E040060D3C8 /* DayProgress.swift */; };
+		91DB167F25641E110060D3C8 /* time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167E25641E110060D3C8 /* time.swift */; };
+		91DB168225641E170060D3C8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB168125641E170060D3C8 /* WebView.swift */; };
 		9D25E8B52562E00F009AE332 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D25E8B42562E00F009AE332 /* Preview Assets.xcassets */; };
 		9D25E8BF2562E23B009AE332 /* AnnouncementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8BD2562E23B009AE332 /* AnnouncementsView.swift */; };
 		9D25E8C02562E23B009AE332 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8BE2562E23B009AE332 /* AccountView.swift */; };
-		9D25E8DC2562E261009AE332 /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8C22562E25C009AE332 /* Inbox.swift */; };
 		9D25E8DE2562E261009AE332 /* OAuthSwift.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 9D25E8C42562E25C009AE332 /* OAuthSwift.xcworkspace */; };
 		9D25E8DF2562E261009AE332 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8C52562E25C009AE332 /* MenuView.swift */; };
 		9D25E8E02562E261009AE332 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8C62562E25C009AE332 /* SceneDelegate.swift */; };
-		9D25E8E22562E261009AE332 /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = 9D25E8C82562E25D009AE332 /* Preview Content */; };
 		9D25E8E32562E261009AE332 /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8C92562E25D009AE332 /* MotherView.swift */; };
-		9D25E8E42562E261009AE332 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D25E8CA2562E25D009AE332 /* Info.plist */; };
 		9D25E8E52562E261009AE332 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D25E8CB2562E25D009AE332 /* Assets.xcassets */; };
 		9D25E8E62562E261009AE332 /* NavMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8CC2562E25E009AE332 /* NavMenuView.swift */; };
-		9D25E8E72562E261009AE332 /* webview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8CD2562E25E009AE332 /* webview.swift */; };
 		9D25E8E92562E261009AE332 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8CF2562E25E009AE332 /* AppDelegate.swift */; };
 		9D25E8EA2562E261009AE332 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8D02562E25F009AE332 /* LoginView.swift */; };
 		9D25E8ED2562E261009AE332 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8D32562E25F009AE332 /* TutorialView.swift */; };
@@ -28,25 +28,25 @@
 		9D25E8F32562E261009AE332 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8D92562E260009AE332 /* ViewRouter.swift */; };
 		9D25E8F42562E261009AE332 /* AssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8DA2562E261009AE332 /* AssignmentView.swift */; };
 		9D25E8F52562E261009AE332 /* ClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8DB2562E261009AE332 /* ClubView.swift */; };
-		9D25E8FA2562E2E2009AE332 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 9D25E8F92562E2E2009AE332 /* Base.lproj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		91DB167525641DCA0060D3C8 /* progressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = progressView.swift; sourceTree = "<group>"; };
+		91DB167B25641E040060D3C8 /* DayProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayProgress.swift; sourceTree = "<group>"; };
+		91DB167E25641E110060D3C8 /* time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = time.swift; sourceTree = "<group>"; };
+		91DB168125641E170060D3C8 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebView.swift; path = "../../EPHS-App/EPHS App/WebView.swift"; sourceTree = "<group>"; };
+		91DB1688256420F50060D3C8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D25E8AA2562E00A009AE332 /* ephsapp2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ephsapp2020.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D25E8B42562E00F009AE332 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9D25E8B62562E00F009AE332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D25E8BD2562E23B009AE332 /* AnnouncementsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsView.swift; sourceTree = "<group>"; };
 		9D25E8BE2562E23B009AE332 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
-		9D25E8C22562E25C009AE332 /* Inbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
 		9D25E8C42562E25C009AE332 /* OAuthSwift.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = OAuthSwift.xcworkspace; sourceTree = "<group>"; };
 		9D25E8C52562E25C009AE332 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		9D25E8C62562E25C009AE332 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9D25E8C82562E25D009AE332 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Preview Content"; path = "../../EPHS-App/EPHS App/Preview Content"; sourceTree = "<group>"; };
 		9D25E8C92562E25D009AE332 /* MotherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
-		9D25E8CA2562E25D009AE332 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../EPHS-App/EPHS App/Info.plist"; sourceTree = "<group>"; };
 		9D25E8CB2562E25D009AE332 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../EPHS-App/EPHS App/Assets.xcassets"; sourceTree = "<group>"; };
 		9D25E8CC2562E25E009AE332 /* NavMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavMenuView.swift; sourceTree = "<group>"; };
-		9D25E8CD2562E25E009AE332 /* webview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webview.swift; sourceTree = "<group>"; };
 		9D25E8CF2562E25E009AE332 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D25E8D02562E25F009AE332 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9D25E8D32562E25F009AE332 /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
@@ -55,7 +55,6 @@
 		9D25E8D92562E260009AE332 /* ViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		9D25E8DA2562E261009AE332 /* AssignmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentView.swift; sourceTree = "<group>"; };
 		9D25E8DB2562E261009AE332 /* ClubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubView.swift; sourceTree = "<group>"; };
-		9D25E8F92562E2E2009AE332 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,15 +100,15 @@
 				9D25E8D02562E25F009AE332 /* LoginView.swift */,
 				9D25E8BD2562E23B009AE332 /* AnnouncementsView.swift */,
 				9D25E8DA2562E261009AE332 /* AssignmentView.swift */,
-				9D25E8CD2562E25E009AE332 /* webview.swift */,
+				91DB168125641E170060D3C8 /* WebView.swift */,
 				9D25E8CB2562E25D009AE332 /* Assets.xcassets */,
-				9D25E8F92562E2E2009AE332 /* Base.lproj */,
-				9D25E8C22562E25C009AE332 /* Inbox.swift */,
-				9D25E8CA2562E25D009AE332 /* Info.plist */,
-				9D25E8C42562E25C009AE332 /* OAuthSwift.xcworkspace */,
-				9D25E8C82562E25D009AE332 /* Preview Content */,
-				9D25E8D62562E260009AE332 /* Progress Bar */,
+				91DB1688256420F50060D3C8 /* LaunchScreen.storyboard */,
 				9D25E8B62562E00F009AE332 /* Info.plist */,
+				91DB167B25641E040060D3C8 /* DayProgress.swift */,
+				91DB167525641DCA0060D3C8 /* progressView.swift */,
+				91DB167E25641E110060D3C8 /* time.swift */,
+				9D25E8C42562E25C009AE332 /* OAuthSwift.xcworkspace */,
+				9D25E8D62562E260009AE332 /* Progress Bar */,
 				9D25E8B32562E00F009AE332 /* Preview Content */,
 			);
 			path = ephsapp2020;
@@ -181,9 +180,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D25E8DE2562E261009AE332 /* OAuthSwift.xcworkspace in Resources */,
-				9D25E8FA2562E2E2009AE332 /* Base.lproj in Resources */,
-				9D25E8E22562E261009AE332 /* Preview Content in Resources */,
-				9D25E8E42562E261009AE332 /* Info.plist in Resources */,
 				9D25E8B52562E00F009AE332 /* Preview Assets.xcassets in Resources */,
 				9D25E8E52562E261009AE332 /* Assets.xcassets in Resources */,
 				9D25E8F02562E261009AE332 /* Progress Bar in Resources */,
@@ -199,19 +195,21 @@
 			files = (
 				9D25E8DF2562E261009AE332 /* MenuView.swift in Sources */,
 				9D25E8C02562E23B009AE332 /* AccountView.swift in Sources */,
+				91DB167C25641E040060D3C8 /* DayProgress.swift in Sources */,
+				91DB167F25641E110060D3C8 /* time.swift in Sources */,
 				9D25E8F42562E261009AE332 /* AssignmentView.swift in Sources */,
+				91DB167625641DCA0060D3C8 /* progressView.swift in Sources */,
 				9D25E8F32562E261009AE332 /* ViewRouter.swift in Sources */,
 				9D25E8E32562E261009AE332 /* MotherView.swift in Sources */,
 				9D25E8BF2562E23B009AE332 /* AnnouncementsView.swift in Sources */,
-				9D25E8DC2562E261009AE332 /* Inbox.swift in Sources */,
 				9D25E8ED2562E261009AE332 /* TutorialView.swift in Sources */,
 				9D25E8E62562E261009AE332 /* NavMenuView.swift in Sources */,
 				9D25E8EA2562E261009AE332 /* LoginView.swift in Sources */,
 				9D25E8E92562E261009AE332 /* AppDelegate.swift in Sources */,
 				9D25E8F52562E261009AE332 /* ClubView.swift in Sources */,
 				9D25E8E02562E261009AE332 /* SceneDelegate.swift in Sources */,
-				9D25E8E72562E261009AE332 /* webview.swift in Sources */,
 				9D25E8EF2562E261009AE332 /* HomeView.swift in Sources */,
+				91DB168225641E170060D3C8 /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
