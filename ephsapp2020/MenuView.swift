@@ -25,7 +25,7 @@ struct Menu: View {
     @ObservedObject var menuPage: MenuPage
     var body: some View {
         VStack {
-            Text("Additional Options").font(.title).padding()
+            Text("Additional Links").font(.title).padding()
             Button(action: {menuPage.menuPage = "counselor"} ) {
                 Text("Counselor Appointments")
                     .font(.title)
