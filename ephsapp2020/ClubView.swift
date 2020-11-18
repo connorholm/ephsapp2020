@@ -10,8 +10,100 @@ import SwiftUI
 struct ClubView: View {
     var body: some View {
         VStack {
-            Text("Clubs").font(.title)
-            
+            Text("Clubs")
+                .font(.title)
+                .padding()
+            List {
+                DisclosureGroup("Key Club"){
+                    ScrollView{
+                        VStack {
+                            DisclosureGroup("Announcement1"){
+                                Text("Hi")
+                            }
+                            .font(.title)
+                            .padding()
+                            .cornerRadius(35)
+                            
+                            DisclosureGroup("Announcement2"){
+                                
+                            }
+                            .font(.title)
+                            .padding()
+                            .cornerRadius(35)
+                            
+                            DisclosureGroup("Announcement3"){
+                                
+                            }
+                            .font(.title)
+                            .padding()
+                            .cornerRadius(35)
+                        }
+                    }.frame(height : 150)
+                    
+                }.font(.title)
+                .padding()
+                .cornerRadius(35)
+                
+                DisclosureGroup("Key Club"){
+                    ScrollView{
+                        VStack {
+                            DisclosureGroup("Announcement1"){
+                                Text("Hi")
+                            }
+                            .font(.title)
+                            .padding()
+                            .cornerRadius(35)
+                            
+                            DisclosureGroup("Announcement2"){
+                                
+                            }
+                            .font(.title)
+                            .padding()
+                            .cornerRadius(35)
+                            
+                            DisclosureGroup("Announcement3"){
+                                
+                            }
+                            .font(.title)
+                            .padding()
+                            .cornerRadius(35)
+                        }
+                    }.frame(height : 150)
+                    
+                }.font(.title)
+                .padding()
+                .cornerRadius(35)
+                
+                DisclosureGroup("Key Club"){
+                    ScrollView{
+                        VStack {
+                            DisclosureGroup("Announcement1"){
+                                Text("Hi")
+                            }
+                            .font(.title)
+                            .padding()
+                            .cornerRadius(35)
+                            
+                            DisclosureGroup("Announcement2"){
+                                
+                            }
+                            .font(.title)
+                            .padding()
+                            .cornerRadius(35)
+                            
+                            DisclosureGroup("Announcement3"){
+                                
+                            }
+                            .font(.title)
+                            .padding()
+                            .cornerRadius(35)
+                        }
+                    }.frame(height : 150)
+                    
+                }.font(.title)
+                .padding()
+                .cornerRadius(35)
+            }
             Spacer()
         }
     }
