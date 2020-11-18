@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		918E856325642B54001F879C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918E856225642B54001F879C /* LaunchScreen.storyboard */; };
+		91D7E7E325657D3F000E3AB3 /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7E7E125657D3F000E3AB3 /* Inbox.swift */; };
+		91D7E7E425657D3F000E3AB3 /* Schoology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7E7E225657D3F000E3AB3 /* Schoology.swift */; };
 		91DB167625641DCA0060D3C8 /* progressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167525641DCA0060D3C8 /* progressView.swift */; };
 		91DB167C25641E040060D3C8 /* DayProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167B25641E040060D3C8 /* DayProgress.swift */; };
 		91DB167F25641E110060D3C8 /* time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167E25641E110060D3C8 /* time.swift */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		918E856225642B54001F879C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		91D7E7E125657D3F000E3AB3 /* Inbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
+		91D7E7E225657D3F000E3AB3 /* Schoology.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schoology.swift; sourceTree = "<group>"; };
 		91DB167525641DCA0060D3C8 /* progressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = progressView.swift; sourceTree = "<group>"; };
 		91DB167B25641E040060D3C8 /* DayProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayProgress.swift; sourceTree = "<group>"; };
 		91DB167E25641E110060D3C8 /* time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = time.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 				91DB167525641DCA0060D3C8 /* progressView.swift */,
 				91DB167E25641E110060D3C8 /* time.swift */,
 				9D25E8C42562E25C009AE332 /* OAuthSwift.xcworkspace */,
+				91D7E7E125657D3F000E3AB3 /* Inbox.swift */,
+				91D7E7E225657D3F000E3AB3 /* Schoology.swift */,
 				9D25E8D62562E260009AE332 /* Progress Bar */,
 				9D25E8B32562E00F009AE332 /* Preview Content */,
 			);
@@ -195,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91D7E7E425657D3F000E3AB3 /* Schoology.swift in Sources */,
 				9D25E8DF2562E261009AE332 /* MenuView.swift in Sources */,
 				9D25E8C02562E23B009AE332 /* AccountView.swift in Sources */,
 				91DB167C25641E040060D3C8 /* DayProgress.swift in Sources */,
@@ -207,6 +214,7 @@
 				9D25E8ED2562E261009AE332 /* TutorialView.swift in Sources */,
 				9D25E8E62562E261009AE332 /* NavMenuView.swift in Sources */,
 				91DB1690256426280060D3C8 /* WebView.swift in Sources */,
+				91D7E7E325657D3F000E3AB3 /* Inbox.swift in Sources */,
 				9D25E8EA2562E261009AE332 /* LoginView.swift in Sources */,
 				9D25E8E92562E261009AE332 /* AppDelegate.swift in Sources */,
 				9D25E8F52562E261009AE332 /* ClubView.swift in Sources */,
