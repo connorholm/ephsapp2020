@@ -25,12 +25,26 @@ struct Menu: View {
     @ObservedObject var menuPage: MenuPage
     var body: some View {
         VStack {
-            Text("Additional Options").font(.title)
+            Text("Additional Options").font(.title).padding()
             Button(action: {menuPage.menuPage = "counselor"} ) {
-                Text("Schedule Couselor Appointment")
+                Text("Counselor Appointments")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(width:350, height: 60)
+                    .background(Color.red)
+                    .cornerRadius(35)
+                    .padding()
             }
             Button(action: {menuPage.menuPage = "campus"}, label: {
                 Text("Campus Login")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(width:220, height: 60)
+                    .background(Color.red)
+                    .cornerRadius(35)
+                    .padding()
             })
             Spacer()
         }
