@@ -18,21 +18,21 @@ struct ClubView: View {
                     ScrollView{
                         VStack {
                             DisclosureGroup("Announcement1"){
-                                Text("Hi")
+                                Text("Hello World")
                             }
                             .font(.title)
                             .padding()
                             .cornerRadius(35)
                             
                             DisclosureGroup("Announcement2"){
-                                
+                                Text("Hello World")
                             }
                             .font(.title)
                             .padding()
                             .cornerRadius(35)
                             
                             DisclosureGroup("Announcement3"){
-                                
+                                Text("Hello World")
                             }
                             .font(.title)
                             .padding()
@@ -48,21 +48,21 @@ struct ClubView: View {
                     ScrollView{
                         VStack {
                             DisclosureGroup("Announcement1"){
-                                Text("Hi")
+                                Text("Hello World")
                             }
                             .font(.title)
                             .padding()
                             .cornerRadius(35)
                             
                             DisclosureGroup("Announcement2"){
-                                
+                                Text("Hello World")
                             }
                             .font(.title)
                             .padding()
                             .cornerRadius(35)
                             
                             DisclosureGroup("Announcement3"){
-                                
+                                Text("Hello World")
                             }
                             .font(.title)
                             .padding()
@@ -78,21 +78,21 @@ struct ClubView: View {
                     ScrollView{
                         VStack {
                             DisclosureGroup("Announcement1"){
-                                Text("Hi")
+                                Text("Hello World")
                             }
                             .font(.title)
                             .padding()
                             .cornerRadius(35)
                             
                             DisclosureGroup("Announcement2"){
-                                
+                                Text("Hello World")
                             }
                             .font(.title)
                             .padding()
                             .cornerRadius(35)
                             
                             DisclosureGroup("Announcement3"){
-                                
+                                Text("Hello World")
                             }
                             .font(.title)
                             .padding()
