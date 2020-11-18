@@ -29,7 +29,7 @@ struct TutorialView: View {
                 .frame(width: 250, alignment: .center)
                 .padding(.init(top: 10, leading: 20, bottom: 10, trailing: 20))
             
-            Text("-Add homeword and projects to your to-do list and check them off when done").padding(.init(top: 10, leading: 20, bottom: 20, trailing: 20))
+            Text("-Add homework and projects to your to-do list and check them off when done").padding(.init(top: 10, leading: 20, bottom: 20, trailing: 20))
             Button( action: {
                 viewRouter.currentPage = "home"
             }, label: {
