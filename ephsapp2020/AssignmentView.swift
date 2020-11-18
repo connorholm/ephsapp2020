@@ -131,7 +131,6 @@ struct AssignmentsView: View {
             .background(Color.red)
             .cornerRadius(8)
             
-            Spacer()
         }.padding(.all)
     }
 }

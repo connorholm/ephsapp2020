@@ -28,6 +28,7 @@ struct HomeView: View {
                     .foregroundColor(Color.red)
                 ProgressView()
             }
+            progressView()
             Spacer()
             NavMenuView(viewRouter: viewRouter)
         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
