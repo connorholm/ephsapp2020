@@ -10,7 +10,7 @@ import SwiftUI
 struct AnnouncementsView: View {
     var body: some View {
         VStack {
-            Text("Announcemts").font(.title)
+            Text("Announcements").font(.title)
             //Text(InboxRequest())
             Spacer()
         }
