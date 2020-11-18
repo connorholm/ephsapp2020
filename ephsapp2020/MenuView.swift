@@ -16,6 +16,8 @@ struct MenuView: View {
             WebViews(url: "https://app.acuityscheduling.com/schedule.php?owner=20439951")
         case "campus":
             WebViews(url: "https://edenprairiemn.infinitecampus.org/campus/portal/eden_prairie.jsp")
+        case "evn":
+            WebViews (url: "https://eaglevisionnews.com/")
         default:
             Menu(menuPage: menuPage)
         }
@@ -41,7 +43,17 @@ struct Menu: View {
                     .font(.title)
                     .foregroundColor(.white)
                     .padding()
-                    .frame(width:220, height: 60)
+                    .frame(width:350, height: 60)
+                    .background(Color.red)
+                    .cornerRadius(35)
+                    .padding()
+            })
+            Button(action: {menuPage.menuPage = "evn"}, label: {
+                Text("Eagle Vision News")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(width:350, height: 60)
                     .background(Color.red)
                     .cornerRadius(35)
                     .padding()
