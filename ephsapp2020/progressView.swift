@@ -18,8 +18,8 @@ struct ProgressBar: View {
     }
 }
 struct progressView: View {
+    let currentDate = getDate(timeType: "day")
     let currentTime = getTime(timeType: "current")
-    let date = getDate(timeType: "day")
     @State var progressValue1st: Float = Float(getTime(timeType: "current")-((7*3600)+(50*60)))/Float((1*3600)+(25*60))
     @State var progressValue2nd: Float = Float(getTime(timeType: "current")-((9*3600)+(20*60)))/Float((1*3600)+(25*60))
     @State var progressValue3rd: Float = Float(getTime(timeType: "current")-((10*3600)+(50*60)))/Float((1*3600)+(25*60))
@@ -30,7 +30,6 @@ struct progressView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(date)
             HStack {
                 Text("1st")
                     .padding(.horizontal,10)

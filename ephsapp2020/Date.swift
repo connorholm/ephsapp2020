@@ -16,13 +16,11 @@ func getDate(timeType: String) -> String {
     
     let date = dayFormatter.string(from: day)
     
-    let start = date.index(date.startIndex, offsetBy: 6)
-    let end = date.index(date.endIndex, offsetBy: -3)
-    let range = start..<end
+    let index = date.index(date.startIndex, offsetBy: 4)
+    let dateSubstring = date[..<index]
     
-    let Day = String(date[range])
     if timeType == "day" {
-        return Day
+        return String(dateSubstring)
     }
     else{
         return "ERROR"
