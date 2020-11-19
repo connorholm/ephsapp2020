@@ -20,27 +20,27 @@ struct ClubView: View {
                             DisclosureGroup("Announcement1"){
                                 Text("Hello World")
                             }
-                            .font(.title)
+                            .font(.title3)
                             .padding()
                             .cornerRadius(35)
                             
                             DisclosureGroup("Announcement2"){
                                 Text("Hello World")
                             }
-                            .font(.title)
+                            .font(.title3)
                             .padding()
                             .cornerRadius(35)
                             
                             DisclosureGroup("Announcement3"){
                                 Text("Hello World")
                             }
-                            .font(.title)
+                            .font(.title3)
                             .padding()
                             .cornerRadius(35)
                         }
                     }.frame(height : 150)
                     
-                }.font(.title)
+                }.font(.title2)
                 .padding()
                 .cornerRadius(35)
                 
@@ -50,27 +50,27 @@ struct ClubView: View {
                             DisclosureGroup("Announcement1"){
                                 Text("Hello World")
                             }
-                            .font(.title)
+                            .font(.title3)
                             .padding()
                             .cornerRadius(35)
                             
                             DisclosureGroup("Announcement2"){
                                 Text("Hello World")
                             }
-                            .font(.title)
+                            .font(.title3)
                             .padding()
                             .cornerRadius(35)
                             
                             DisclosureGroup("Announcement3"){
                                 Text("Hello World")
                             }
-                            .font(.title)
+                            .font(.title3)
                             .padding()
                             .cornerRadius(35)
                         }
                     }.frame(height : 150)
                     
-                }.font(.title)
+                }.font(.title2)
                 .padding()
                 .cornerRadius(35)
                 
@@ -80,27 +80,27 @@ struct ClubView: View {
                             DisclosureGroup("Announcement1"){
                                 Text("Hello World")
                             }
-                            .font(.title)
+                            .font(.title3)
                             .padding()
                             .cornerRadius(35)
                             
                             DisclosureGroup("Announcement2"){
                                 Text("Hello World")
                             }
-                            .font(.title)
+                            .font(.title3)
                             .padding()
                             .cornerRadius(35)
                             
                             DisclosureGroup("Announcement3"){
                                 Text("Hello World")
                             }
-                            .font(.title)
+                            .font(.title3)
                             .padding()
                             .cornerRadius(35)
                         }
                     }.frame(height : 150)
                     
-                }.font(.title)
+                }.font(.title2)
                 .padding()
                 .cornerRadius(35)
             }
