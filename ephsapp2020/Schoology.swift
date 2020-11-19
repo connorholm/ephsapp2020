@@ -31,9 +31,11 @@ func InboxRequest() -> String {
                 messages = dataResponce.responce
                  */
                 responceString = convertedString ?? ""
-            } catch {
+            }
+            /* catch {
                 return
             }
+             */
         case .failure(let error):
             return
         }
