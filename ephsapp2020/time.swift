@@ -5,7 +5,9 @@
 //  Created by 90305163 on 10/28/20.
 //
 
+
 import Foundation
+
 //To return this method use the parameter minute/second/hour/current
 func getTime(timeType: String) -> Int {
     let now = Date()

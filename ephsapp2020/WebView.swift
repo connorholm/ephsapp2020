@@ -14,11 +14,8 @@ struct WebViews: View {
             .navigationBarItems(trailing:
                 Button("Last Page") {
                     self.webViewStateModel.goBack.toggle()
-                }.disabled(!webViewStateModel.canGoBack)
-            )
-        
-     }
-        
+                }.disabled(!webViewStateModel.canGoBack))
+        }
     }
 }
 
@@ -28,12 +25,12 @@ struct ActivityIndicator: UIViewRepresentable {
     let style: UIActivityIndicatorView.Style
 
     func makeUIView(context: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
-        return UIActivityIndicatorView(style: style)
-    }
-
+            return UIActivityIndicatorView(style: style)
+        }
+    
     func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicator>) {
-        isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
-    }
+            isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
+        }
 }
 
 struct LoadingView<Content>: View where Content: View {
@@ -59,15 +56,10 @@ struct LoadingView<Content>: View where Content: View {
                 .foregroundColor(Color.primary)
                 .cornerRadius(20)
                 .opacity(self.isShowing ? 1 : 0)
-
             }
         }
     }
-
 }
-
-
-
 
 ///// Implementaton
 class WebViewStateModel: ObservableObject {
@@ -87,7 +79,7 @@ struct WebView: View {
            case didFinish(WKNavigation)
            case didFailProvisionalNavigation(WKNavigation,Error)
            case didFail(WKNavigation,Error)
-       }
+    }
        
     @ObservedObject var webViewStateModel: WebViewStateModel
     
@@ -122,7 +114,6 @@ struct WebView: View {
 /*
   A weird case: if you change WebViewWrapper to struct cahnge in WebViewStateModel will never call updateUIView
  */
-
 final class WebViewWrapper : UIViewRepresentable {
     @ObservedObject var webViewStateModel: WebViewStateModel
     let action: ((_ navigationAction: WebView.NavigationAction) -> Void)?
@@ -136,7 +127,6 @@ final class WebViewWrapper : UIViewRepresentable {
         self.request = request
         self.webViewStateModel = webViewStateModel
     }
-    
     
     func makeUIView(context: Context) -> WKWebView  {
         let view = WKWebView()
@@ -165,7 +155,6 @@ final class WebViewWrapper : UIViewRepresentable {
             self.action = action
             self.webViewStateModel = webViewStateModel
         }
-        
     }
 }
 
@@ -221,11 +210,8 @@ extension WebViewWrapper.Coordinator: WKNavigationDelegate {
         } else {
             action?(.didRecieveAuthChallange(challenge, completionHandler))
         }
-        
     }
 }
-
-
 
 struct webview_Previews: PreviewProvider {
     static var previews: some View {

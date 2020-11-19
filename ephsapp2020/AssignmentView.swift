@@ -5,6 +5,7 @@
 //  Created by 90307094 on 10/26/20.
 //
 
+
 import SwiftUI
 
 struct AssignmentsView: View {
@@ -51,7 +52,6 @@ struct AssignmentsView: View {
             .padding(.all)
             .background(Color.red)
             .cornerRadius(8)
-            
             
             DisclosureGroup("IOS", isExpanded: $isExpanded2){
                 ScrollView{

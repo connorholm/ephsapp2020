@@ -5,6 +5,7 @@
 //  Created by 90305863 on 10/20/20.
 //
 
+
 import SwiftUI
 
 struct AnnouncementsView: View {
@@ -24,4 +25,3 @@ struct AnnouncementsView_Previews: PreviewProvider {
         
     }
 }
-

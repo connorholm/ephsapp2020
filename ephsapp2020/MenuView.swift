@@ -5,6 +5,7 @@
 //  Created by 90305189 on 11/2/20.
 //
 
+
 import SwiftUI
 import Combine
 
@@ -23,6 +24,7 @@ struct MenuView: View {
         }
     }
 }
+
 struct Menu: View {
     @ObservedObject var menuPage: MenuPage
     var body: some View {

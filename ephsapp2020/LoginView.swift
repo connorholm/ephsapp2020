@@ -5,12 +5,12 @@
 //  Created by 90305863 on 9/30/20.
 //
 
+
 import SwiftUI
 
 // MESSAGE: This is where we can use Schoology API for SchoolIDs and passwords
 let storedSchoolID = "0"
 let storedPassword = "0"
-//
 
 struct LoginView: View {
     @ObservedObject var viewRouter: ViewRouter
@@ -62,7 +62,6 @@ struct LoginView: View {
             }
             .padding()
         }
-        
     }
 }
 

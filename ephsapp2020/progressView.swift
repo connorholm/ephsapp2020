@@ -17,6 +17,7 @@ struct ProgressBar: View {
         }
     }
 }
+
 struct progressView: View {
     var currentTime = getTime(timeType: "current")
     @State var progressValue1st: Float = Float(getTime(timeType: "current")-((7*3600)+(50*60)))/Float((1*3600)+(25*60))
