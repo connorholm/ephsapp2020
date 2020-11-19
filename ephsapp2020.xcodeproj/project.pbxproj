@@ -25,7 +25,6 @@
 		9D25E8EA2562E261009AE332 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8D02562E25F009AE332 /* LoginView.swift */; };
 		9D25E8ED2562E261009AE332 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8D32562E25F009AE332 /* TutorialView.swift */; };
 		9D25E8EF2562E261009AE332 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8D52562E25F009AE332 /* HomeView.swift */; };
-		9D25E8F02562E261009AE332 /* Progress Bar in Resources */ = {isa = PBXBuildFile; fileRef = 9D25E8D62562E260009AE332 /* Progress Bar */; };
 		9D25E8F32562E261009AE332 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8D92562E260009AE332 /* ViewRouter.swift */; };
 		9D25E8F42562E261009AE332 /* AssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8DA2562E261009AE332 /* AssignmentView.swift */; };
 		9D25E8F52562E261009AE332 /* ClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8DB2562E261009AE332 /* ClubView.swift */; };
@@ -52,7 +51,6 @@
 		9D25E8D02562E25F009AE332 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9D25E8D32562E25F009AE332 /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		9D25E8D52562E25F009AE332 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		9D25E8D62562E260009AE332 /* Progress Bar */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Progress Bar"; sourceTree = "<group>"; };
 		9D25E8D92562E260009AE332 /* ViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		9D25E8DA2562E261009AE332 /* AssignmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentView.swift; sourceTree = "<group>"; };
 		9D25E8DB2562E261009AE332 /* ClubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubView.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 				91DB167525641DCA0060D3C8 /* progressView.swift */,
 				91DB167E25641E110060D3C8 /* time.swift */,
 				9D25E8C42562E25C009AE332 /* OAuthSwift.xcworkspace */,
-				9D25E8D62562E260009AE332 /* Progress Bar */,
 				9D25E8B32562E00F009AE332 /* Preview Content */,
 			);
 			path = ephsapp2020;
@@ -184,7 +181,6 @@
 				9D25E8B52562E00F009AE332 /* Preview Assets.xcassets in Resources */,
 				91DB16952564268F0060D3C8 /* Assets.xcassets in Resources */,
 				918E856325642B54001F879C /* LaunchScreen.storyboard in Resources */,
-				9D25E8F02562E261009AE332 /* Progress Bar in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
