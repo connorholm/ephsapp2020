@@ -9,7 +9,7 @@ import Foundation
 //To return this method use the parameter minute/second/hour/current
 func getTime(timeType: String) -> Int {
     let now = Date()
-
+   
     let formatter = DateFormatter()
     formatter.dateStyle = .none
     formatter.timeStyle = .medium
