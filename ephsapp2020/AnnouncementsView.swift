@@ -11,7 +11,7 @@ struct AnnouncementsView: View {
     var body: some View {
         VStack {
             Text("Announcemts").font(.title)
-            //Text(InboxRequest())
+            Text(InboxRequest())
             Spacer()
         }
     }
