@@ -28,55 +28,67 @@ struct progressView: View {
     var currentHour = getTime(timeType: "hour")
     var currentMinute = getTime(timeType: "minute")
     var currentSecond = getTime(timeType: "second")
-    
+    var currentClassHour = getHour()
     var body: some View {
+        
         VStack(alignment: .leading) {
-            HStack {
-                Text("1st")
+            if currentClassHour == 1{
+                HStack {
+                    Text("1st")
+                        .padding(.horizontal,10)
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .frame(width: 70.0)
+                        .background(Color.black)
+                        .cornerRadius(15)
+                        .shadow(color: Color.red, radius: 2)
+                    ProgressBar(value: $progressValue1st).frame(height: 20)
+                }.padding(.horizontal, 10)
+            }else if currentClassHour == 2{
+                HStack {
+                    Text("2nd")
+                        .padding(.horizontal,10)
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .frame(width: 70.0)
+                        .background(Color.black)
+                        .cornerRadius(15)
+                        .shadow(color: Color.red, radius: 2)
+                    ProgressBar(value: $progressValue2nd).frame(height: 20)
+                }.padding(.horizontal, 10)
+            }else if currentClassHour == 3{
+                HStack {
+                    Text("3rd")
+                        .padding(.horizontal,10)
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .frame(width: 70.0)
+                        .background(Color.black)
+                        .cornerRadius(15)
+                        .shadow(color: Color.red, radius: 2)
+                    ProgressBar(value: $progressValue3rd).frame(height: 20)
+                }.padding(.horizontal, 10)
+            }else if currentClassHour == 4{
+                HStack {
+                    Text("4th")
+                        .padding(.horizontal,10)
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .frame(width: 70.0)
+                        .background(Color.black)
+                        .cornerRadius(15)
+                        .shadow(color: Color.red, radius: 2)
+                    ProgressBar(value: $progressValue4th).frame(height: 20)
+                }.padding(.horizontal, 10)
+            }else if currentClassHour == -1{
+                Text("Class Hasn't Started Yet")
                     .padding(.horizontal,10)
                     .font(.title)
                     .foregroundColor(.white)
-                    .frame(width: 70.0)
                     .background(Color.black)
                     .cornerRadius(15)
                     .shadow(color: Color.red, radius: 2)
-                ProgressBar(value: $progressValue1st).frame(height: 20)
-            }.padding(.horizontal, 10)
-            HStack {
-                Text("2nd")
-                    .padding(.horizontal,10)
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .frame(width: 70.0)
-                    .background(Color.black)
-                    .cornerRadius(15)
-                    .shadow(color: Color.red, radius: 2)
-                ProgressBar(value: $progressValue2nd).frame(height: 20)
-            }.padding(.horizontal, 10)
-            
-            HStack {
-                Text("3rd")
-                    .padding(.horizontal,10)
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .frame(width: 70.0)
-                    .background(Color.black)
-                    .cornerRadius(15)
-                    .shadow(color: Color.red, radius: 2)
-                ProgressBar(value: $progressValue3rd).frame(height: 20)
-            }.padding(.horizontal, 10)
-            
-            HStack {
-                Text("4th")
-                    .padding(.horizontal,10)
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .frame(width: 70.0)
-                    .background(Color.black)
-                    .cornerRadius(15)
-                    .shadow(color: Color.red, radius: 2)
-                ProgressBar(value: $progressValue4th).frame(height: 20)
-            }.padding(.horizontal, 10)
+            }
 
         }
     }

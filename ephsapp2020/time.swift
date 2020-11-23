@@ -52,3 +52,19 @@ func getTime(timeType: String) -> Int {
         return -1
     }
 }
+func getHour() -> Int {
+    let currentTime = getTime(timeType: "current")
+    if currentTime > (8*3600) && currentTime < ((9*3600)+(20*60)){
+        return 1
+    }else if currentTime > ((9*3600)+(35*60)) && currentTime < (11*3600){
+        return 2
+    }else if currentTime > ((11*3600)+(12*60)) && currentTime < ((12*3600)+(35*60)){
+        return 3
+    }else if currentTime > ((13*3600)+(15*60)) && currentTime < ((14*3600)+(35*60)){
+        return 4
+    }
+    else{
+        return -1
+    }
+    
+}
