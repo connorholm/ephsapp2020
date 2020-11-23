@@ -19,6 +19,9 @@ struct MenuView: View {
             WebViews(url: "https://edenprairiemn.infinitecampus.org/campus/portal/eden_prairie.jsp")
         case "evn":
             WebViews (url: "https://eaglevisionnews.com/")
+        case  "library":
+            WebViews (url:
+                "https://edenpr.follettdestiny.com/cataloging/servlet/presentadvancedsearchredirectorform.do?l2m=Library%20Search&tm=TopLevelCatalog&l2m=Library+Search")
         default:
             Menu(menuPage: menuPage)
         }
@@ -52,6 +55,16 @@ struct Menu: View {
             })
             Button(action: {menuPage.menuPage = "evn"}, label: {
                 Text("Eagle Vision News")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(width:350, height: 60)
+                    .background(Color.red)
+                    .cornerRadius(35)
+                    .padding()
+            })
+            Button(action: {menuPage.menuPage = "library"}, label: {
+                Text("EPHS Library")
                     .font(.title)
                     .foregroundColor(.white)
                     .padding()
