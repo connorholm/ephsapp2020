@@ -132,6 +132,7 @@ struct AssignmentsView: View {
             .cornerRadius(8)
             
         }.padding(.all)
+        progressView()
     }
 }
 

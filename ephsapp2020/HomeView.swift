@@ -27,9 +27,8 @@ struct HomeView: View {
             default:
                 Text("ERROR: No \(viewRouter.homePage) view")
                     .foregroundColor(Color.red)
-                ProgressView()
+                progressView()
             }
-            progressView()
             Spacer()
             NavMenuView(viewRouter: viewRouter)
         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
