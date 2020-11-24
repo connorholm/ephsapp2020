@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-// MESSAGE: This is where we can use Schoology API for SchoolIDs and passwords
+// This is where we can use Schoology API for SchoolIDs and passwords
 let storedSchoolID = "0"
 let storedPassword = "0"
 
