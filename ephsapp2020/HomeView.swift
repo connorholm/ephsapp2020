@@ -5,6 +5,7 @@
 //  Created by 90305863 on 10/20/20.
 //
 
+
 import SwiftUI
 
 struct HomeView: View {
@@ -26,7 +27,7 @@ struct HomeView: View {
             default:
                 Text("ERROR: No \(viewRouter.homePage) view")
                     .foregroundColor(Color.red)
-                ProgressView()
+                progressView()
             }
             Spacer()
             NavMenuView(viewRouter: viewRouter)

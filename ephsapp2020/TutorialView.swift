@@ -5,6 +5,7 @@
 //  Created by 90305863 on 10/20/20.
 //
 
+
 import SwiftUI
 
 struct TutorialView: View {
@@ -29,10 +30,12 @@ struct TutorialView: View {
                 .frame(width: 250, alignment: .center)
                 .padding(.init(top: 10, leading: 20, bottom: 10, trailing: 20))
             
-            Text("-Add homeword and projects to your to-do list and check them off when done").padding(.init(top: 10, leading: 20, bottom: 20, trailing: 20))
-            Button( action: {
-                viewRouter.currentPage = "home"
-            }, label: {
+            Text("-Add homework and projects to your to-do list and check them off when done").padding(.init(top: 10, leading: 20, bottom: 20, trailing: 20))
+            Button(
+                action: {
+                    viewRouter.currentPage = "home"
+                },
+                label: {
                 Text("OK")
                     .font(.title)
                     .foregroundColor(.white)
@@ -40,7 +43,8 @@ struct TutorialView: View {
                     .frame(width:80, height: 60)
                     .background(Color.red)
                     .cornerRadius(35)
-            })
+                }
+            )
         }
     }
 }

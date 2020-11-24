@@ -12,7 +12,6 @@
 		91D7E7E325657D3F000E3AB3 /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7E7E125657D3F000E3AB3 /* Inbox.swift */; };
 		91D7E7E425657D3F000E3AB3 /* Schoology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7E7E225657D3F000E3AB3 /* Schoology.swift */; };
 		91DB167625641DCA0060D3C8 /* progressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167525641DCA0060D3C8 /* progressView.swift */; };
-		91DB167C25641E040060D3C8 /* DayProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167B25641E040060D3C8 /* DayProgress.swift */; };
 		91DB167F25641E110060D3C8 /* time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167E25641E110060D3C8 /* time.swift */; };
 		91DB1690256426280060D3C8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB168F256426280060D3C8 /* WebView.swift */; };
 		91DB16952564268F0060D3C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91DB16942564268F0060D3C8 /* Assets.xcassets */; };
@@ -27,10 +26,10 @@
 		9D25E8EA2562E261009AE332 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8D02562E25F009AE332 /* LoginView.swift */; };
 		9D25E8ED2562E261009AE332 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8D32562E25F009AE332 /* TutorialView.swift */; };
 		9D25E8EF2562E261009AE332 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8D52562E25F009AE332 /* HomeView.swift */; };
-		9D25E8F02562E261009AE332 /* Progress Bar in Resources */ = {isa = PBXBuildFile; fileRef = 9D25E8D62562E260009AE332 /* Progress Bar */; };
 		9D25E8F32562E261009AE332 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8D92562E260009AE332 /* ViewRouter.swift */; };
 		9D25E8F42562E261009AE332 /* AssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8DA2562E261009AE332 /* AssignmentView.swift */; };
 		9D25E8F52562E261009AE332 /* ClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8DB2562E261009AE332 /* ClubView.swift */; };
+		9D8DDBB32566D8E5000916F5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8DDBB22566D8E5000916F5 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +97,6 @@
 		91D7E7E125657D3F000E3AB3 /* Inbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
 		91D7E7E225657D3F000E3AB3 /* Schoology.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schoology.swift; sourceTree = "<group>"; };
 		91DB167525641DCA0060D3C8 /* progressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = progressView.swift; sourceTree = "<group>"; };
-		91DB167B25641E040060D3C8 /* DayProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayProgress.swift; sourceTree = "<group>"; };
 		91DB167E25641E110060D3C8 /* time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = time.swift; sourceTree = "<group>"; };
 		91DB168F256426280060D3C8 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		91DB16942564268F0060D3C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,10 +113,10 @@
 		9D25E8D02562E25F009AE332 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9D25E8D32562E25F009AE332 /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		9D25E8D52562E25F009AE332 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		9D25E8D62562E260009AE332 /* Progress Bar */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Progress Bar"; sourceTree = "<group>"; };
 		9D25E8D92562E260009AE332 /* ViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		9D25E8DA2562E261009AE332 /* AssignmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentView.swift; sourceTree = "<group>"; };
 		9D25E8DB2562E261009AE332 /* ClubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubView.swift; sourceTree = "<group>"; };
+		9D8DDBB22566D8E5000916F5 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,12 +190,13 @@
 				918E856225642B54001F879C /* LaunchScreen.storyboard */,
 				91DB16942564268F0060D3C8 /* Assets.xcassets */,
 				9D25E8B62562E00F009AE332 /* Info.plist */,
-				91DB167B25641E040060D3C8 /* DayProgress.swift */,
 				91DB167525641DCA0060D3C8 /* progressView.swift */,
 				91DB167E25641E110060D3C8 /* time.swift */,
 				91D7E7E125657D3F000E3AB3 /* Inbox.swift */,
 				91D7E7E225657D3F000E3AB3 /* Schoology.swift */,
 				9D25E8D62562E260009AE332 /* Progress Bar */,
+				9D8DDBB22566D8E5000916F5 /* Date.swift */,
+				9D25E8C42562E25C009AE332 /* OAuthSwift.xcworkspace */,
 				9D25E8B32562E00F009AE332 /* Preview Content */,
 			);
 			path = ephsapp2020;
@@ -330,7 +329,6 @@
 				9D25E8B52562E00F009AE332 /* Preview Assets.xcassets in Resources */,
 				91DB16952564268F0060D3C8 /* Assets.xcassets in Resources */,
 				918E856325642B54001F879C /* LaunchScreen.storyboard in Resources */,
-				9D25E8F02562E261009AE332 /* Progress Bar in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,11 +342,11 @@
 				91D7E7E425657D3F000E3AB3 /* Schoology.swift in Sources */,
 				9D25E8DF2562E261009AE332 /* MenuView.swift in Sources */,
 				9D25E8C02562E23B009AE332 /* AccountView.swift in Sources */,
-				91DB167C25641E040060D3C8 /* DayProgress.swift in Sources */,
 				91DB167F25641E110060D3C8 /* time.swift in Sources */,
 				9D25E8F42562E261009AE332 /* AssignmentView.swift in Sources */,
 				91DB167625641DCA0060D3C8 /* progressView.swift in Sources */,
 				9D25E8F32562E261009AE332 /* ViewRouter.swift in Sources */,
+				9D8DDBB32566D8E5000916F5 /* Date.swift in Sources */,
 				9D25E8E32562E261009AE332 /* MotherView.swift in Sources */,
 				9D25E8BF2562E23B009AE332 /* AnnouncementsView.swift in Sources */,
 				9D25E8ED2562E261009AE332 /* TutorialView.swift in Sources */,
@@ -496,7 +494,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"ephsapp2020/Preview Content\"";
 				DEVELOPMENT_TEAM = TTW839W4A8;
 				ENABLE_PREVIEWS = YES;
@@ -506,8 +504,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.ephs2020;
+				MARKETING_VERSION = 4.6;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.ephsapp2020;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -520,7 +518,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"ephsapp2020/Preview Content\"";
 				DEVELOPMENT_TEAM = TTW839W4A8;
 				ENABLE_PREVIEWS = YES;
@@ -530,8 +528,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.ephs2020;
+				MARKETING_VERSION = 4.6;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.ephsapp2020;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
