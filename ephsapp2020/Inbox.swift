@@ -8,25 +8,23 @@
 import Foundation
 
 struct Inbox: Codable {
-    let message:[Message]
-    let links:String
-    let unread_count:String
+    var message:[Message]
+    var links:MessageLinks
+    var unread_count:String
 }
 
 struct Message: Codable {
-    let id:Int
-    let subject:String
-    let recipient_ids:String
-    let last_updated:Int
-    let mid:String
-    let author_id:Int
-    let message_status:String
-    let message:String
-    let links:String
+    var id:Int
+    var subject:String
+    var recipient_ids:String
+    var last_updated:Int
+    //var mid:String
+    var author_id:Int
+    var message_status:String
+    //var message:String
+    var links:MessageLinks
 }
-/*
-struct MessageLinks:Decodable {
-    //name should be self, need workaround
-    let self:String
+
+struct MessageLinks:Codable {
+    var `self`:String
 }
- */

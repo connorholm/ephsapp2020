@@ -7,16 +7,37 @@
 
 
 import SwiftUI
+import Combine
+
+class Refresh: ObservableObject {
+    let objectWillChange = PassthroughSubject<Refresh,Never>()
+    var inbox: Inbox = RequestInbox() {
+        didSet {
+            objectWillChange.send(self)
+            print("Inbox refreshed")
+        }
+    }
+}
 
 struct AnnouncementsView: View {
     
-    var inbox = RequestInbox()
+    var refresh = Refresh()
     
     var body: some View {
         VStack {
             Text("Announcemts").font(.title)
             
-            Text("author_id: \(inbox.message[0].author_id)")
+            Button(action: {}, label: {
+                Text("Refresh")
+            })
+            Button(action: {
+                refresh.inbox.message[0].author_id += 1
+                print("Increased author_id by 1")
+            }, label: {
+                Text("Increase author id by 1")
+            })
+            
+            Text("Message 0 author_id: \(refresh.inbox.message[0].author_id)")
             Spacer()
         }
     }
@@ -24,8 +45,7 @@ struct AnnouncementsView: View {
 
 struct AnnouncementsView_Previews: PreviewProvider {
     static var previews: some View {
-        AnnouncementsView()
+        AnnouncementsView(/*inbox: Inbox(message: [Message(id: 0, subject: "0", recipient_ids: "0", last_updated: 0/*, mid: "0"*/, author_id: 0, message_status: "0"/*, message: "0"*/, links: MessageLinks(self: "0"))], links: MessageLinks(self: "0"), unread_count: "0")*/)
             .padding()
-        
     }
 }

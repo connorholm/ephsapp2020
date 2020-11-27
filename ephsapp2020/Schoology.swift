@@ -15,46 +15,40 @@ func RequestInbox() -> Inbox {
         consumerKey:    "b6801717d71e876773d6faa90eb3b89d05fa427d8",
         consumerSecret: "e0954bdd2da0ad001b2c9dc28d8d299f"
     )
-    print("\tSet the keys")
+    printf("Keys set")
     
-    let message = Message(id: 0, subject: "0", recipient_ids: "0", last_updated: 0, mid: "0", author_id: 0, message_status: "0", message: "0", links: "0")
-    var inbox = Inbox(message: [message], links: "0", unread_count: "0")
+    let message = Message(id: 0, subject: "0", recipient_ids: "0", last_updated: 0/*, mid: "0"*/, author_id: 0, message_status: "0"/*, message: "0"*/, links: MessageLinks(self: "0"))
+    var inbox = Inbox(message: [message], links: MessageLinks(self: "0"), unread_count: "0")
     
-    //var responceString = ""
+    // Used to make program wait for API to return
+    let semaphore = DispatchSemaphore(value: 0)
     
     // do your HTTP request without authorize
     oauthswift.client.get("https://api.schoology.com/v1/messages/inbox") { result in
         switch result {
         case .success(let response):
-            print("\tSuccess!!")
-            print(response.dataString()!)
-            var result: Inbox?
+            var result: Inbox
             do {
-                //let convertedString = String(data: response.data, encoding: String.Encoding.utf8)
-                //responceString = convertedString!
                 result = try JSONDecoder().decode(Inbox.self, from: response.data)
             }
             catch {
-                print("\tERROR during JSON conversion: \(error.localizedDescription)")
+                printf("ERROR during JSON conversion: \(error)")
                 return
             }
-            inbox = result!
-        case .failure( _):
-            print("\tERROR")
+            inbox = result
+            printf("Retrieved and decoded data, stoed in inbox")
+        case .failure(let error):
+            printf("ERROR: \(error)")
             return
         }
+        // Gives signal for program to continue
+        semaphore.signal()
     }
+    // Waits for API to finish
+    printf("SUCCESS!! Returned inbox")
     return inbox
 }
-/*
-func jsonToString(json: AnyObject) -> String {
-    do {
-        let data1 =  try JSONSerialization.dataWithJSONObject(json, options: JSONSerialization.WritingOptions.PrettyPrinted) // first of all convert json to the data
-        let convertedString = String(data: data1, encoding: NSUTF8StringEncoding) // the data will be converted to the string
-        return convertedString
 
-    } catch let myJSONError {
-        print(myJSONError)
-    }
+let printf:(String) -> () = {
+    print("\t\($0)")
 }
- */
