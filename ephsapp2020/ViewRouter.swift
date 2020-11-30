@@ -15,6 +15,7 @@ class ViewRouter: ObservableObject {
     var currentPage: String = "login" {
         didSet {
             objectWillChange.send(self)
+            print("currentPage refreshed")
         }
     }
     var homePage: String = "" {
