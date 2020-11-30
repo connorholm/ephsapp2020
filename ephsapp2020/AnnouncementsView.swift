@@ -36,25 +36,30 @@ struct AnnouncementsView: View {
             }, label: {
                 Text("Increase author id by 1")
             })
-            Text("Last Updated: \(refresh.inbox.message[0].last_updated)")
-                .foregroundColor(.white)
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                .padding(5)
-                .background(Color.red)
-                .cornerRadius(35)
-                .shadow(radius: 5)
-            Text("Subject: \(refresh.inbox.message[0].subject)")
-                .foregroundColor(.white)
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                .padding(5)
-                .background(Color.red)
-                .cornerRadius(35)
-                .shadow(radius: 5)
+            ForEach(0..<refresh.inbox.message.count){ index in
+                Text("Last Updated: \(refresh.inbox.message[index].last_updated)")
+                    .foregroundColor(.white)
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .padding(5)
+                    .background(Color.red)
+                    .cornerRadius(35)
+                    .shadow(radius: 5)
+                Text("Subject: \(refresh.inbox.message[index].subject)")
+                    .foregroundColor(.white)
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .padding(5)
+                    .background(Color.red)
+                    .cornerRadius(35)
+                    .shadow(radius: 5)
+            }
+                
+            }
+            
             
             Spacer()
         }
     }
-}
+
 
 struct AnnouncementsView_Previews: PreviewProvider {
     static var previews: some View {
