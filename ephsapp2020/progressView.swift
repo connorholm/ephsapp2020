@@ -29,6 +29,8 @@ struct progressView: View {
     var currentMinute = getTime(timeType: "minute")
     var currentSecond = getTime(timeType: "second")
     var currentClassHour = getHour()
+    
+    
     var body: some View {
         
         VStack(alignment: .leading) {
