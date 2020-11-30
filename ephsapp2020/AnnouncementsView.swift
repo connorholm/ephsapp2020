@@ -36,8 +36,21 @@ struct AnnouncementsView: View {
             }, label: {
                 Text("Increase author id by 1")
             })
+            Text("Last Updated: \(refresh.inbox.message[0].last_updated)")
+                .foregroundColor(.white)
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .padding(5)
+                .background(Color.red)
+                .cornerRadius(35)
+                .shadow(radius: 5)
+            Text("Subject: \(refresh.inbox.message[0].subject)")
+                .foregroundColor(.white)
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .padding(5)
+                .background(Color.red)
+                .cornerRadius(35)
+                .shadow(radius: 5)
             
-            Text("Message 0 author_id: \(refresh.inbox.message[0].author_id)")
             Spacer()
         }
     }
