@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var viewRouter: ViewRouter
+    @ObservedObject var refresh: Refresh
 
     var body: some View {
         VStack() {
@@ -17,7 +18,7 @@ struct HomeView: View {
             case "assignments":
                 AssignmentsView()
             case "announcements":
-                AnnouncementsView()
+                AnnouncementsView(refresh: refresh)
             case "clubs":
                 ClubView()
             case "menu":
@@ -38,7 +39,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HomeView(viewRouter: ViewRouter())
+            HomeView(viewRouter: ViewRouter(), refresh: Refresh())
         }
     }
 }

@@ -8,15 +8,12 @@
 
 import SwiftUI
 
-// This is where we can use Schoology API for SchoolIDs and passwords
-let storedSchoolID = "0"
-let storedPassword = "0"
-
 struct LoginView: View {
     @ObservedObject var viewRouter: ViewRouter
+    @ObservedObject var refresh: Refresh
     
-    @State var schoolid: String = ""
-    @State var password: String = ""
+    @State var consumer_key: String = ""
+    @State var consumer_secret: String = ""
     
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
@@ -30,8 +27,8 @@ struct LoginView: View {
                     .aspectRatio(contentMode: .fit)
                     .padding(.bottom, 75)
                 
-                SchoolidTextField(schoolid: $schoolid)
-                PasswordSecureField(password: $password)
+                SchoolidTextField(schoolid: $consumer_key)
+                PasswordSecureField(password: $consumer_secret)
                 if authenticationDidFail {
                     Text("Information not correct. Try again.")
                         .offset(y: -10)
@@ -41,15 +38,27 @@ struct LoginView: View {
                 
                 
                 Button(action: {
-//                    if self.schoolid == storedSchoolID && self.password == storedPassword {
-//                        self.authenticationDidSucceed = true
-//                    } else {
-//                        self.authenticationDidFail = true
-//                    }
-//
-//                    if authenticationDidSucceed {
-                        viewRouter.currentPage = "tutorial"
-//                    }
+                    /*
+                    if self.schoolid == storedSchoolID && self.password == storedPassword {
+                        self.authenticationDidSucceed = true
+                    } else {
+                        self.authenticationDidFail = true
+                    }
+
+                    if authenticationDidSucceed {
+                    viewRouter.currentPage = "tutorial"
+                    }
+                     */
+                    
+                    // Sends keys to viewRouter WITHOUT VERIFICATION
+                    if consumer_key != "" {
+                        refresh.oauthswift.setValue(consumer_key, forKey: "consumerKey")
+                    }
+                    if consumer_secret != "" {
+                        refresh.oauthswift.setValue(consumer_secret, forKey: "consumerSecret")
+                    }
+                        
+                    viewRouter.currentPage = "tutorial"
                 }) {
                     Text("Login")
                         .font(.title)
@@ -67,7 +76,7 @@ struct LoginView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewRouter: ViewRouter())
+        LoginView(viewRouter: ViewRouter(), refresh: Refresh())
     }
 }
 
@@ -76,7 +85,7 @@ struct SchoolidTextField: View {
     @Binding var schoolid: String
     
     var body: some View {
-        TextField("School ID", text: $schoolid)
+        TextField("Comsuner key", text: $schoolid)
             .padding()
             .background(Color(.systemGray6))
             .cornerRadius(5.0)
@@ -89,7 +98,7 @@ struct PasswordSecureField: View {
     @Binding var password: String
     
     var body: some View {
-        SecureField("Password", text: $password)
+        SecureField("Consumer secret", text: $password)
             .padding()
             .background(Color(.systemGray6))
             .cornerRadius(5.0)

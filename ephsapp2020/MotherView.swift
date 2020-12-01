@@ -11,6 +11,7 @@ import SwiftUI
 
 struct MotherView: View {
     @ObservedObject var viewRouter: ViewRouter
+    @ObservedObject var refresh: Refresh
     
     var body: some View {
         VStack {
@@ -18,9 +19,9 @@ struct MotherView: View {
                 case "tutorial":
                     TutorialView(viewRouter: viewRouter)
                 case "home":
-                    HomeView(viewRouter: viewRouter)
+                    HomeView(viewRouter: viewRouter, refresh: refresh)
                 default:
-                    LoginView(viewRouter: viewRouter)
+                    LoginView(viewRouter: viewRouter, refresh: refresh)
             }
         }
     }
@@ -28,6 +29,6 @@ struct MotherView: View {
 
 struct MotherView_Previews: PreviewProvider {
     static var previews: some View {
-        MotherView(viewRouter: ViewRouter())
+        MotherView(viewRouter: ViewRouter(), refresh: Refresh())
     }
 }

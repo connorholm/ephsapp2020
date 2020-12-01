@@ -10,6 +10,7 @@ import OAuthSwift
 import Combine
 
 class Refresh: ObservableObject {
+    
     let objectWillChange = PassthroughSubject<Refresh,Never>()
     
     let oauthswift = OAuth1Swift(

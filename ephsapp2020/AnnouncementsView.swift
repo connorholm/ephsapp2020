@@ -9,8 +9,7 @@
 import SwiftUI
 
 struct AnnouncementsView: View {
-    
-    @ObservedObject var refresh = Refresh()
+    @ObservedObject var refresh: Refresh
     
     var body: some View {
         VStack {
@@ -21,14 +20,12 @@ struct AnnouncementsView: View {
             }, label: {
                 Text("Refresh")
             })
-            
             Button(action: {
                 refresh.inbox.message[0].last_updated += 1
                 print("Increased last_updated by 1")
             }, label: {
                 Text("Increase last_updated by 1")
             })
-            
             ForEach(0..<refresh.inbox.message.count){ index in
                 MessageDisplay(message: refresh.inbox.message[index])
             }
@@ -55,7 +52,7 @@ struct MessageDisplay: View {
 
 struct AnnouncementsView_Previews: PreviewProvider {
     static var previews: some View {
-        AnnouncementsView(/*inbox: Inbox(message: [Message(id: 0, subject: "0", recipient_ids: "0", last_updated: 0/*, mid: "0"*/, author_id: 0, message_status: "0"/*, message: "0"*/, links: MessageLinks(self: "0"))], links: MessageLinks(self: "0"), unread_count: "0")*/)
+        AnnouncementsView(refresh: Refresh())
             .padding()
     }
 }
