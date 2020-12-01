@@ -18,7 +18,7 @@ class Refresh: ObservableObject {
         consumerSecret: "e0954bdd2da0ad001b2c9dc28d8d299f"
     )
     
-    var inbox: Inbox = Inbox(message: [Message(id: 0, subject: "0", recipient_ids: "0", last_updated: 0/*, mid: "0"*/, author_id: 0, message_status: "0"/*, message: "0"*/, links: MessageLinks(self: "0"))], links: MessageLinks(self: "0"), unread_count: "0") {
+    var inbox: Inbox = Inbox(message: [Message(id: 0, subject: "0", recipient_ids: "0", last_updated: 0, author_id: 0, message_status: "0", links: MessageLinks(self: "0"))], links: MessageLinks(self: "0"), unread_count: "0") {
         didSet {
             objectWillChange.send(self)
             print("Inbox refreshed")

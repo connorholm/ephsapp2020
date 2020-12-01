@@ -23,6 +23,4 @@ class ViewRouter: ObservableObject {
             objectWillChange.send(self)
         }
     }
-    var consumer_key: String = ""
-    var consumer_secret: String = ""
 }
