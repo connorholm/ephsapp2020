@@ -29,8 +29,8 @@ struct AnnouncementsView: View {
                 Text("Increase last_updated by 1")
             })
             
-            ForEach(0..<messages.count){ index in
-                MessageDisplay(message: messages[index])
+            ForEach(0..<refresh.inbox.message.count){ index in
+                MessageDisplay(message: refresh.inbox.message[index])
             }
         }
     Spacer()
