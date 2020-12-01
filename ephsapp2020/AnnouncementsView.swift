@@ -7,58 +7,50 @@
 
 
 import SwiftUI
-import Combine
-
-class Refresh: ObservableObject {
-    let objectWillChange = PassthroughSubject<Refresh,Never>()
-    var inbox: Inbox = RequestInbox() {
-        didSet {
-            objectWillChange.send(self)
-            print("Inbox refreshed")
-        }
-    }
-}
 
 struct AnnouncementsView: View {
     
-    var refresh = Refresh()
+    @ObservedObject var refresh = Refresh()
     
     var body: some View {
         VStack {
             Text("Announcemts").font(.title)
             
-            Button(action: {}, label: {
+            Button(action: {
+                refresh.refresh()
+            }, label: {
                 Text("Refresh")
             })
+            
             Button(action: {
-                refresh.inbox.message[0].author_id += 1
-                print("Increased author_id by 1")
+                refresh.inbox.message[0].last_updated += 1
+                print("Increased last_updated by 1")
             }, label: {
-                Text("Increase author id by 1")
+                Text("Increase last_updated by 1")
             })
-            ForEach(0..<refresh.inbox.message.count){ index in
-                Text("Last Updated: \(refresh.inbox.message[index].last_updated)")
-                    .foregroundColor(.white)
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .padding(5)
-                    .background(Color.red)
-                    .cornerRadius(35)
-                    .shadow(radius: 5)
-                Text("Subject: \(refresh.inbox.message[index].subject)")
-                    .foregroundColor(.white)
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .padding(5)
-                    .background(Color.red)
-                    .cornerRadius(35)
-                    .shadow(radius: 5)
-            }
-                
-            }
             
-            
-            Spacer()
+            ForEach(0..<messages.count){ index in
+                MessageDisplay(message: messages[index])
+            }
         }
+    Spacer()
     }
+}
+
+struct MessageDisplay: View {
+    var message: Message
+    var body: some View {
+        VStack {
+            Text("\(message.subject)")
+            Text("Last updated \(message.last_updated)")
+        }.foregroundColor(.white)
+        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+        .padding(5)
+        .background(Color.red)
+        .cornerRadius(35)
+        .shadow(radius: 5)
+    }
+}
 
 
 struct AnnouncementsView_Previews: PreviewProvider {
