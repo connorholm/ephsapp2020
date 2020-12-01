@@ -36,19 +36,16 @@ func getTime(timeType: String) -> Int {
     
     let currentTime = (Hour * 3600)+(minute * 60)+second
     
-    if timeType == "minute" {
-        return Int(minute) 
-    }
-    else if timeType == "second" {
-        return Int(second) 
-    }
-    else if timeType == "hour" {
-        return Int(Hour) 
-    }
-    else if timeType == "current" {
+    switch timeType {
+    case "minute":
+        return Int(minute)
+    case "second":
+        return Int(second)
+    case "hour":
+        return Int(Hour)
+    case "current":
         return currentTime
-    }
-    else{
+    default:
         return -1
     }
 }

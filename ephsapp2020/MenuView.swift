@@ -19,9 +19,13 @@ struct MenuView: View {
             WebViews(url: "https://edenprairiemn.infinitecampus.org/campus/portal/eden_prairie.jsp")
         case "evn":
             WebViews (url: "https://eaglevisionnews.com/")
-        case  "library":
+        case  "contacts":
             WebViews (url:
-                "https://edenpr.follettdestiny.com/cataloging/servlet/presentadvancedsearchredirectorform.do?l2m=Library%20Search&tm=TopLevelCatalog&l2m=Library+Search")
+                "https://www.edenpr.org/eden-prairie-high-school/contact")
+        case  "calender":
+            WebViews (url:
+                "https://www.edenpr.org/eden-prairie-high-school/student-life/news-information/calendar")
+            
         default:
             Menu(menuPage: menuPage)
         }
@@ -38,7 +42,7 @@ struct Menu: View {
                     .font(.title)
                     .foregroundColor(.white)
                     .padding()
-                    .frame(width:350, height: 60)
+                    .frame(width:315, height: 60)
                     .background(Color.red)
                     .cornerRadius(35)
                     .padding()
@@ -48,7 +52,7 @@ struct Menu: View {
                     .font(.title)
                     .foregroundColor(.white)
                     .padding()
-                    .frame(width:350, height: 60)
+                    .frame(width:315, height: 60)
                     .background(Color.red)
                     .cornerRadius(35)
                     .padding()
@@ -58,17 +62,27 @@ struct Menu: View {
                     .font(.title)
                     .foregroundColor(.white)
                     .padding()
-                    .frame(width:350, height: 60)
+                    .frame(width:315, height: 60)
                     .background(Color.red)
                     .cornerRadius(35)
                     .padding()
             })
-            Button(action: {menuPage.menuPage = "library"}, label: {
-                Text("EPHS Library")
+            Button(action: {menuPage.menuPage = "contacts"}, label: {
+                Text("EPHS Contacts")
                     .font(.title)
                     .foregroundColor(.white)
                     .padding()
-                    .frame(width:350, height: 60)
+                    .frame(width:315, height: 60)
+                    .background(Color.red)
+                    .cornerRadius(35)
+                    .padding()
+            })
+            Button(action: {menuPage.menuPage = "calender"}, label: {
+                Text("EPHS Calender")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(width:315, height: 60)
                     .background(Color.red)
                     .cornerRadius(35)
                     .padding()
