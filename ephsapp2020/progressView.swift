@@ -21,80 +21,57 @@ struct ProgressBar: View {
 struct progressView: View {
     let currentDate = getDate(timeType: "day")
     let currentTime = getTime(timeType: "current")
-    @State var progressValue1st: Float = Float(getTime(timeType: "current")-((8*3600)+(0*60)))/Float((1*3600)+(20*60))
-    @State var progressValue2nd: Float = Float(getTime(timeType: "current")-((9*3600)+(35*60)))/Float((1*3600)+(20*60))
-    @State var progressValue3rd: Float = Float(getTime(timeType: "current")-((11*3600)+(15*60)))/Float((1*3600)+(20*60))
-    @State var progressValue4th: Float = Float(getTime(timeType: "current")-((13*3600)+(15*60)))/Float((1*3600)+(20*60))
+    @State var progressValue1: Float = Float(getTime(timeType: "current")-((8*3600)+(0*60)))/Float((1*3600)+(20*60))
+    @State var progressValue2: Float = Float(getTime(timeType: "current")-((9*3600)+(35*60)))/Float((1*3600)+(20*60))
+    @State var progressValue3: Float = Float(getTime(timeType: "current")-((11*3600)+(15*60)))/Float((1*3600)+(20*60))
+    @State var progressValue4: Float = Float(getTime(timeType: "current")-((13*3600)+(15*60)))/Float((1*3600)+(20*60))
     var currentHour = getTime(timeType: "hour")
     var currentMinute = getTime(timeType: "minute")
     var currentSecond = getTime(timeType: "second")
     var currentClassHour = getHour()
     
-    
-    var body: some View {
-        
-        VStack(alignment: .leading) {
-            if currentClassHour == 1{
-                HStack {
-                    Text("1st")
-                        .padding(.horizontal,10)
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .frame(width: 70.0)
-                        .background(Color.black)
-                        .cornerRadius(15)
-                        .shadow(color: Color.red, radius: 2)
-                    ProgressBar(value: $progressValue1st).frame(height: 20)
-                }.padding(.horizontal, 10)
-            }else if currentClassHour == 2{
-                HStack {
-                    Text("2nd")
-                        .padding(.horizontal,10)
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .frame(width: 70.0)
-                        .background(Color.black)
-                        .cornerRadius(15)
-                        .shadow(color: Color.red, radius: 2)
-                    ProgressBar(value: $progressValue2nd).frame(height: 20)
-                }.padding(.horizontal, 10)
-            }else if currentClassHour == 3{
-                HStack {
-                    Text("3rd")
-                        .padding(.horizontal,10)
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .frame(width: 70.0)
-                        .background(Color.black)
-                        .cornerRadius(15)
-                        .shadow(color: Color.red, radius: 2)
-                    ProgressBar(value: $progressValue3rd).frame(height: 20)
-                }.padding(.horizontal, 10)
-            }else if currentClassHour == 4{
-                HStack {
-                    Text("4th")
-                        .padding(.horizontal,10)
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .frame(width: 70.0)
-                        .background(Color.black)
-                        .cornerRadius(15)
-                        .shadow(color: Color.red, radius: 2)
-                    ProgressBar(value: $progressValue4th).frame(height: 20)
-                }.padding(.horizontal, 10)
-            }else if currentClassHour == -1{
-                Text("Class Hasn't Started Yet")
-                    .padding(.horizontal,10)
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .background(Color.black)
-                    .cornerRadius(15)
-                    .shadow(color: Color.red, radius: 2)
-            }
-
+    var text:String {
+        switch currentClassHour {
+        case 1:
+            return "1st"
+        case 2:
+            return "1st"
+        case 3:
+            return "1st"
+        case 4:
+            return "1st"
+        default:
+            return "AAA"
+        }
+    }
+    var progressValue:Binding<Float> {
+        switch currentClassHour {
+        case 1:
+            return $progressValue1
+        case 2:
+            return $progressValue2
+        case 3:
+            return $progressValue3
+        default:
+            return $progressValue4
         }
     }
     
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Text(text)
+                    .padding(.horizontal,10)
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .frame(width: 70.0)
+                    .background(Color.black)
+                    .cornerRadius(15)
+                    .shadow(color: Color.red, radius: 2)
+                ProgressBar(value: progressValue).frame(height: 20)
+            }.padding(.horizontal, 10)
+        }
+    }
 }
 
 struct ProgressView_Previews: PreviewProvider {
