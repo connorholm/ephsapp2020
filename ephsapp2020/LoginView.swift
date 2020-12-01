@@ -41,15 +41,15 @@ struct LoginView: View {
                 
                 
                 Button(action: {
-                    if self.schoolid == storedSchoolID && self.password == storedPassword {
-                        self.authenticationDidSucceed = true
-                    } else {
-                        self.authenticationDidFail = true
-                    }
-                    
-                    if authenticationDidSucceed {
+//                    if self.schoolid == storedSchoolID && self.password == storedPassword {
+//                        self.authenticationDidSucceed = true
+//                    } else {
+//                        self.authenticationDidFail = true
+//                    }
+//
+//                    if authenticationDidSucceed {
                         viewRouter.currentPage = "tutorial"
-                    }
+//                    }
                 }) {
                     Text("Login")
                         .font(.title)
