@@ -27,6 +27,8 @@ struct LoginView: View {
                     .aspectRatio(contentMode: .fit)
                     .padding(.bottom, 75)
                 
+                Link("API Credentials", destination: URL(string: "https://edenpr.schoology.com/api")!)
+                
                 SchoolidTextField(schoolid: $consumer_key)
                 PasswordSecureField(password: $consumer_secret)
                 if authenticationDidFail {

@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9105073B2576A0E000FEB93A /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 913ED49C256C18D10060059B /* OAuthSwift.framework */; };
-		9105073C2576A0E000FEB93A /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 913ED49C256C18D10060059B /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		918E856325642B54001F879C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918E856225642B54001F879C /* LaunchScreen.storyboard */; };
+		91D5A2CC2577F32C009BC160 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 913ED49C256C18D10060059B /* OAuthSwift.framework */; };
+		91D5A2CD2577F32C009BC160 /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 913ED49C256C18D10060059B /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		91D7E7E325657D3F000E3AB3 /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7E7E125657D3F000E3AB3 /* Inbox.swift */; };
 		91D7E7E425657D3F000E3AB3 /* Schoology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7E7E225657D3F000E3AB3 /* Schoology.swift */; };
 		91DB167625641DCA0060D3C8 /* progressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167525641DCA0060D3C8 /* progressView.swift */; };
@@ -86,13 +86,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9105073D2576A0E000FEB93A /* Embed Frameworks */ = {
+		91D5A2CE2577F32C009BC160 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9105073C2576A0E000FEB93A /* OAuthSwift.framework in Embed Frameworks */,
+				91D5A2CD2577F32C009BC160 /* OAuthSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9105073B2576A0E000FEB93A /* OAuthSwift.framework in Frameworks */,
+				91D5A2CC2577F32C009BC160 /* OAuthSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +226,7 @@
 				9D25E8A62562E00A009AE332 /* Sources */,
 				9D25E8A72562E00A009AE332 /* Frameworks */,
 				9D25E8A82562E00A009AE332 /* Resources */,
-				9105073D2576A0E000FEB93A /* Embed Frameworks */,
+				91D5A2CE2577F32C009BC160 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
