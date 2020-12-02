@@ -10,13 +10,10 @@ import OAuthSwift
 import Combine
 
 class Refresh: ObservableObject {
+    var consumer_key: String = ""
+    var consumer_secret: String = ""
     
     let objectWillChange = PassthroughSubject<Refresh,Never>()
-    
-    let oauthswift = OAuth1Swift(
-        consumerKey:    "b6801717d71e876773d6faa90eb3b89d05fa427d8",
-        consumerSecret: "e0954bdd2da0ad001b2c9dc28d8d299f"
-    )
     
     var inbox: Inbox = Inbox(message: [Message(id: 0, subject: "0", recipient_ids: "0", last_updated: 0, author_id: 0, message_status: "0", links: MessageLinks(self: "0"))], links: MessageLinks(self: "0"), unread_count: "0") {
         didSet {
@@ -26,6 +23,11 @@ class Refresh: ObservableObject {
     }
     func refresh() -> Void {
         print("Running InboxRequest()...")
+        
+        let oauthswift = OAuth1Swift(
+            consumerKey:    consumer_key,
+            consumerSecret: consumer_secret
+        )
         
         // do your HTTP request without authorize
         oauthswift.client.get("https://api.schoology.com/v1/messages/inbox") { result in

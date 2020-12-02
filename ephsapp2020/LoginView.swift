@@ -12,8 +12,8 @@ struct LoginView: View {
     @ObservedObject var viewRouter: ViewRouter
     @ObservedObject var refresh: Refresh
     
-    @State var consumer_key: String = ""
-    @State var consumer_secret: String = ""
+    @State var consumer_key: String = "b6801717d71e876773d6faa90eb3b89d05fa427d8"
+    @State var consumer_secret: String = "e0954bdd2da0ad001b2c9dc28d8d299f"
     
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
@@ -54,10 +54,12 @@ struct LoginView: View {
                     
                     // Sends keys to viewRouter WITHOUT VERIFICATION
                     if consumer_key != "" {
-                        refresh.oauthswift.setValue(consumer_key, forKey: "consumerKey")
+                        //refresh.oauthswift.setValue(consumer_key, forKey: "consumerKey")
+                        refresh.consumer_key = consumer_key
                     }
                     if consumer_secret != "" {
-                        refresh.oauthswift.setValue(consumer_secret, forKey: "consumerSecret")
+                        //refresh.oauthswift.setValue(consumer_secret, forKey: "consumerSecret")
+                        refresh.consumer_secret = consumer_secret
                     }
                         
                     viewRouter.currentPage = "tutorial"

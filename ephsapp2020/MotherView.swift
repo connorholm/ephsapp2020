@@ -13,6 +13,8 @@ struct MotherView: View {
     @ObservedObject var viewRouter: ViewRouter
     @ObservedObject var refresh: Refresh
     
+    var keys = ["", ""]
+    
     var body: some View {
         VStack {
             switch viewRouter.currentPage {

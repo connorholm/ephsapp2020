@@ -12,6 +12,7 @@ import SwiftUI
 
 class ViewRouter: ObservableObject {
     let objectWillChange = PassthroughSubject<ViewRouter,Never>()
+    let data = UserDefaults.standard
     var currentPage: String = "login" {
         didSet {
             objectWillChange.send(self)
