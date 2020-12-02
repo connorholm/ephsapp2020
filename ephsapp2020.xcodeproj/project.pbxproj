@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F900CAC25754E3700C98DCD /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 913ED49C256C18D10060059B /* OAuthSwift.framework */; };
 		2F900CAD25754E3700C98DCD /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 913ED49C256C18D10060059B /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		884A24C81B07022FCD2E0D40 /* Pods_ephsapp2020.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9650ABDE1A03EF9D59BA64B0 /* Pods_ephsapp2020.framework */; };
 		918E856325642B54001F879C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918E856225642B54001F879C /* LaunchScreen.storyboard */; };
 		91D7E7E325657D3F000E3AB3 /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7E7E125657D3F000E3AB3 /* Inbox.swift */; };
 		91D7E7E425657D3F000E3AB3 /* Schoology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7E7E225657D3F000E3AB3 /* Schoology.swift */; };
@@ -102,6 +103,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		54F1678836EE92A0D64F0461 /* Pods-ephsapp2020.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ephsapp2020.release.xcconfig"; path = "Target Support Files/Pods-ephsapp2020/Pods-ephsapp2020.release.xcconfig"; sourceTree = "<group>"; };
 		913ED491256C18D10060059B /* OAuthSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthSwift.xcodeproj; path = OAuthSwift/OAuthSwift.xcodeproj; sourceTree = "<group>"; };
 		918E856225642B54001F879C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91D7E7E125657D3F000E3AB3 /* Inbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		91DB167E25641E110060D3C8 /* time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = time.swift; sourceTree = "<group>"; };
 		91DB168F256426280060D3C8 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		91DB16942564268F0060D3C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9650ABDE1A03EF9D59BA64B0 /* Pods_ephsapp2020.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ephsapp2020.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D25E8AA2562E00A009AE332 /* ephsapp2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ephsapp2020.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D25E8B42562E00F009AE332 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9D25E8B62562E00F009AE332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,6 +132,7 @@
 		9D8DDBB22566D8E5000916F5 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		9DB6C63A25774CB400F00223 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9DB6C64325774CDB00F00223 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		D2C1EC438DE0CCE774A8CA51 /* Pods-ephsapp2020.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ephsapp2020.debug.xcconfig"; path = "Target Support Files/Pods-ephsapp2020/Pods-ephsapp2020.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F900CAC25754E3700C98DCD /* OAuthSwift.framework in Frameworks */,
+				884A24C81B07022FCD2E0D40 /* Pods_ephsapp2020.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +165,7 @@
 		913ED4B0256C19090060059B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9650ABDE1A03EF9D59BA64B0 /* Pods_ephsapp2020.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -171,6 +177,7 @@
 				913ED491256C18D10060059B /* OAuthSwift.xcodeproj */,
 				9D25E8AB2562E00A009AE332 /* Products */,
 				913ED4B0256C19090060059B /* Frameworks */,
+				E9E047ABB041AEF97160C289 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,6 +229,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E9E047ABB041AEF97160C289 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2C1EC438DE0CCE774A8CA51 /* Pods-ephsapp2020.debug.xcconfig */,
+				54F1678836EE92A0D64F0461 /* Pods-ephsapp2020.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,10 +246,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D25E8B92562E00F009AE332 /* Build configuration list for PBXNativeTarget "ephsapp2020" */;
 			buildPhases = (
+				EC062A2EFB382C25BB561873 /* [CP] Check Pods Manifest.lock */,
 				9D25E8A62562E00A009AE332 /* Sources */,
 				9D25E8A72562E00A009AE332 /* Frameworks */,
 				9D25E8A82562E00A009AE332 /* Resources */,
 				2F900CAE25754E3700C98DCD /* Embed Frameworks */,
+				577577A65871DB20E5B2879B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -346,6 +365,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		577577A65871DB20E5B2879B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ephsapp2020/Pods-ephsapp2020-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ephsapp2020/Pods-ephsapp2020-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ephsapp2020/Pods-ephsapp2020-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC062A2EFB382C25BB561873 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ephsapp2020-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9D25E8A62562E00A009AE332 /* Sources */ = {
@@ -496,6 +557,7 @@
 		};
 		9D25E8BA2562E00F009AE332 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2C1EC438DE0CCE774A8CA51 /* Pods-ephsapp2020.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -520,6 +582,7 @@
 		};
 		9D25E8BB2562E00F009AE332 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54F1678836EE92A0D64F0461 /* Pods-ephsapp2020.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
