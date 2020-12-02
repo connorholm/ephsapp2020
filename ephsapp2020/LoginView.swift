@@ -7,12 +7,14 @@
 
 
 import SwiftUI
+import Firebase
 
 // This is where we can use Schoology API for SchoolIDs and passwords
 let storedSchoolID = "0"
 let storedPassword = "0"
 
 struct LoginView: View {
+    FirebaseApp.configure()
     @ObservedObject var viewRouter: ViewRouter
     
     @State var schoolid: String = ""
