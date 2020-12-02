@@ -7,5 +7,6 @@ target 'ephsapp2020' do
 
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase'
 
 end
