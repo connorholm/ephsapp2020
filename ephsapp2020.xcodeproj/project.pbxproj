@@ -31,6 +31,8 @@
 		9D25E8F42562E261009AE332 /* AssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8DA2562E261009AE332 /* AssignmentView.swift */; };
 		9D25E8F52562E261009AE332 /* ClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8DB2562E261009AE332 /* ClubView.swift */; };
 		9D8DDBB32566D8E5000916F5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8DDBB22566D8E5000916F5 /* Date.swift */; };
+		9DB6C64225774CB400F00223 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DB6C63A25774CB400F00223 /* GoogleService-Info.plist */; };
+		9DB6C64425774CDB00F00223 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB6C64325774CDB00F00223 /* Firebase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,8 @@
 		9D25E8DA2562E261009AE332 /* AssignmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentView.swift; sourceTree = "<group>"; };
 		9D25E8DB2562E261009AE332 /* ClubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubView.swift; sourceTree = "<group>"; };
 		9D8DDBB22566D8E5000916F5 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		9DB6C63A25774CB400F00223 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9DB6C64325774CDB00F00223 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,14 +197,16 @@
 				9D25E8D32562E25F009AE332 /* TutorialView.swift */,
 				9D25E8D02562E25F009AE332 /* LoginView.swift */,
 				9D25E8BD2562E23B009AE332 /* AnnouncementsView.swift */,
+				9DB6C64325774CDB00F00223 /* Firebase.swift */,
 				9D25E8DA2562E261009AE332 /* AssignmentView.swift */,
 				91DB168F256426280060D3C8 /* WebView.swift */,
 				918E856225642B54001F879C /* LaunchScreen.storyboard */,
 				91DB16942564268F0060D3C8 /* Assets.xcassets */,
 				9D25E8B62562E00F009AE332 /* Info.plist */,
-				91DB167525641DCA0060D3C8 /* ProgressView.swift */,
+				91DB167525641DCA0060D3C8 /* progressView.swift */,
 				91DB167E25641E110060D3C8 /* time.swift */,
 				91D7E7E125657D3F000E3AB3 /* Inbox.swift */,
+				9DB6C63A25774CB400F00223 /* GoogleService-Info.plist */,
 				91D7E7E225657D3F000E3AB3 /* Schoology.swift */,
 				9D8DDBB22566D8E5000916F5 /* Date.swift */,
 				9D25E8B32562E00F009AE332 /* Preview Content */,
@@ -333,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D25E8B52562E00F009AE332 /* Preview Assets.xcassets in Resources */,
+				9DB6C64225774CB400F00223 /* GoogleService-Info.plist in Resources */,
 				91DB16952564268F0060D3C8 /* Assets.xcassets in Resources */,
 				918E856325642B54001F879C /* LaunchScreen.storyboard in Resources */,
 			);
@@ -350,11 +357,12 @@
 				9D25E8C02562E23B009AE332 /* AccountView.swift in Sources */,
 				91DB167F25641E110060D3C8 /* time.swift in Sources */,
 				9D25E8F42562E261009AE332 /* AssignmentView.swift in Sources */,
-				91DB167625641DCA0060D3C8 /* ProgressView.swift in Sources */,
+				91DB167625641DCA0060D3C8 /* progressView.swift in Sources */,
 				9D25E8F32562E261009AE332 /* ViewRouter.swift in Sources */,
 				9D8DDBB32566D8E5000916F5 /* Date.swift in Sources */,
 				9D25E8E32562E261009AE332 /* MotherView.swift in Sources */,
 				9D25E8BF2562E23B009AE332 /* AnnouncementsView.swift in Sources */,
+				9DB6C64425774CDB00F00223 /* Firebase.swift in Sources */,
 				9D25E8ED2562E261009AE332 /* TutorialView.swift in Sources */,
 				9D25E8E62562E261009AE332 /* NavMenuView.swift in Sources */,
 				91DB1690256426280060D3C8 /* WebView.swift in Sources */,
