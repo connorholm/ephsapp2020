@@ -43,7 +43,7 @@ struct progressView: View {
         case 4:
             return "1st"
         default:
-            return "AAA"
+            return "AA"
         }
     }
     var progressValue:Binding<Float> {

@@ -9,8 +9,10 @@ import Foundation
 import OAuthSwift
 import Combine
 
-class Refresh: ObservableObject {
-    let objectWillChange = PassthroughSubject<Refresh,Never>()
+class GetInbox: ObservableObject {
+    let objectWillChange = PassthroughSubject<GetInbox,Never>()
+    let defaults = UserDefaults.standard
+    let keys = Keys()
     
     var inbox: Inbox = Inbox(message: [Message(id: 0, subject: "0", recipient_ids: "0", last_updated: 0, author_id: 0, message_status: "0", links: MessageLinks(self: "0"))], links: MessageLinks(self: "0"), unread_count: "0") {
         didSet {
@@ -18,13 +20,12 @@ class Refresh: ObservableObject {
             print("Inbox refreshed")
         }
     }
-    func refresh(consumer_key: String, consumer_secret: String) -> Void {
-        
+    func get() -> Void {
         print("Running InboxRequest()...")
         
         let oauthswift = OAuth1Swift(
-            consumerKey:    consumer_key,
-            consumerSecret: consumer_secret
+            consumerKey:    defaults.string(forKey: keys.consumer_key)!,
+            consumerSecret: defaults.string(forKey: keys.consumer_secret)!
         )
         
         // do your HTTP request without authorize

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LoginView: View {
     @ObservedObject var viewRouter: ViewRouter
-    @State var defaults: UserDefaults
+    @State var defaults = UserDefaults.standard
     let keys = Keys()
     
     @State var consumer_key: String = ""
@@ -59,7 +59,11 @@ struct LoginView: View {
                 if consumer_secret != "" {
                     defaults.set(consumer_secret, forKey: keys.consumer_secret)
                 }
-                viewRouter.currentPage = "tutorial"
+                if defaults.string(forKey: keys.consumer_key) != nil && defaults.string(forKey: keys.consumer_secret) != nil {
+                    viewRouter.currentPage = "tutorial"
+                } else {
+                    authenticationDidFail = true
+                }
             }) {
                 Text("Login")
                     .font(.title)
