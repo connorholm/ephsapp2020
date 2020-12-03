@@ -15,7 +15,7 @@ struct AnnouncementsView: View {
     
     var body: some View {
         VStack {
-            Text("Announcemts").font(.title)
+            Text("Announcements").font(.title)
             
             Button(action: {
                 refresh.refresh(
