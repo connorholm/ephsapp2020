@@ -20,9 +20,6 @@ struct LoginView: View {
     @State var authenticationDidSucceed: Bool = false
     
     var body: some View {
-        Color.white
-                 // Ignore just for the color
-                .overlay(
         VStack {
             Image("ephs")
                 .resizable()
@@ -73,7 +70,7 @@ struct LoginView: View {
                     .cornerRadius(35)
             }
         }.padding()
-    )}
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
