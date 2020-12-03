@@ -87,7 +87,7 @@ struct SchoolidTextField: View {
     @Binding var schoolid: String
     
     var body: some View {
-        TextField("Comsuner key", text: $schoolid)
+        TextField("Consumer key", text: $schoolid)
             .padding()
             .background(Color(.systemGray6))
             .cornerRadius(5.0)
