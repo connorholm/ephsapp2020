@@ -10,9 +10,6 @@ import OAuthSwift
 import Combine
 
 class Refresh: ObservableObject {
-    var consumer_key: String = ""
-    var consumer_secret: String = ""
-    
     let objectWillChange = PassthroughSubject<Refresh,Never>()
     
     var inbox: Inbox = Inbox(message: [Message(id: 0, subject: "0", recipient_ids: "0", last_updated: 0, author_id: 0, message_status: "0", links: MessageLinks(self: "0"))], links: MessageLinks(self: "0"), unread_count: "0") {
@@ -21,7 +18,8 @@ class Refresh: ObservableObject {
             print("Inbox refreshed")
         }
     }
-    func refresh() -> Void {
+    func refresh(consumer_key: String, consumer_secret: String) -> Void {
+        
         print("Running InboxRequest()...")
         
         let oauthswift = OAuth1Swift(

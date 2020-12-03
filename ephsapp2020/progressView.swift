@@ -10,9 +10,11 @@ struct ProgressBar: View {
                     .opacity(0.3)
                     .foregroundColor(Color(UIColor.red))
                 
+                /*
                 Rectangle().frame(width: min(CGFloat(self.value)*geometry.size.width, geometry.size.width), height: geometry.size.height)
                     .foregroundColor(Color(UIColor.red))
                     .animation(.linear)
+                 */
             }.cornerRadius(45.0)
         }
     }

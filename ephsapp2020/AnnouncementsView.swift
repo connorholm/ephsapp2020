@@ -10,13 +10,18 @@ import SwiftUI
 
 struct AnnouncementsView: View {
     @ObservedObject var refresh: Refresh
+    @State var defaults: UserDefaults
+    let keys = Keys()
     
     var body: some View {
         VStack {
             Text("Announcemts").font(.title)
             
             Button(action: {
-                refresh.refresh()
+                refresh.refresh(
+                    consumer_key: defaults.string(forKey: keys.consumer_key)!,
+                    consumer_secret: defaults.string(forKey: keys.consumer_secret)!
+                )
             }, label: {
                 Text("Refresh")
             })
@@ -52,7 +57,7 @@ struct MessageDisplay: View {
 
 struct AnnouncementsView_Previews: PreviewProvider {
     static var previews: some View {
-        AnnouncementsView(refresh: Refresh())
+        AnnouncementsView(refresh: Refresh(), defaults: UserDefaults())
             .padding()
     }
 }

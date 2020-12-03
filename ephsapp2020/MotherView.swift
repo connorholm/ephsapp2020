@@ -8,12 +8,10 @@
 
 import SwiftUI
 
-
 struct MotherView: View {
-    @ObservedObject var viewRouter: ViewRouter
-    @ObservedObject var refresh: Refresh
-    
-    var keys = ["", ""]
+    @ObservedObject var viewRouter = ViewRouter()
+    @ObservedObject var refresh = Refresh()
+    @State var defaults = UserDefaults.standard
     
     var body: some View {
         VStack {
@@ -21,9 +19,9 @@ struct MotherView: View {
                 case "tutorial":
                     TutorialView(viewRouter: viewRouter)
                 case "home":
-                    HomeView(viewRouter: viewRouter, refresh: refresh)
+                    HomeView(viewRouter: viewRouter, refresh: refresh, defaults: defaults)
                 default:
-                    LoginView(viewRouter: viewRouter, refresh: refresh)
+                    LoginView(viewRouter: viewRouter, defaults: defaults)
             }
         }
     }
@@ -31,6 +29,12 @@ struct MotherView: View {
 
 struct MotherView_Previews: PreviewProvider {
     static var previews: some View {
-        MotherView(viewRouter: ViewRouter(), refresh: Refresh())
+        MotherView()
     }
+}
+
+struct Keys {
+    var consumer_key: String = "consumerKeyString"
+    var consumer_secret: String = "consumerSecretString"
+    var currentPage: String = "currentPageString"
 }
