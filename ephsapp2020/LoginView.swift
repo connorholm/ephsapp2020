@@ -20,7 +20,9 @@ struct LoginView: View {
     @State var authenticationDidSucceed: Bool = false
     
     var body: some View {
-        
+        Color.white
+                 // Ignore just for the color
+                .overlay(
         VStack {
             Image("ephs")
                 .resizable()
@@ -28,6 +30,7 @@ struct LoginView: View {
                 .padding(.bottom, 75)
             
             Text("You must only enter these once, skip if you've already entered")
+                .foregroundColor(.red)
             Link("API Credentials", destination: URL(string: "https://edenpr.schoology.com/api")!)
             
             SchoolidTextField(schoolid: $consumer_key)
@@ -70,7 +73,7 @@ struct LoginView: View {
                     .cornerRadius(35)
             }
         }.padding()
-    }
+    )}
 }
 
 struct ContentView_Previews: PreviewProvider {
