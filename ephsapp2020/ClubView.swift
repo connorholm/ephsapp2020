@@ -122,14 +122,7 @@ struct Clubs: View {
 //            .frame(height: 200)
             
             Button(action: {clubPage.clubPage = "moreClubs"} ) {
-                Text("More about Clubs")
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(width:350, height: 60)
-                    .background(Color.red)
-                    .cornerRadius(35)
-                    .padding()
+                BigRedText(text: "More about Clubs")
             }
             Spacer()
         }
@@ -151,6 +144,3 @@ struct ClubView_Previews: PreviewProvider {
             .padding()
     }
 }
-
-
-

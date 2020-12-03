@@ -16,6 +16,7 @@
 		91DB167F25641E110060D3C8 /* time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167E25641E110060D3C8 /* time.swift */; };
 		91DB1690256426280060D3C8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB168F256426280060D3C8 /* WebView.swift */; };
 		91DB16952564268F0060D3C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91DB16942564268F0060D3C8 /* Assets.xcassets */; };
+		91E5D662257999C400CCAB39 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5D661257999C400CCAB39 /* Elements.swift */; };
 		9D25E8B52562E00F009AE332 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D25E8B42562E00F009AE332 /* Preview Assets.xcassets */; };
 		9D25E8BF2562E23B009AE332 /* AnnouncementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8BD2562E23B009AE332 /* AnnouncementsView.swift */; };
 		9D25E8C02562E23B009AE332 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8BE2562E23B009AE332 /* AccountView.swift */; };
@@ -108,6 +109,7 @@
 		91DB167E25641E110060D3C8 /* time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = time.swift; sourceTree = "<group>"; };
 		91DB168F256426280060D3C8 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		91DB16942564268F0060D3C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		91E5D661257999C400CCAB39 /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
 		9D25E8AA2562E00A009AE332 /* ephsapp2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ephsapp2020.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D25E8B42562E00F009AE332 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9D25E8B62562E00F009AE332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				91DB168F256426280060D3C8 /* WebView.swift */,
 				918E856225642B54001F879C /* LaunchScreen.storyboard */,
 				91DB16942564268F0060D3C8 /* Assets.xcassets */,
+				91E5D661257999C400CCAB39 /* Elements.swift */,
 				9D25E8B62562E00F009AE332 /* Info.plist */,
 				91DB167525641DCA0060D3C8 /* progressView.swift */,
 				91DB167E25641E110060D3C8 /* time.swift */,
@@ -359,6 +362,7 @@
 				9D25E8E62562E261009AE332 /* NavMenuView.swift in Sources */,
 				91DB1690256426280060D3C8 /* WebView.swift in Sources */,
 				91D7E7E325657D3F000E3AB3 /* Inbox.swift in Sources */,
+				91E5D662257999C400CCAB39 /* Elements.swift in Sources */,
 				9D25E8EA2562E261009AE332 /* LoginView.swift in Sources */,
 				9D25E8E92562E261009AE332 /* AppDelegate.swift in Sources */,
 				9D25E8F52562E261009AE332 /* ClubView.swift in Sources */,

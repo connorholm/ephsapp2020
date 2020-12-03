@@ -51,27 +51,16 @@ struct LoginView: View {
                 viewRouter.currentPage = "tutorial"
                 }
                  */
-                
                 // Sends keys to viewRouter WITHOUT VERIFICATION
-                if consumer_key != "" {
+                if consumer_key != "" && consumer_secret != "" {
                     defaults.set(consumer_key, forKey: keys.consumer_key)
-                }
-                if consumer_secret != "" {
                     defaults.set(consumer_secret, forKey: keys.consumer_secret)
-                }
-                if defaults.string(forKey: keys.consumer_key) != nil && defaults.string(forKey: keys.consumer_secret) != nil {
                     viewRouter.currentPage = "tutorial"
                 } else {
                     authenticationDidFail = true
                 }
             }) {
-                Text("Login")
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(width:228, height: 60)
-                    .background(Color.red)
-                    .cornerRadius(35)
+                BigRedText(text: "Login")
             }
         }.padding()
     }

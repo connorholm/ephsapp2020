@@ -25,6 +25,6 @@ struct Message: Codable {
     var links:MessageLinks
 }
 
-struct MessageLinks:Codable {
+struct MessageLinks: Codable {
     var `self`:String
 }

@@ -10,6 +10,9 @@ import SwiftUI
 
 struct AccountView: View {
     @ObservedObject var viewRouter: ViewRouter
+    @State var defaults = UserDefaults.standard
+    let keys = Keys()
+    
     var body: some View {
         VStack {
             Text("Account")
@@ -26,17 +29,17 @@ struct AccountView: View {
                 .foregroundColor(Color.gray)
                 .padding(.bottom, 20)
             Button(action: {
+                defaults.set("login", forKey: keys.currentPage)
                 viewRouter.currentPage = "login"
             }, label: {
-                Text("Log out")
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(width: 200, height: 60)
-                    .background(Color.red)
-                    .cornerRadius(35)
+                BigRedText(text: "Change API Keys")
             })
-            Spacer()
+            Button(action: {
+                defaults.set("tutorial", forKey: keys.currentPage)
+                viewRouter.currentPage = "tutorial"
+            }, label: {
+                BigRedText(text: "View Tutorial")
+            })
         }
     }
 }
