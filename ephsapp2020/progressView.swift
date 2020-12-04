@@ -62,7 +62,6 @@ struct progressView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(currentAMPM)
             HStack {
                 Text(text)
                     .padding(.horizontal,10)
