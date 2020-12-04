@@ -16,6 +16,7 @@ func getTime(timeType: String) -> Int {
     formatter.dateStyle = .none
     formatter.timeStyle = .medium
     
+    
     let str = formatter.string(from: now)
     
     let start = str.index(str.startIndex, offsetBy: 6)
@@ -49,8 +50,28 @@ func getTime(timeType: String) -> Int {
         return -1
     }
 }
+func getAMPM() -> String{
+    let now = Date()
+   
+    let formatter = DateFormatter()
+    formatter.dateStyle = .none
+    formatter.timeStyle = .medium
+    
+    
+    let mediumTime = formatter.string(from: now)
+    
+    let start = mediumTime.index(mediumTime.startIndex, offsetBy: 8)
+    let ends = mediumTime.index(mediumTime.endIndex, offsetBy: 0)
+    let range = start..<ends
+    let timeOfDay = String(mediumTime[range])
+    
+    return timeOfDay
+}
 func getHour() -> Int {
     let currentTime = getTime(timeType: "current")
+    if (getAMPM() == "PM" && currentTime > ((14*3600)+(35*60))) || (getAMPM() == "AM" && currentTime < (8*3600)){
+        return -1
+    }
     if currentTime > (8*3600) && currentTime < ((9*3600)+(20*60)){
         return 1
     }else if currentTime > ((9*3600)+(35*60)) && currentTime < (11*3600){

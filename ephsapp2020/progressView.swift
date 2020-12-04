@@ -27,6 +27,7 @@ struct progressView: View {
     @State var progressValue2: Float = Float(getTime(timeType: "current")-((9*3600)+(35*60)))/Float((1*3600)+(20*60))
     @State var progressValue3: Float = Float(getTime(timeType: "current")-((11*3600)+(15*60)))/Float((1*3600)+(20*60))
     @State var progressValue4: Float = Float(getTime(timeType: "current")-((13*3600)+(15*60)))/Float((1*3600)+(20*60))
+    let currentAMPM = getAMPM()
     var currentHour = getTime(timeType: "hour")
     var currentMinute = getTime(timeType: "minute")
     var currentSecond = getTime(timeType: "second")
@@ -61,6 +62,7 @@ struct progressView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
+            Text(currentAMPM)
             HStack {
                 Text(text)
                     .padding(.horizontal,10)
