@@ -8,66 +8,67 @@
 
 import SwiftUI
 
-// This is where we can use Schoology API for SchoolIDs and passwords
-let storedSchoolID = "0"
-let storedPassword = "0"
-
 struct LoginView: View {
     @ObservedObject var viewRouter: ViewRouter
+    @State var defaults = UserDefaults.standard
+    let keys = Keys()
     
-    @State var schoolid: String = ""
-    @State var password: String = ""
+    @State var consumer_key: String = ""
+    @State var consumer_secret: String = ""
     
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
     
     var body: some View {
-        
-        ZStack {
-            VStack {
-                Image("ephs")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.bottom, 75)
-                
-                SchoolidTextField(schoolid: $schoolid)
-                PasswordSecureField(password: $password)
-                if authenticationDidFail {
-                    Text("Information not correct. Try again.")
-                        .offset(y: -10)
-                        .foregroundColor(.red)
-                        .animation(Animation.default)
-                }
-                
-                
-                Button(action: {
-                    if self.schoolid == storedSchoolID && self.password == storedPassword {
-                        self.authenticationDidSucceed = true
-                    } else {
-                        self.authenticationDidFail = true
-                    }
-                    
-                    if authenticationDidSucceed {
-                        viewRouter.currentPage = "tutorial"
-                    }
-                }) {
-                    Text("Login")
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width:228, height: 60)
-                        .background(Color.red)
-                        .cornerRadius(35)
-                }
+        VStack {
+            Image("ephs")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding(.bottom, 75)
+            
+            Text("You must only enter these once, skip if you've already entered")
+                .foregroundColor(.red)
+            Link("API Credentials", destination: URL(string: "https://edenpr.schoology.com/api")!)
+            
+            SchoolidTextField(schoolid: $consumer_key)
+            PasswordSecureField(password: $consumer_secret)
+            if authenticationDidFail {
+                Text("Information not correct. Try again.")
+                    .offset(y: -10)
+                    .foregroundColor(.red)
+                    .animation(Animation.default)
             }
-            .padding()
-        }
+            
+            Button(action: {
+                /*
+                if self.schoolid == storedSchoolID && self.password == storedPassword {
+                    self.authenticationDidSucceed = true
+                } else {
+                    self.authenticationDidFail = true
+                }
+
+                if authenticationDidSucceed {
+                viewRouter.currentPage = "tutorial"
+                }
+                 */
+                // Sends keys to viewRouter WITHOUT VERIFICATION
+                if consumer_key != "" && consumer_secret != "" {
+                    defaults.set(consumer_key, forKey: keys.consumer_key)
+                    defaults.set(consumer_secret, forKey: keys.consumer_secret)
+                    viewRouter.currentPage = "tutorial"
+                } else {
+                    authenticationDidFail = true
+                }
+            }) {
+                BigRedText(text: "Login")
+            }
+        }.padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewRouter: ViewRouter())
+        LoginView(viewRouter: ViewRouter(), defaults: UserDefaults())
     }
 }
 
@@ -76,7 +77,7 @@ struct SchoolidTextField: View {
     @Binding var schoolid: String
     
     var body: some View {
-        TextField("School ID", text: $schoolid)
+        TextField("Consumer key", text: $schoolid)
             .padding()
             .background(Color(.systemGray6))
             .cornerRadius(5.0)
@@ -89,7 +90,7 @@ struct PasswordSecureField: View {
     @Binding var password: String
     
     var body: some View {
-        SecureField("Password", text: $password)
+        SecureField("Consumer secret", text: $password)
             .padding()
             .background(Color(.systemGray6))
             .cornerRadius(5.0)

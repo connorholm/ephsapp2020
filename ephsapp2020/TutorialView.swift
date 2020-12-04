@@ -10,6 +10,8 @@ import SwiftUI
 
 struct TutorialView: View {
     @ObservedObject var viewRouter: ViewRouter
+    @State var defaults = UserDefaults.standard
+    let keys = Keys()
     
     var body: some View {
         VStack {
@@ -34,6 +36,7 @@ struct TutorialView: View {
             Button(
                 action: {
                     viewRouter.currentPage = "home"
+                    defaults.set("home", forKey: keys.currentPage)
                 },
                 label: {
                 Text("OK")

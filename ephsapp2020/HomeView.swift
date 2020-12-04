@@ -10,6 +10,8 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var viewRouter: ViewRouter
+    @ObservedObject var inbox: GetInbox
+    @State var defaults = UserDefaults.standard
 
     var body: some View {
         VStack() {
@@ -17,7 +19,7 @@ struct HomeView: View {
             case "assignments":
                 AssignmentsView()
             case "announcements":
-                AnnouncementsView()
+                AnnouncementsView(inbox: inbox)
             case "clubs":
                 ClubView()
             case "menu":
@@ -38,7 +40,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HomeView(viewRouter: ViewRouter())
+            HomeView(viewRouter: ViewRouter(), inbox: GetInbox(), defaults: UserDefaults())
         }
     }
 }

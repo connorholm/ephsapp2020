@@ -9,78 +9,53 @@
 import SwiftUI
 import Combine
 
+//
+//List of websites, to add more, add more. Buttons and view routing are automatic
+//
+var websites = [
+    Website(name: "Counselor Appointments", url: "https://app.acuityscheduling.com/schedule.php?owner=20439951"),
+    Website(name: "Campus Login", url: "https://edenprairiemn.infinitecampus.org/campus/portal/eden_prairie.jsp"),
+    Website(name: "Eagle Vision News", url: "https://eaglevisionnews.com/"),
+    Website(name: "EPHS Contacts", url: "https://www.edenpr.org/eden-prairie-high-school/contact"),
+    Website(name: "EPHS Calender", url: "https://www.edenpr.org/eden-prairie-high-school/student-life/news-information/calendar")
+]
+
 struct MenuView: View {
     @ObservedObject var menuPage = MenuPage()
     var body: some View {
-        switch menuPage.menuPage {
-        case "counselor":
-            WebViews(url: "https://app.acuityscheduling.com/schedule.php?owner=20439951")
-        case "campus":
-            WebViews(url: "https://edenprairiemn.infinitecampus.org/campus/portal/eden_prairie.jsp")
-        case "evn":
-            WebViews (url: "https://eaglevisionnews.com/")
-        case  "library":
-            WebViews (url:
-                "https://edenpr.follettdestiny.com/cataloging/servlet/presentadvancedsearchredirectorform.do?l2m=Library%20Search&tm=TopLevelCatalog&l2m=Library+Search")
-        default:
+        if menuPage.menuPage == -1 {
             Menu(menuPage: menuPage)
+        } else {
+            WebViews(url: websites[menuPage.menuPage].url)
         }
     }
 }
 
 struct Menu: View {
     @ObservedObject var menuPage: MenuPage
+    
     var body: some View {
         VStack {
-            Text("Additional Links").font(.title).padding()
-            Button(action: {menuPage.menuPage = "counselor"} ) {
-                Text("Counselor Appointments")
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(width:350, height: 60)
-                    .background(Color.red)
-                    .cornerRadius(35)
-                    .padding()
+            Text("Web Links").font(.title).padding()
+            List {
+                ForEach(0..<websites.count) { i in
+                    Button(action: {menuPage.menuPage = i} ) {
+                        BigRedText(text: websites[i].name)
+                    }
+                }
             }
-            Button(action: {menuPage.menuPage = "campus"}, label: {
-                Text("Campus Login")
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(width:350, height: 60)
-                    .background(Color.red)
-                    .cornerRadius(35)
-                    .padding()
-            })
-            Button(action: {menuPage.menuPage = "evn"}, label: {
-                Text("Eagle Vision News")
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(width:350, height: 60)
-                    .background(Color.red)
-                    .cornerRadius(35)
-                    .padding()
-            })
-            Button(action: {menuPage.menuPage = "library"}, label: {
-                Text("EPHS Library")
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(width:350, height: 60)
-                    .background(Color.red)
-                    .cornerRadius(35)
-                    .padding()
-            })
-            Spacer()
         }
     }
 }
 
+struct Website {
+    var name: String
+    var url: String
+}
+
 class MenuPage: ObservableObject {
     let objectWillChange = PassthroughSubject<MenuPage,Never>()
-    var menuPage: String = "menu" {
+    var menuPage: Int = -1 {
         didSet {
             objectWillChange.send(self)
         }
@@ -89,7 +64,6 @@ class MenuPage: ObservableObject {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
-            .padding()
+        MenuView().padding()
     }
 }
