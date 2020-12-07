@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91133B7E257A880D007BB6F5 /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 913ED49C256C18D10060059B /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		91133B7F257A8817007BB6F5 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 913ED49C256C18D10060059B /* OAuthSwift.framework */; };
+		9117279C257A2F75001C107F /* APIRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117279B257A2F75001C107F /* APIRequests.swift */; };
 		918E856325642B54001F879C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918E856225642B54001F879C /* LaunchScreen.storyboard */; };
-		91D5A2CC2577F32C009BC160 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 913ED49C256C18D10060059B /* OAuthSwift.framework */; };
-		91D5A2CD2577F32C009BC160 /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 913ED49C256C18D10060059B /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		91D7E7E325657D3F000E3AB3 /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7E7E125657D3F000E3AB3 /* Inbox.swift */; };
-		91D7E7E425657D3F000E3AB3 /* Schoology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7E7E225657D3F000E3AB3 /* Schoology.swift */; };
+		91D7E7E325657D3F000E3AB3 /* APIStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7E7E125657D3F000E3AB3 /* APIStructs.swift */; };
 		91DB167625641DCA0060D3C8 /* progressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167525641DCA0060D3C8 /* progressView.swift */; };
 		91DB167F25641E110060D3C8 /* time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167E25641E110060D3C8 /* time.swift */; };
 		91DB1690256426280060D3C8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB168F256426280060D3C8 /* WebView.swift */; };
@@ -93,7 +93,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				91D5A2CD2577F32C009BC160 /* OAuthSwift.framework in Embed Frameworks */,
+				91133B7E257A880D007BB6F5 /* OAuthSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,10 +101,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9117279B257A2F75001C107F /* APIRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequests.swift; sourceTree = "<group>"; };
 		913ED491256C18D10060059B /* OAuthSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthSwift.xcodeproj; path = OAuthSwift/OAuthSwift.xcodeproj; sourceTree = "<group>"; };
 		918E856225642B54001F879C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		91D7E7E125657D3F000E3AB3 /* Inbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
-		91D7E7E225657D3F000E3AB3 /* Schoology.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schoology.swift; sourceTree = "<group>"; };
+		91D7E7E125657D3F000E3AB3 /* APIStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIStructs.swift; sourceTree = "<group>"; };
 		91DB167525641DCA0060D3C8 /* progressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = progressView.swift; sourceTree = "<group>"; };
 		91DB167E25641E110060D3C8 /* time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = time.swift; sourceTree = "<group>"; };
 		91DB168F256426280060D3C8 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91D5A2CC2577F32C009BC160 /* OAuthSwift.framework in Frameworks */,
+				91133B7F257A8817007BB6F5 /* OAuthSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,8 +203,8 @@
 				9D25E8B62562E00F009AE332 /* Info.plist */,
 				91DB167525641DCA0060D3C8 /* progressView.swift */,
 				91DB167E25641E110060D3C8 /* time.swift */,
-				91D7E7E125657D3F000E3AB3 /* Inbox.swift */,
-				91D7E7E225657D3F000E3AB3 /* Schoology.swift */,
+				91D7E7E125657D3F000E3AB3 /* APIStructs.swift */,
+				9117279B257A2F75001C107F /* APIRequests.swift */,
 				9D8DDBB22566D8E5000916F5 /* Date.swift */,
 				9D25E8B32562E00F009AE332 /* Preview Content */,
 			);
@@ -348,20 +348,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91D7E7E425657D3F000E3AB3 /* Schoology.swift in Sources */,
 				9D25E8DF2562E261009AE332 /* MenuView.swift in Sources */,
 				9D25E8C02562E23B009AE332 /* AccountView.swift in Sources */,
 				91DB167F25641E110060D3C8 /* time.swift in Sources */,
 				9D25E8F42562E261009AE332 /* AssignmentView.swift in Sources */,
 				91DB167625641DCA0060D3C8 /* progressView.swift in Sources */,
 				9D25E8F32562E261009AE332 /* ViewRouter.swift in Sources */,
+				9117279C257A2F75001C107F /* APIRequests.swift in Sources */,
 				9D8DDBB32566D8E5000916F5 /* Date.swift in Sources */,
 				9D25E8E32562E261009AE332 /* MotherView.swift in Sources */,
 				9D25E8BF2562E23B009AE332 /* AnnouncementsView.swift in Sources */,
 				9D25E8ED2562E261009AE332 /* TutorialView.swift in Sources */,
 				9D25E8E62562E261009AE332 /* NavMenuView.swift in Sources */,
 				91DB1690256426280060D3C8 /* WebView.swift in Sources */,
-				91D7E7E325657D3F000E3AB3 /* Inbox.swift in Sources */,
+				91D7E7E325657D3F000E3AB3 /* APIStructs.swift in Sources */,
 				91E5D662257999C400CCAB39 /* Elements.swift in Sources */,
 				9D25E8EA2562E261009AE332 /* LoginView.swift in Sources */,
 				9D25E8E92562E261009AE332 /* AppDelegate.swift in Sources */,

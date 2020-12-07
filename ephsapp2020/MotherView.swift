@@ -10,14 +10,18 @@ import SwiftUI
 
 struct MotherView: View {
     @ObservedObject var viewRouter = ViewRouter()
-    @ObservedObject var inbox = GetInbox()
+    var api = API()
     @State var defaults = UserDefaults.standard
     let keys = Keys()
+    
+    init() {
+        api.getInbox()
+    }
     
     var body: some View {
         VStack {
             if defaults.string(forKey: keys.currentPage) == "home" {
-                HomeView(viewRouter: viewRouter, inbox: inbox)
+                HomeView(viewRouter: viewRouter, api: api)
             } else if viewRouter.currentPage == "tutorial" {
                 TutorialView(viewRouter: viewRouter)
             } else {
@@ -34,7 +38,8 @@ struct MotherView_Previews: PreviewProvider {
 }
 
 struct Keys {
-    var consumer_key: String = "consumerKeyString"
-    var consumer_secret: String = "consumerSecretString"
-    var currentPage: String = "currentPageString"
+    let consumer_key = "consumerKeyString"
+    let consumer_secret = "consumerSecretString"
+    let user_id = "userIDString"
+    let currentPage = "currentPageString"
 }
