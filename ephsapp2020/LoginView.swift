@@ -62,6 +62,12 @@ struct LoginView: View {
             }) {
                 BigRedText(text: "Login")
             }
+            
+            Button(action: {
+                viewRouter.currentPage = "tutorial"
+            }) {
+                BigRedText(text: "Guest login")
+            }
         }.padding()
     }
 }
