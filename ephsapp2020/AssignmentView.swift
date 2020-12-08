@@ -13,7 +13,7 @@ struct AssignmentsView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15){
-            Text("Assignments")
+            Text("Unfinished Schoology Assignments")
                 .font(.largeTitle)
             
             List{
@@ -80,6 +80,6 @@ func formatDate(from: String) -> String {
     df.dateFormat = "yyyy-MM-dd HH:mm:ss"
     let updated = df.date(from: from)!
     
-    df.dateFormat = "M/d/yy h:m"
+    df.dateFormat = "h:mm M/d/yy"
     return df.string(from: updated)
 }
