@@ -11,6 +11,7 @@
 		91133B7F257A8817007BB6F5 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 913ED49C256C18D10060059B /* OAuthSwift.framework */; };
 		9117279C257A2F75001C107F /* APIRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117279B257A2F75001C107F /* APIRequests.swift */; };
 		918E856325642B54001F879C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918E856225642B54001F879C /* LaunchScreen.storyboard */; };
+		91BF9935257FD761000B1270 /* GradesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF9934257FD761000B1270 /* GradesView.swift */; };
 		91D7E7E325657D3F000E3AB3 /* APIStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7E7E125657D3F000E3AB3 /* APIStructs.swift */; };
 		91DB167625641DCA0060D3C8 /* progressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167525641DCA0060D3C8 /* progressView.swift */; };
 		91DB167F25641E110060D3C8 /* time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167E25641E110060D3C8 /* time.swift */; };
@@ -104,6 +105,7 @@
 		9117279B257A2F75001C107F /* APIRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequests.swift; sourceTree = "<group>"; };
 		913ED491256C18D10060059B /* OAuthSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthSwift.xcodeproj; path = OAuthSwift/OAuthSwift.xcodeproj; sourceTree = "<group>"; };
 		918E856225642B54001F879C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		91BF9934257FD761000B1270 /* GradesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesView.swift; sourceTree = "<group>"; };
 		91D7E7E125657D3F000E3AB3 /* APIStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIStructs.swift; sourceTree = "<group>"; };
 		91DB167525641DCA0060D3C8 /* progressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = progressView.swift; sourceTree = "<group>"; };
 		91DB167E25641E110060D3C8 /* time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = time.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				9D25E8DB2562E261009AE332 /* ClubView.swift */,
 				9D25E8BE2562E23B009AE332 /* AccountView.swift */,
 				9D25E8C52562E25C009AE332 /* MenuView.swift */,
+				91BF9934257FD761000B1270 /* GradesView.swift */,
 				9D25E8CC2562E25E009AE332 /* NavMenuView.swift */,
 				9D25E8D32562E25F009AE332 /* TutorialView.swift */,
 				9D25E8D02562E25F009AE332 /* LoginView.swift */,
@@ -350,6 +353,7 @@
 			files = (
 				9D25E8DF2562E261009AE332 /* MenuView.swift in Sources */,
 				9D25E8C02562E23B009AE332 /* AccountView.swift in Sources */,
+				91BF9935257FD761000B1270 /* GradesView.swift in Sources */,
 				91DB167F25641E110060D3C8 /* time.swift in Sources */,
 				9D25E8F42562E261009AE332 /* AssignmentView.swift in Sources */,
 				91DB167625641DCA0060D3C8 /* progressView.swift in Sources */,

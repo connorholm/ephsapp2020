@@ -54,14 +54,14 @@ struct ClassesSection: Codable {
 // Grades information
 //
 struct Grades: Codable {
-    var section: GradesSection
+    var section: [GradesSection]
     var links: Links
 }
 
 struct GradesSection: Codable {
     var section_id: String?
     //var period: [Period]
-    var final_grade: [FinalGrade]?
+    var final_grade: [FinalGrade]
     //var grading_category: [GradingCategoryPeriod]
 }
 

@@ -21,14 +21,13 @@ struct HomeView: View {
             case "announcements":
                 AnnouncementsView(inbox: api.inbox)
             case "clubs":
-                ClubView()
+                //ClubView()
+                GradesView(cid: api.cid, grades: api.grades)
             case "menu":
                 MenuView()
             case "account":
                 AccountView(viewRouter: viewRouter)
             default:
-                Text("ERROR: No \(viewRouter.homePage) view")
-                    .foregroundColor(Color.red)
                 progressView()
             }
             Spacer()

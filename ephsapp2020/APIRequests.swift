@@ -24,6 +24,7 @@ class API {
     var cidAssignments = [CIDAssignments]()
     var grades = [GradesSection]()
     var uid: Int = 0
+    var cid = [String : String]()
     
     func getInbox() {
         print("Getting Inbox...")
@@ -71,6 +72,9 @@ class API {
                     return
                 }
                 self.classes = result
+                for section in result.section {
+                    self.cid[section.id] = section.course_title
+                }
                 self.afterClass()
             case .failure(let error):
                 printf("ERROR: \(error)")
@@ -80,11 +84,11 @@ class API {
     }
     
     //Gets assignments for spesified course
-    func getAssignmnets(cid: Int, course_title: String) {
+    func getAssignmnets(class: ClassesSection) {
         print("Getting Assignemts...")
         
         // do your HTTP request without authorize
-        oauthswift.client.get("https://api.schoology.com/v1/sections/\(cid)/assignments?limit=80") { result in
+        oauthswift.client.get("https://api.schoology.com/v1/sections/\(`class`.id)/assignments?limit=80") { result in
             switch result {
             case .success(let response):
                 var result: ClassAssignments
@@ -101,7 +105,7 @@ class API {
                         result.assignment.remove(at: i ?? -1)
                     }
                 }
-                self.cidAssignments.append(CIDAssignments(course_title: course_title, assingments: result.assignment))
+                self.cidAssignments.append(CIDAssignments(course_title: `class`.course_title, assingments: result.assignment))
             case .failure(let error):
                 printf("ERROR: \(error)")
                 return
@@ -111,22 +115,26 @@ class API {
     
     
     //Gets grades for a spesific course
-    func getGrades(cid: Int, uid: Int) {
+    func getGrades(class: ClassesSection, uid: Int) {
         print("Getting Grades...")
         
         // do your HTTP request without authorize
-        oauthswift.client.get("https://api.schoology.com/v1/users/\(uid)/grades?section_id=\(cid)") { result in
+        oauthswift.client.get("https://api.schoology.com/v1/users/\(uid)/grades?section_id=\(`class`.id)") { result in
             switch result {
             case .success(let response):
-                var result: GradesSection
+                var result: Grades
                 do {
-                    result = try JSONDecoder().decode(GradesSection.self, from: response.data)
+                    //print(response.string)
+                    result = try JSONDecoder().decode(Grades.self, from: response.data)
                 }
                 catch {
                     printf("ERROR during JSON conversion: \(error)")
                     return
                 }
-                self.grades.append(result)
+                print(result)
+                if result.section.count >= 1 {
+                    self.grades.append(result.section[0])
+                }
             case .failure(let error):
                 printf("ERROR: \(error)")
                 return
@@ -146,9 +154,8 @@ class API {
 
         print("Getting assignments and grades")
         for `class` in classes.section {
-            let cid = Int(`class`.id) ?? -1
-            getAssignmnets(cid: cid, course_title: `class`.course_title)
-            getGrades(cid: cid, uid: uid)
+            getAssignmnets(class: `class`)
+            getGrades(class: `class`, uid: uid)
         }
     }
 }

@@ -42,7 +42,7 @@ struct EachClass: View {
     
     var body: some View {
         
-        DisclosureGroup("\(className): \(assignments.count)", isExpanded: $isExpanded){
+        DisclosureGroup("\(className):  \(assignments.count)", isExpanded: $isExpanded){
             VStack{
                 ForEach(0..<assignments.count, id: \.self){ i in
                     HStack {

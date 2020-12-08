@@ -44,7 +44,7 @@ struct Menu: View {
                     }
                 }
             }
-        }
+        }.frame(alignment: .center)
     }
 }
 
