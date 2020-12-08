@@ -19,11 +19,11 @@ let oauthswift = OAuth1Swift(
 let links = Links(self: "0")
 
 class API {
-    var inbox: Inbox = Inbox(message: [Message(id: 0, subject: "0", recipient_ids: "0", last_updated: 0, author_id: 0, message_status: "0", links: Links(self: "0"))], links: links, unread_count: "0")
-    var classes: Classes = Classes(section: [ClassesSection(id: "0", course_title: "0", active: 0, profile_url: "0")], links: links)
+    var inbox: Inbox = Inbox(message: [Message](), links: links, unread_count: "0")
+    var classes: Classes = Classes(section: [ClassesSection](), links: links)
+    var cidAssignments = [CIDAssignments]()
     var grades = [GradesSection]()
     var uid: Int = 0
-    var sectionIDs = [Int]()
     
     func getInbox() {
         print("Getting Inbox...")
@@ -40,9 +40,13 @@ class API {
                     printf("ERROR during JSON conversion: \(error)")
                     return
                 }
-                
+                var uid = defaults.integer(forKey: keys.uid)
+                if uid <= 1 {
+                    uid = getUserID(messages: result.message)
+                    defaults.set(uid, forKey: keys.uid)
+                }
+                self.uid = uid
                 self.inbox = result
-                self.uid = getUserID(messages: result.message)
                 self.refresh()
                 
             case .failure(let error):
@@ -51,11 +55,11 @@ class API {
         }
     }
     
-    func getClasses(userID: Int) {
+    func getClasses(uid: Int) {
         print("Getting classes...")
         
         // do your HTTP request without authorize
-        oauthswift.client.get("https://api.schoology.com/v1/users/\(userID)/sections") { result in
+        oauthswift.client.get("https://api.schoology.com/v1/users/\(uid)/sections") { result in
             switch result {
             case .success(let response):
                 var result: Classes
@@ -67,6 +71,7 @@ class API {
                     return
                 }
                 self.classes = result
+                self.afterClass()
             case .failure(let error):
                 printf("ERROR: \(error)")
                 return
@@ -74,12 +79,43 @@ class API {
         }
     }
     
+    //Gets assignments for spesified course
+    func getAssignmnets(cid: Int, course_title: String) {
+        print("Getting Assignemts...")
+        
+        // do your HTTP request without authorize
+        oauthswift.client.get("https://api.schoology.com/v1/sections/\(cid)/assignments?limit=80") { result in
+            switch result {
+            case .success(let response):
+                var result: ClassAssignments
+                do {
+                    result = try JSONDecoder().decode(ClassAssignments.self, from: response.data)
+                }
+                catch {
+                    printf("ERROR during JSON conversion: \(error)")
+                    return
+                }
+                for assignment in result.assignment {
+                    if assignment.completed == 1 {
+                        let i = result.assignment.firstIndex(of: assignment)
+                        result.assignment.remove(at: i ?? -1)
+                    }
+                }
+                self.cidAssignments.append(CIDAssignments(course_title: course_title, assingments: result.assignment))
+            case .failure(let error):
+                printf("ERROR: \(error)")
+                return
+            }
+        }
+    }
+    
+    
     //Gets grades for a spesific course
-    func getGrades(userID: Int, sectionID: Int) {
+    func getGrades(cid: Int, uid: Int) {
         print("Getting Grades...")
         
         // do your HTTP request without authorize
-        oauthswift.client.get("https://api.schoology.com/v1/users/\(userID)/grades?section_id=\(sectionID)") { result in
+        oauthswift.client.get("https://api.schoology.com/v1/users/\(uid)/grades?section_id=\(cid)") { result in
             switch result {
             case .success(let response):
                 var result: GradesSection
@@ -103,18 +139,16 @@ class API {
             printf("ERROR: uid = \(uid)")
             return
         }
-        getClasses(userID: uid)
-        
-        for section in classes.section {
-            sectionIDs.append(Int(section.id) ?? -1)
-        }
-        
-        for sectionID in sectionIDs {
-            getGrades(userID: uid, sectionID: sectionID)
-        }
-        
-        if defaults.string(forKey: keys.user_id) == nil {
-            defaults.set(getUserID(messages: inbox.message), forKey: keys.user_id)
+        print("Getting classes")
+        getClasses(uid: uid)
+    }
+    private func afterClass() {
+
+        print("Getting assignments and grades")
+        for `class` in classes.section {
+            let cid = Int(`class`.id) ?? -1
+            getAssignmnets(cid: cid, course_title: `class`.course_title)
+            getGrades(cid: cid, uid: uid)
         }
     }
 }

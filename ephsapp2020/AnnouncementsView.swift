@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AnnouncementsView: View {
-    var api: API
+    var inbox: Inbox
     @State var defaults = UserDefaults.standard
     let keys = Keys()
     
@@ -17,14 +17,9 @@ struct AnnouncementsView: View {
         VStack {
             Text("Announcements").font(.title)
             
-            Button(action: {
-                api.getInbox()
-            }, label: {
-                Text("Refresh")
-            })
             List {
-                ForEach(0..<api.inbox.message.count){ index in
-                    MessageDisplay(message: api.inbox.message[index])
+                ForEach(0..<inbox.message.count){ index in
+                    MessageDisplay(message: inbox.message[index])
                 }
             }
         }
@@ -46,7 +41,7 @@ struct MessageDisplay: View {
 
 struct AnnouncementsView_Previews: PreviewProvider {
     static var previews: some View {
-        AnnouncementsView(api: API())
+        AnnouncementsView(inbox: Inbox(message: [Message](), links: links, unread_count: ""))
             .padding()
     }
 }

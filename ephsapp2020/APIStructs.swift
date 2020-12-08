@@ -8,7 +8,7 @@
 import Foundation
 
 //
-//Inbox information
+// Inbox information
 //
 struct Inbox: Codable {
     var message:[Message]
@@ -30,11 +30,12 @@ struct Message: Codable {
 
 struct Links: Codable {
     var `self`: String
+    var next: String?
 }
 
 
 //
-//Classes information
+// Classes information
 //
 struct Classes: Codable {
     var section: [ClassesSection]
@@ -50,7 +51,7 @@ struct ClassesSection: Codable {
 
 
 //
-//Grades information
+// Grades information
 //
 struct Grades: Codable {
     var section: GradesSection
@@ -64,15 +65,15 @@ struct GradesSection: Codable {
     //var grading_category: [GradingCategoryPeriod]
 }
 
-//Comming soon!
+// Comming soon!
 struct Period: Codable {
     var period_id: String
     var period_title: String
-    //var assignment: [Assignment]
+    //var assignment: [GradingAssignment]
 }
 
-//Comming soon!
-struct Assignment: Codable {
+// Comming soon!
+struct GradingAssignment: Codable {
     var enrollment_id: Int
     var assignment_id: Int
     var grade: Int?
@@ -103,7 +104,7 @@ struct FinalGrade: Codable {
     //var grading_category: [GradingCategoryFinalGrade]
 }
 
-//Comming soon!
+// Comming soon!
 struct GradingCategoryFinalGrade: Codable {
     var category_id: Int
     var grade: Int
@@ -112,4 +113,33 @@ struct GradingCategoryFinalGrade: Codable {
 struct GradingCategoryPeriod: Codable {
     var id: Int
     var title: String
+}
+
+
+//
+// Assignment info
+//
+struct CIDAssignments {
+    var course_title: String
+    var assingments: [ClassAssignment]
+}
+
+struct ClassAssignments: Codable {
+    var assignment: [ClassAssignment]
+    var total: Int
+    var links: Links
+}
+
+struct ClassAssignment: Codable, Equatable {
+    var id: Int
+    var title: String
+    var description: String
+    var due: String
+    var max_points: String
+    var is_final: String
+    var available: Int
+    var completed: Int
+    var web_url: String
+    var last_updated: String
+    var completion_status: String
 }

@@ -40,6 +40,6 @@ struct MotherView_Previews: PreviewProvider {
 struct Keys {
     let consumer_key = "consumerKeyString"
     let consumer_secret = "consumerSecretString"
-    let user_id = "userIDString"
+    let uid = "uidInt"
     let currentPage = "currentPageString"
 }

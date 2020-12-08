@@ -9,16 +9,18 @@
 import SwiftUI
 
 struct AssignmentsView: View {
+    var cidAssignments: [CIDAssignments]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15){
             Text("Assignments")
                 .font(.largeTitle)
-           
-            eachClass(className: .constant("Chinese"))
-            eachClass(className: .constant("iOS"))
-            eachClass(className: .constant("AP Economics"))
-            eachClass(className: .constant("AP Calculus BC"))
+            
+            List{
+                ForEach(0..<cidAssignments.count) { i in
+                    EachClass(className: cidAssignments[i].course_title, assignments: cidAssignments[i].assingments)
+                }
+            }
         }
         .padding(.all)
         progressView()
@@ -27,36 +29,39 @@ struct AssignmentsView: View {
 
 struct AssignmentsView_Previews: PreviewProvider {
     static var previews: some View {
-        AssignmentsView()
+        AssignmentsView(cidAssignments: [CIDAssignments]())
     }
 }
 
-struct eachClass: View {
-    
-    @Binding var className: String
+struct EachClass: View {
+    var className: String
+    var assignments: [ClassAssignment]
     
     @State private var isExpanded = false
     @State private var selectedNum = 1
     
     var body: some View {
-        DisclosureGroup(className, isExpanded: $isExpanded){
-            ScrollView{
-                VStack{
-                    ForEach(1...20, id: \.self){ num in
-                        Text("\(num)")
-                            .frame( maxWidth: .infinity)
-                            .font(.title3)
-                            .onTapGesture{
-                                self.selectedNum = num
-                                withAnimation{
-                                    self.isExpanded.toggle()
-                                }
-                            }
-                            .padding(.all)
+        
+        DisclosureGroup("\(className): \(assignments.count)", isExpanded: $isExpanded){
+            VStack{
+                ForEach(0..<assignments.count, id: \.self){ i in
+                    HStack {
+                        Text(assignments[i].title)
+                        Spacer()
+                        Text("Due \(formatDate(from: assignments[i].due))")
+                    }.frame( maxWidth: .infinity)
+                    .font(.title3)
+                    .padding(.all)
+                    /*
+                    .onTapGesture{
+                        self.selectedNum = num
+                        withAnimation{
+                            self.isExpanded.toggle()
+                        }
                     }
+                 */
                 }
             }
-            .frame(height : 150)
         }
         .accentColor(.black)
         .font(.title2)
@@ -65,4 +70,16 @@ struct eachClass: View {
         .background(Color.red)
         .cornerRadius(8)
     }
+}
+
+let df = DateFormatter()
+func formatDate(from: String) -> String {
+    if from == "" {
+        return "never"
+    }
+    df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    let updated = df.date(from: from)!
+    
+    df.dateFormat = "M/d/yy h:m"
+    return df.string(from: updated)
 }
