@@ -32,7 +32,7 @@ struct HomeView: View {
                 progressView()
             }
             Spacer()
-            NavMenuView(viewRouter: viewRouter)
+            NavMenuView(viewRouter: viewRouter, api: api)
         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
     }
 }
