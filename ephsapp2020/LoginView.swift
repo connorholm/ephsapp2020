@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+var isGuest = false
+
 struct LoginView: View {
     @ObservedObject var viewRouter: ViewRouter
     @State var defaults = UserDefaults.standard
@@ -40,17 +42,6 @@ struct LoginView: View {
             }
             
             Button(action: {
-                /*
-                if self.schoolid == storedSchoolID && self.password == storedPassword {
-                    self.authenticationDidSucceed = true
-                } else {
-                    self.authenticationDidFail = true
-                }
-
-                if authenticationDidSucceed {
-                viewRouter.currentPage = "tutorial"
-                }
-                 */
                 // Sends keys to viewRouter WITHOUT VERIFICATION
                 if consumer_key != "" && consumer_secret != "" {
                     defaults.set(consumer_key, forKey: keys.consumer_key)
@@ -59,8 +50,16 @@ struct LoginView: View {
                 } else {
                     authenticationDidFail = true
                 }
+                isGuest = false
             }) {
                 BigRedText(text: "Login")
+            }
+            
+            Button(action: {
+                viewRouter.currentPage = "tutorial"
+                isGuest = true
+            }) {
+                BigRedText(text: "Guest login")
             }
         }.padding()
     }

@@ -9,135 +9,77 @@
 import SwiftUI
 
 struct AssignmentsView: View {
-    
-    @State private var isExpanded = false
-    @State private var selectedNum = 1
-   
-    @State private var isExpanded2 = false
-    @State private var selectedNum2 = 1
-    
-    @State private var isExpanded3 = false
-    @State private var selectedNum3 = 1
-    
-    @State private var isExpanded4 = false
-    @State private var selectedNum4 = 1
+    var cidAssignments: [CIDAssignments]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15){
-            Text("Assignments")
+            Text("Unfinished Schoology Assignments")
                 .font(.largeTitle)
-           
-            DisclosureGroup("Chinese", isExpanded: $isExpanded){
-                ScrollView{
-                VStack{
-                    ForEach(1...20, id: \.self){ num in
-                    Text("\(num)")
-                        .frame( maxWidth: .infinity)
-                        .font(.title3)
-                        .onTapGesture{
-                            self.selectedNum = num
-                            withAnimation{
-                            self.isExpanded.toggle()
-                            }
-                        }
-                        .padding(.all)
-                    
-                    }
-                }
-                }.frame(height : 150)
-                
-            }.accentColor(.black)
-            .font(.title2)
-            .foregroundColor(.black)
-            .padding(.all)
-            .background(Color.red)
-            .cornerRadius(8)
             
-            DisclosureGroup("IOS", isExpanded: $isExpanded2){
-                ScrollView{
-                VStack{
-                    ForEach(1...20, id: \.self){ num in
-                    Text("\(num)")
-                        .frame( maxWidth: .infinity)
-                        .font(.title3)
-                        .onTapGesture{
-                            self.selectedNum2 = num
-                            withAnimation{
-                            self.isExpanded2.toggle()
-                            }
-                        }
-                        .padding(.all)
-                    
-                    }
+            List{
+                ForEach(0..<cidAssignments.count) { i in
+                    EachClass(className: cidAssignments[i].course_title, assignments: cidAssignments[i].assingments)
                 }
-                }.frame(height : 150)
-                
-            }.accentColor(.black)
-            .font(.title2)
-            .foregroundColor(.black)
-            .padding(.all)
-            .background(Color.red)
-            .cornerRadius(8)
-            
-            DisclosureGroup("AP Economics", isExpanded: $isExpanded3){
-                ScrollView{
-                VStack{
-                    ForEach(1...20, id: \.self){ num in
-                    Text("\(num)")
-                        .frame( maxWidth: .infinity)
-                        .font(.title3)
-                        .onTapGesture{
-                            self.selectedNum3 = num
-                            withAnimation{
-                            self.isExpanded3.toggle()
-                            }
-                        }
-                        .padding(.all)
-                    
-                    }
-                }
-                }.frame(height : 150)
-                
-            }.accentColor(.black)
-            .font(.title2)
-            .foregroundColor(.black)
-            .padding(.all)
-            .background(Color.red)
-            .cornerRadius(8)
-    
-            DisclosureGroup("Calc 2", isExpanded: $isExpanded4){
-                ScrollView{
-                VStack{
-                    ForEach(1...20, id: \.self){ num in
-                    Text("\(num)")
-                        .frame( maxWidth: .infinity)
-                        .font(.title3)
-                        .onTapGesture{
-                            self.selectedNum4 = num
-                            withAnimation{
-                            self.isExpanded4.toggle()
-                            }
-                        }
-                        .padding(.all)
-                    
-                    }
-                }
-                }.frame(height : 150)
-                
-            }.accentColor(.black)
-            .font(.title2)
-            .foregroundColor(.black)
-            .padding(.all)
-            .background(Color.red)
-            .cornerRadius(8)
-            
-        }.padding(.all)
+            }
+        }
+        .padding(.all)
         progressView()
     }
 }
 
 struct AssignmentsView_Previews: PreviewProvider {
     static var previews: some View {
-        AssignmentsView()
+        AssignmentsView(cidAssignments: [CIDAssignments]())
     }
+}
+
+struct EachClass: View {
+    var className: String
+    var assignments: [ClassAssignment]
+    
+    @State private var isExpanded = false
+    @State private var selectedNum = 1
+    
+    var body: some View {
+        
+        DisclosureGroup("\(className): \(assignments.count)", isExpanded: $isExpanded){
+            VStack{
+                ForEach(0..<assignments.count, id: \.self){ i in
+                    HStack {
+                        Text(assignments[i].title)
+                        Spacer()
+                        Text("Due \(formatDate(from: assignments[i].due))")
+                    }.frame( maxWidth: .infinity)
+                    .font(.title3)
+                    .padding(.all)
+                    /*
+                    .onTapGesture{
+                        self.selectedNum = num
+                        withAnimation{
+                            self.isExpanded.toggle()
+                        }
+                    }
+                 */
+                }
+            }
+        }
+        .accentColor(.black)
+        .font(.title2)
+        .foregroundColor(.black)
+        .padding(.all)
+        .background(Color.red)
+        .cornerRadius(8)
+    }
+}
+
+let df = DateFormatter()
+func formatDate(from: String) -> String {
+    if from == "" {
+        return "never"
+    }
+    df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    let updated = df.date(from: from)!
+    
+    df.dateFormat = "h:mm M/d/yy"
+    return df.string(from: updated)
 }
