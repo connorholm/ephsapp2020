@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+var isGuest = false
+
 struct LoginView: View {
     @ObservedObject var viewRouter: ViewRouter
     @State var defaults = UserDefaults.standard
@@ -59,12 +61,14 @@ struct LoginView: View {
                 } else {
                     authenticationDidFail = true
                 }
+                isGuest = false
             }) {
                 BigRedText(text: "Login")
             }
             
             Button(action: {
                 viewRouter.currentPage = "tutorial"
+                isGuest = true
             }) {
                 BigRedText(text: "Guest login")
             }

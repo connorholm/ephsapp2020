@@ -22,12 +22,20 @@ struct AccountView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 150, height: 150, alignment: .center)
                 .padding(.bottom, 20)
-            Text("(Name)")
-                .foregroundColor(Color.gray)
-                .padding(.bottom, 10)
-            Text("(School Id)")
-                .foregroundColor(Color.gray)
-                .padding(.bottom, 20)
+            if isGuest {
+                Text("You are a guest")
+                    .padding(.bottom, 10)
+                    .font(.title2)
+                Text("Assignments, Announcements, Clubs disabled")
+                    .font(.caption)
+            } else {
+                Text("(Name)")
+                    .foregroundColor(Color.gray)
+                    .padding(.bottom, 10)
+                Text("(School ID)")
+                    .foregroundColor(Color.gray)
+                    .padding(.bottom, 20)
+            }
             Button(action: {
                 defaults.set("login", forKey: keys.currentPage)
                 viewRouter.currentPage = "login"
