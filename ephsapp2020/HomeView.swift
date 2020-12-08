@@ -20,7 +20,7 @@ struct HomeView: View {
                 AssignmentsView(cidAssignments: api.cidAssignments)
             case "announcements":
                 AnnouncementsView(inbox: api.inbox)
-            case "clubs":
+            case "grade":
                 ClubView()
             case "menu":
                 MenuView()
@@ -32,7 +32,7 @@ struct HomeView: View {
                 progressView()
             }
             Spacer()
-            NavMenuView(viewRouter: viewRouter)
+            NavMenuView(viewRouter: viewRouter, api: api)
         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
     }
 }
