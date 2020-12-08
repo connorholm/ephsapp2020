@@ -20,7 +20,7 @@ struct HomeView: View {
                 AssignmentsView(cidAssignments: api.cidAssignments)
             case "announcements":
                 AnnouncementsView(inbox: api.inbox)
-            case "clubs":
+            case "grade":
                 ClubView()
             case "menu":
                 MenuView()
