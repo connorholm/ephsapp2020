@@ -42,17 +42,6 @@ struct LoginView: View {
             }
             
             Button(action: {
-                /*
-                if self.schoolid == storedSchoolID && self.password == storedPassword {
-                    self.authenticationDidSucceed = true
-                } else {
-                    self.authenticationDidFail = true
-                }
-
-                if authenticationDidSucceed {
-                viewRouter.currentPage = "tutorial"
-                }
-                 */
                 // Sends keys to viewRouter WITHOUT VERIFICATION
                 if consumer_key != "" && consumer_secret != "" {
                     defaults.set(consumer_key, forKey: keys.consumer_key)
