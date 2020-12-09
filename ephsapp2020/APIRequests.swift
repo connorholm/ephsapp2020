@@ -131,9 +131,10 @@ class API {
                     printf("ERROR during JSON conversion: \(error)")
                     return
                 }
-                print(result)
+                //print(result)
                 if result.section.count >= 1 {
                     self.grades.append(result.section[0])
+                    self.cid[result.section[0].section_id ?? "0"] = `class`.course_title
                 }
             case .failure(let error):
                 printf("ERROR: \(error)")

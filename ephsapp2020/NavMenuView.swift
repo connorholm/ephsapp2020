@@ -10,8 +10,11 @@ import SwiftUI
 
 struct NavMenuView: View {
     @ObservedObject var viewRouter: ViewRouter
+    @State private var refreshAlert = false
+    
     var api : API
     var body: some View {
+        
         HStack {
             Button(action: {
                 if !isGuest {
@@ -38,10 +41,10 @@ struct NavMenuView: View {
             }
             Button(action: {
                 if !isGuest {
-                    viewRouter.homePage = "clubs"
+                    viewRouter.homePage = "grade"
                 }
             }) {
-                Image("clubs")
+                Image("grade")
                     .resizable()
                     .frame(width: 60, height: 60)
             }
@@ -50,17 +53,23 @@ struct NavMenuView: View {
                     .resizable()
                     .frame(width: 60, height: 60)
             }
-            Button(action: {api.getInbox()}) {
+            Button(action: {
+                api.getInbox()
+                refreshAlert = true
+            }) {
                 Image("refresh")
                     .resizable()
                     .frame(width: 60, height: 60)
+            }.alert(isPresented: $refreshAlert, content: {
+                Alert(title: Text("Refreshing"), dismissButton: nil)
+            })
         }
         .padding()
         .frame(minWidth: 0, maxWidth: 350, minHeight: 0, maxHeight: 50, alignment: .center)
         .border(Color.black, width: 1)
     }
 }
-}
+
 struct NavMenuView_Previews: PreviewProvider {
     static var previews: some View {
         NavMenuView(viewRouter: ViewRouter(), api: API())

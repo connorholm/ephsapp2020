@@ -20,7 +20,7 @@ struct AccountView: View {
             Image("account")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 150, height: 150, alignment: .center)
+                .frame(width: 100, height: 100, alignment: .center)
                 .padding(.bottom, 20)
             if isGuest {
                 Text("You are a guest")
@@ -28,13 +28,6 @@ struct AccountView: View {
                     .font(.title2)
                 Text("Assignments, Announcements, Clubs disabled")
                     .font(.caption)
-            } else {
-                Text("(Name)")
-                    .foregroundColor(Color.gray)
-                    .padding(.bottom, 10)
-                Text("(School ID)")
-                    .foregroundColor(Color.gray)
-                    .padding(.bottom, 20)
             }
             Button(action: {
                 defaults.set("login", forKey: keys.currentPage)

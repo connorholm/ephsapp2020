@@ -21,7 +21,7 @@ struct HomeView: View {
             case "announcements":
                 AnnouncementsView(inbox: api.inbox)
             case "grade":
-                ClubView()
+                GradesView(cid: api.cid, grades: api.grades)
             case "menu":
                 MenuView()
             case "account":

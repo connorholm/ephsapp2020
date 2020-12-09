@@ -15,9 +15,9 @@ struct GradesView: View {
         List {
             ForEach(0..<grades.count) { i in
                 HStack {
-                    Text(cid[grades[i].section_id ?? "0"] ?? "ERROR Finding section_id class_title")
+                    Text(cid[grades[i].section_id ?? "0"] ?? grades[i].section_id ?? "ERROR finding name")
                     Spacer()
-                    Text("\(Int((grades[i].final_grade[0].grade) ?? 0*100))%")
+                    Text("\(Int(grades[i].final_grade[0].grade))%")
                 }
             }
         }
