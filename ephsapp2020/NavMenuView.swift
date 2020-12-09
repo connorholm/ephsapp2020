@@ -10,15 +10,23 @@ import SwiftUI
 
 struct NavMenuView: View {
     @ObservedObject var viewRouter: ViewRouter
-    
+    var api : API
     var body: some View {
         HStack {
-            Button(action: {viewRouter.homePage = "assignments"}) {
+            Button(action: {
+                if !isGuest {
+                    viewRouter.homePage = "assignments"
+                }
+            }) {
                 Image("assignments")
                     .resizable()
                     .frame(width: 60, height: 60)
             }
-            Button(action: {viewRouter.homePage = "announcements"}) {
+            Button(action: {
+                if !isGuest {
+                    viewRouter.homePage = "announcements"
+                }
+            }) {
                 Image("announcements")
                     .resizable()
                     .frame(width: 60, height: 60)
@@ -28,26 +36,33 @@ struct NavMenuView: View {
                     .resizable()
                     .frame(width: 60, height: 60)
             }
-            Button(action: {viewRouter.homePage = "clubs"}) {
+            Button(action: {
+                if !isGuest {
+                    viewRouter.homePage = "clubs"
+                }
+            }) {
                 Image("clubs")
                     .resizable()
                     .frame(width: 60, height: 60)
-            
             }
             Button(action: {viewRouter.homePage = "account"}) {
                 Image("account")
                     .resizable()
                     .frame(width: 60, height: 60)
             }
+            Button(action: {api.getInbox()}) {
+                Image("refresh")
+                    .resizable()
+                    .frame(width: 60, height: 60)
         }
         .padding()
         .frame(minWidth: 0, maxWidth: 350, minHeight: 0, maxHeight: 50, alignment: .center)
         .border(Color.black, width: 1)
     }
 }
-
+}
 struct NavMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        NavMenuView(viewRouter: ViewRouter())
+        NavMenuView(viewRouter: ViewRouter(), api: API())
     }
 }
