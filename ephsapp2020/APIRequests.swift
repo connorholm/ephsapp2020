@@ -19,14 +19,25 @@ let oauthswift = OAuth1Swift(
 let links = Links(self: "0")
 
 class API {
-    var inbox: Inbox = Inbox(message: [Message](), links: links, unread_count: "0")
-    var classes: Classes = Classes(section: [ClassesSection](), links: links)
+    var inbox = Inbox(message: [Message](), links: links, unread_count: "0")
+    var classes = Classes(section: [ClassesSection](), links: links)
     var cidAssignments = [CIDAssignments]()
     var grades = [GradesSection]()
-    var uid: Int = 0
+    var uid = 0
     var cid = [String : String]()
+    var firstRun = true
+    
+    func clear() {
+        self.inbox = Inbox(message: [Message](), links: links, unread_count: "0")
+        self.classes = Classes(section: [ClassesSection](), links: links)
+        self.cidAssignments = [CIDAssignments]()
+        self.grades = [GradesSection]()
+    }
     
     func getInbox() {
+        print("Clearing structs...")
+        clear()
+        
         print("Getting Inbox...")
         
         // do your HTTP request without authorize
@@ -41,12 +52,15 @@ class API {
                     printf("ERROR during JSON conversion: \(error)")
                     return
                 }
-                var uid = defaults.integer(forKey: keys.uid)
-                if uid <= 1 {
-                    uid = getUserID(messages: result.message)
-                    defaults.set(uid, forKey: keys.uid)
+                if self.firstRun {
+                    var uid = defaults.integer(forKey: keys.uid)
+                    if uid <= 1 {
+                        uid = getUserID(messages: result.message)
+                        defaults.set(uid, forKey: keys.uid)
+                    }
+                    self.uid = uid
+                    self.firstRun = false
                 }
-                self.uid = uid
                 self.inbox = result
                 self.refresh()
                 
