@@ -65,7 +65,7 @@ struct NavMenuView: View {
             })
         }
         .padding()
-        .frame(minWidth: 0, maxWidth: 350, minHeight: 0, maxHeight: 50, alignment: .center)
+        .frame(minWidth: 0, maxWidth: 400, minHeight: 0, maxHeight: 50, alignment: .center)
         .border(Color.black, width: 1)
     }
 }
