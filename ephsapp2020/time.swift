@@ -23,7 +23,7 @@ func getTime(timeType: String) -> Int {
     let end = str.index(str.endIndex, offsetBy: -3)
     let range = start..<end
     
-    let startMinute = str.index(str.startIndex, offsetBy: 2)
+    let startMinute = str.index(str.startIndex, offsetBy: 3)
     let endMinute = str.index(str.endIndex, offsetBy: -6)
     let rangeMinute = startMinute..<endMinute
     
