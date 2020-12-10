@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045EB0552582874E008C8189 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EB0542582874E008C8189 /* ViewController.swift */; };
 		91133B7E257A880D007BB6F5 /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 913ED49C256C18D10060059B /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		91133B7F257A8817007BB6F5 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 913ED49C256C18D10060059B /* OAuthSwift.framework */; };
 		9117279C257A2F75001C107F /* APIRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117279B257A2F75001C107F /* APIRequests.swift */; };
@@ -102,6 +103,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		045EB0542582874E008C8189 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9117279B257A2F75001C107F /* APIRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequests.swift; sourceTree = "<group>"; };
 		913ED491256C18D10060059B /* OAuthSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthSwift.xcodeproj; path = OAuthSwift/OAuthSwift.xcodeproj; sourceTree = "<group>"; };
 		918E856225642B54001F879C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				9D25E8C62562E25C009AE332 /* SceneDelegate.swift */,
 				9D25E8C92562E25D009AE332 /* MotherView.swift */,
 				9D25E8D92562E260009AE332 /* ViewRouter.swift */,
+				045EB0542582874E008C8189 /* ViewController.swift */,
 				9D25E8D52562E25F009AE332 /* HomeView.swift */,
 				9D25E8DB2562E261009AE332 /* ClubView.swift */,
 				9D25E8BE2562E23B009AE332 /* AccountView.swift */,
@@ -355,6 +358,7 @@
 				9D25E8C02562E23B009AE332 /* AccountView.swift in Sources */,
 				91BF9935257FD761000B1270 /* GradesView.swift in Sources */,
 				91DB167F25641E110060D3C8 /* time.swift in Sources */,
+				045EB0552582874E008C8189 /* ViewController.swift in Sources */,
 				9D25E8F42562E261009AE332 /* AssignmentView.swift in Sources */,
 				91DB167625641DCA0060D3C8 /* progressView.swift in Sources */,
 				9D25E8F32562E261009AE332 /* ViewRouter.swift in Sources */,
