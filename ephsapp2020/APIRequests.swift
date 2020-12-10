@@ -11,6 +11,7 @@ import OAuthSwift
 let printf:(String) -> () = { print("\t\($0)") }
 let defaults = UserDefaults.standard
 let keys = Keys()
+let date = Date().timeIntervalSince1970
 
 let oauthswift = OAuth1Swift(
     consumerKey:    defaults.string(forKey: keys.consumer_key)!,
@@ -114,11 +115,19 @@ class API {
                     return
                 }
                 for assignment in result.assignment {
+                    if (convertDate(from: assignment.due) + 2629800) <= date {
+                        let i = result.assignment.firstIndex(of: assignment)
+                        result.assignment.remove(at: i ?? -1)
+                    }
+                }
+                /* Removes completed assignments
+                for assignment in result.assignment {
                     if assignment.completed == 1 {
                         let i = result.assignment.firstIndex(of: assignment)
                         result.assignment.remove(at: i ?? -1)
                     }
                 }
+                 */
                 self.cidAssignments.append(CIDAssignments(course_title: `class`.course_title, assingments: result.assignment))
             case .failure(let error):
                 printf("ERROR: \(error)")
@@ -193,4 +202,12 @@ func getUserID(messages: [Message]) -> Int {
     
     print(sorted[0].key)
     return sorted[0].key
+}
+
+//let df = DateFormatter()
+func convertDate(from: String) -> Double {
+    df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    let updated = df.date(from: from) ?? NSDate(timeIntervalSince1970: date) as Date
+    
+    return updated.timeIntervalSince1970
 }
