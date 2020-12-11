@@ -16,6 +16,7 @@ struct NavMenuView: View {
     var body: some View {
         
         HStack {
+            
             Button(action: {
                 if !isGuest {
                     viewRouter.homePage = "assignments"
@@ -23,7 +24,8 @@ struct NavMenuView: View {
             }) {
                 Image("assignments")
                     .resizable()
-                    .frame(width: 60, height: 60)
+                    .frame(width: 57, height: 57)
+                    .padding(.leading, 20)
             }
             Button(action: {
                 if !isGuest {
@@ -32,12 +34,12 @@ struct NavMenuView: View {
             }) {
                 Image("announcements")
                     .resizable()
-                    .frame(width: 60, height: 60)
+                    .frame(width: 57, height: 57)
             }
             Button(action: {viewRouter.homePage = "menu"}) {
                 Image("menu")
                     .resizable()
-                    .frame(width: 60, height: 60)
+                    .frame(width: 57, height: 57)
             }
             Button(action: {
                 if !isGuest {
@@ -46,12 +48,12 @@ struct NavMenuView: View {
             }) {
                 Image("grade")
                     .resizable()
-                    .frame(width: 60, height: 60)
+                    .frame(width: 57, height: 57)
             }
             Button(action: {viewRouter.homePage = "account"}) {
                 Image("account")
                     .resizable()
-                    .frame(width: 60, height: 60)
+                    .frame(width: 57, height: 57)
             }
             Button(action: {
                 api.getInbox()
@@ -59,14 +61,15 @@ struct NavMenuView: View {
             }) {
                 Image("refresh")
                     .resizable()
-                    .frame(width: 60, height: 60)
+                    .frame(width: 57, height: 57)
+                    .padding(.trailing, 20)
             }.alert(isPresented: $refreshAlert, content: {
-                Alert(title: Text("Refreshing"), dismissButton: nil)
+                Alert(title: Text("Refreshed"), dismissButton: nil)
             })
         }
         .padding()
         .frame(minWidth: 0, maxWidth: 400, minHeight: 0, maxHeight: 50, alignment: .center)
-        .border(Color.black, width: 1)
+        .border(Color(.systemGray2), width: 1)
     }
 }
 
