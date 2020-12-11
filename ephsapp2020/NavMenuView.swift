@@ -16,6 +16,7 @@ struct NavMenuView: View {
     var body: some View {
         
         HStack {
+            
             Button(action: {
                 if !isGuest {
                     viewRouter.homePage = "assignments"
@@ -61,7 +62,7 @@ struct NavMenuView: View {
                     .resizable()
                     .frame(width: 60, height: 60)
             }.alert(isPresented: $refreshAlert, content: {
-                Alert(title: Text("Refreshing"), dismissButton: nil)
+                Alert(title: Text("Refreshed"), dismissButton: nil)
             })
         }
         .padding()
