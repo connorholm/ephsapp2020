@@ -72,13 +72,23 @@ func getHour() -> Int {
     if (getAMPM() == "PM" && currentTime > ((14*3600)+(35*60))) || (getAMPM() == "AM" && currentTime < (8*3600)){
         return -1
     }
-    if currentTime > (8*3600) && currentTime < ((9*3600)+(20*60)){
+    if currentTime > (8*3600) && currentTime < ((9*3600)+(20*60)) && getDate(timeType: "day") != "Frid"{
         return 1
-    }else if currentTime > ((9*3600)+(35*60)) && currentTime < (11*3600){
+    }else if currentTime > ((9*3600)+(35*60)) && currentTime < (11*3600)  && getDate(timeType: "day") != "Frid"{
         return 2
-    }else if currentTime > ((11*3600)+(12*60)) && currentTime < ((12*3600)+(35*60)){
+    }else if currentTime > ((11*3600)+(12*60)) && currentTime < ((12*3600)+(35*60))  && getDate(timeType: "day") != "Frid"{
         return 3
-    }else if currentTime > ((13*3600)+(15*60)) && currentTime < ((14*3600)+(35*60)){
+    }else if currentTime > ((13*3600)+(15*60)) && currentTime < ((14*3600)+(35*60))  && getDate(timeType: "day") != "Frid"{
+        return 4
+    }else if getDate(timeType: "day") == "Frid" &&  currentTime > Int(firstHrStartTime()) && currentTime < Int(firstHrStartTime() + getClassLength()){
+        return 1
+    }
+    else if getDate(timeType: "day") == "Frid" &&  currentTime > Int(secondHrStartTime()) && currentTime < Int(secondHrStartTime() + getClassLength()){
+        return 2
+    }
+    else if getDate(timeType: "day") == "Frid" &&  currentTime > Int(thirdHrStartTime()) && currentTime < Int(thirdHrStartTime() + getClassLength()){
+        return 3
+    }else if getDate(timeType: "day") == "Frid" &&  currentTime > Int(fourthHrStartTime()) && currentTime < Int(fourthHrStartTime() + getClassLength()){
         return 4
     }
     else{
