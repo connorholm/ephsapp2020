@@ -21,10 +21,10 @@ struct ProgressBar: View {
 struct progressView: View {
     let currentDate = getDate(timeType: "day")
     let currentTime = getTime(timeType: "current")
-    @State var progressValue1st: Float = Float(getTime(timeType: "current")-firstHrStartTime()/getClassLength()
-    @State var progressValue2nd: Float = Float(getTime(timeType: "current")-secondHrStartTime()/getClassLength()
-    @State var progressValue3rd: Float = Float(getTime(timeType: "current")-thirdHrStartTime()/getClassLength()
-    @State var progressValue4th: Float = Float(getTime(timeType: "current")-fourthHrStartTime()/getClassLength()
+    @State var progressValue1st: Float = (Float(getTime(timeType: "current"))-firstHrStartTime())/getClassLength()
+    @State var progressValue2nd: Float = (Float(getTime(timeType: "current"))-secondHrStartTime())/getClassLength()
+    @State var progressValue3rd: Float = (Float(getTime(timeType: "current"))-thirdHrStartTime())/getClassLength()
+    @State var progressValue4th: Float = (Float(getTime(timeType: "current"))-fourthHrStartTime())/getClassLength()
     var currentHour = getTime(timeType: "hour")
     var currentMinute = getTime(timeType: "minute")
     var currentSecond = getTime(timeType: "second")
@@ -35,7 +35,6 @@ struct progressView: View {
         
         VStack(alignment: .leading) {
             if currentClassHour == 1{
-                Text(currentDate)
                 HStack {
                     Text("1st")
                         .padding(.horizontal,10)
