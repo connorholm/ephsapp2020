@@ -13,7 +13,7 @@ struct AssignmentsView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15){
-            Text("Unfinished Schoology Assignments")
+            Text("Completed Schoology Assignments")
                 .font(.largeTitle)
             
             List{

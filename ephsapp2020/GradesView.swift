@@ -12,6 +12,8 @@ struct GradesView: View {
     var grades: [GradesSection]
     
     var body: some View {
+        Text("Grades")
+            .font(.largeTitle)
         List {
             ForEach(0..<grades.count) { i in
                 HStack {
