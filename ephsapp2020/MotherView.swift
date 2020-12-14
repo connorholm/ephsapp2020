@@ -15,7 +15,7 @@ struct MotherView: View {
     let keys = Keys()
     
     init() {
-        api.getInbox()
+        self.api.refresh()
     }
     
     var body: some View {

@@ -13,9 +13,9 @@ let defaults = UserDefaults.standard
 let keys = Keys()
 let date = Date().timeIntervalSince1970
 
-let oauthswift = OAuth1Swift(
-    consumerKey:    defaults.string(forKey: keys.consumer_key)!,
-    consumerSecret: defaults.string(forKey: keys.consumer_secret)!
+var oauthswift = OAuth1Swift(
+    consumerKey:    defaults.string(forKey: keys.consumer_key) ?? "",
+    consumerSecret: defaults.string(forKey: keys.consumer_secret) ?? ""
 )
 let links = Links(self: "0")
 
@@ -28,6 +28,13 @@ class API {
     var cid = [String : String]()
     var firstRun = true
     
+    public func refresh() {
+        print("Clearing structs...")
+        clear()
+        
+        self.getInbox()
+    }
+    
     func clear() {
         self.inbox = Inbox(message: [Message](), links: links, unread_count: "0")
         self.classes = Classes(section: [ClassesSection](), links: links)
@@ -35,10 +42,7 @@ class API {
         self.grades = [GradesSection]()
     }
     
-    func getInbox() {
-        print("Clearing structs...")
-        clear()
-        
+    private func getInbox() {
         print("Getting Inbox...")
         
         // do your HTTP request without authorize
@@ -63,15 +67,19 @@ class API {
                     self.firstRun = false
                 }
                 self.inbox = result
-                self.refresh()
+                self.internalRefresh()
                 
             case .failure(let error):
                 printf("ERROR: \(error)")
+                oauthswift = OAuth1Swift(
+                    consumerKey:    defaults.string(forKey: keys.consumer_key) ?? "",
+                    consumerSecret: defaults.string(forKey: keys.consumer_secret) ?? ""
+                )
             }
         }
     }
     
-    func getClasses(uid: Int) {
+    private func getClasses(uid: Int) {
         print("Getting classes...")
         
         // do your HTTP request without authorize
@@ -99,7 +107,7 @@ class API {
     }
     
     //Gets assignments for spesified course
-    func getAssignmnets(class: ClassesSection) {
+    private func getAssignmnets(class: ClassesSection) {
         print("Getting Assignemts...")
         
         // do your HTTP request without authorize
@@ -138,7 +146,7 @@ class API {
     
     
     //Gets grades for a spesific course
-    func getGrades(class: ClassesSection, uid: Int) {
+    private func getGrades(class: ClassesSection, uid: Int) {
         print("Getting Grades...")
         
         // do your HTTP request without authorize
@@ -166,7 +174,7 @@ class API {
         }
     }
     
-    private func refresh() {
+    private func internalRefresh() {
         if uid <= 0 {
             printf("ERROR: uid = \(uid)")
             return

@@ -56,7 +56,7 @@ struct NavMenuView: View {
                     .frame(width: 57, height: 57)
             }
             Button(action: {
-                api.getInbox()
+                api.refresh()
                 refreshAlert = true
             }) {
                 Image("refresh")
