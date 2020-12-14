@@ -26,8 +26,10 @@ struct AccountView: View {
                 Text("You are a guest")
                     .padding(.bottom, 10)
                     .font(.title2)
-                Text("Assignments, Announcements, Clubs disabled")
-                    .font(.caption)
+//                Text("Assignments, Announcements, Clubs disabled")
+//                    .font(.title3)
+                Text("Assignments, Announcements, Grades disabled")
+                    .font(.callout)
             }
             Button(action: {
                 defaults.set("login", forKey: keys.currentPage)
