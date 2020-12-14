@@ -16,7 +16,7 @@ struct AccountView: View {
     var body: some View {
         VStack {
             Text("Account")
-                .font(.title)
+                .font(.largeTitle)
             Image("account")
                 .resizable()
                 .aspectRatio(contentMode: .fit)

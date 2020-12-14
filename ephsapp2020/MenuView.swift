@@ -36,7 +36,9 @@ struct Menu: View {
     
     var body: some View {
         VStack {
-            Text("Web Links").font(.title).padding()
+            Text("Web Links")
+                .font(.largeTitle)
+                //.padding()
             List {
                 ForEach(0..<websites.count) { i in
                     Button(action: {menuPage.menuPage = i} ) {
