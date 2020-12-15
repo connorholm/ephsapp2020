@@ -1,8 +1,9 @@
 //
 //  ViewController.swift
-//  ephsapp2020
+//  StartUpScreen
 //
-//  Created by 90305189 on 12/10/20.
+//  Created by 90301422 on 1/22/19.
+//  Copyright © 2019 Nico D. All rights reserved.
 //
 
 import UIKit
@@ -46,4 +47,3 @@ class ViewController: UIViewController {
     }
     
 }
-

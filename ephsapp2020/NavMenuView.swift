@@ -11,7 +11,7 @@ import SwiftUI
 struct NavMenuView: View {
     @ObservedObject var viewRouter: ViewRouter
     @State private var refreshAlert = false
-    
+    //f
     var api : API
     var body: some View {
         
