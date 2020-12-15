@@ -12,7 +12,7 @@ struct HomeView: View {
     @ObservedObject var viewRouter: ViewRouter
     var api: API
     @State var defaults = UserDefaults.standard
-
+    
     var body: some View {
         VStack() {
             switch viewRouter.homePage {
@@ -38,7 +38,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HomeView(viewRouter: ViewRouter(), api: API(), defaults: UserDefaults())
+            HomeView(viewRouter: ViewRouter(), api: API())
         }
     }
 }

@@ -15,7 +15,7 @@ struct AnnouncementsView: View {
     
     var body: some View {
         VStack {
-            Text("Announcements").font(.title)
+            Text("Announcements").font(.largeTitle)
             
             List {
                 ForEach(0..<inbox.message.count){ index in

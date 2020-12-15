@@ -11,10 +11,11 @@ import OAuthSwift
 let printf:(String) -> () = { print("\t\($0)") }
 let defaults = UserDefaults.standard
 let keys = Keys()
+let date = Date().timeIntervalSince1970
 
-let oauthswift = OAuth1Swift(
-    consumerKey:    defaults.string(forKey: keys.consumer_key)!,
-    consumerSecret: defaults.string(forKey: keys.consumer_secret)!
+var oauthswift = OAuth1Swift(
+    consumerKey:    defaults.string(forKey: keys.consumer_key) ?? "",
+    consumerSecret: defaults.string(forKey: keys.consumer_secret) ?? ""
 )
 let links = Links(self: "0")
 
@@ -27,6 +28,13 @@ class API {
     var cid = [String : String]()
     var firstRun = true
     
+    public func refresh() {
+        print("Clearing structs...")
+        clear()
+        
+        self.getInbox()
+    }
+    
     func clear() {
         self.inbox = Inbox(message: [Message](), links: links, unread_count: "0")
         self.classes = Classes(section: [ClassesSection](), links: links)
@@ -34,10 +42,7 @@ class API {
         self.grades = [GradesSection]()
     }
     
-    func getInbox() {
-        print("Clearing structs...")
-        clear()
-        
+    private func getInbox() {
         print("Getting Inbox...")
         
         // do your HTTP request without authorize
@@ -62,15 +67,19 @@ class API {
                     self.firstRun = false
                 }
                 self.inbox = result
-                self.refresh()
+                self.internalRefresh()
                 
             case .failure(let error):
                 printf("ERROR: \(error)")
+                oauthswift = OAuth1Swift(
+                    consumerKey:    defaults.string(forKey: keys.consumer_key) ?? "",
+                    consumerSecret: defaults.string(forKey: keys.consumer_secret) ?? ""
+                )
             }
         }
     }
     
-    func getClasses(uid: Int) {
+    private func getClasses(uid: Int) {
         print("Getting classes...")
         
         // do your HTTP request without authorize
@@ -98,7 +107,7 @@ class API {
     }
     
     //Gets assignments for spesified course
-    func getAssignmnets(class: ClassesSection) {
+    private func getAssignmnets(class: ClassesSection) {
         print("Getting Assignemts...")
         
         // do your HTTP request without authorize
@@ -114,11 +123,19 @@ class API {
                     return
                 }
                 for assignment in result.assignment {
+                    if (convertDate(from: assignment.due) + 2629800) <= date {
+                        let i = result.assignment.firstIndex(of: assignment)
+                        result.assignment.remove(at: i ?? -1)
+                    }
+                }
+                /* Removes completed assignments
+                for assignment in result.assignment {
                     if assignment.completed == 1 {
                         let i = result.assignment.firstIndex(of: assignment)
                         result.assignment.remove(at: i ?? -1)
                     }
                 }
+                 */
                 self.cidAssignments.append(CIDAssignments(course_title: `class`.course_title, assingments: result.assignment))
             case .failure(let error):
                 printf("ERROR: \(error)")
@@ -129,7 +146,7 @@ class API {
     
     
     //Gets grades for a spesific course
-    func getGrades(class: ClassesSection, uid: Int) {
+    private func getGrades(class: ClassesSection, uid: Int) {
         print("Getting Grades...")
         
         // do your HTTP request without authorize
@@ -152,12 +169,18 @@ class API {
                 }
             case .failure(let error):
                 printf("ERROR: \(error)")
-                return
+                if defaults.string(forKey: keys.consumer_key) ?? "" != "" {
+                    oauthswift = OAuth1Swift(
+                        consumerKey:    defaults.string(forKey: keys.consumer_key) ?? "",
+                        consumerSecret: defaults.string(forKey: keys.consumer_secret) ?? ""
+                    )
+                    self.getInbox()
+                }
             }
         }
     }
     
-    private func refresh() {
+    private func internalRefresh() {
         if uid <= 0 {
             printf("ERROR: uid = \(uid)")
             return
@@ -193,4 +216,12 @@ func getUserID(messages: [Message]) -> Int {
     
     print(sorted[0].key)
     return sorted[0].key
+}
+
+//let df = DateFormatter()
+func convertDate(from: String) -> Double {
+    df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    let updated = df.date(from: from) ?? NSDate(timeIntervalSince1970: date) as Date
+    
+    return updated.timeIntervalSince1970
 }

@@ -34,6 +34,7 @@
 		9D25E8F42562E261009AE332 /* AssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8DA2562E261009AE332 /* AssignmentView.swift */; };
 		9D25E8F52562E261009AE332 /* ClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25E8DB2562E261009AE332 /* ClubView.swift */; };
 		9D8DDBB32566D8E5000916F5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8DDBB22566D8E5000916F5 /* Date.swift */; };
+		9DB6C7B42583C65400F00223 /* ClassTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB6C7B32583C65400F00223 /* ClassTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		9D25E8DA2562E261009AE332 /* AssignmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentView.swift; sourceTree = "<group>"; };
 		9D25E8DB2562E261009AE332 /* ClubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubView.swift; sourceTree = "<group>"; };
 		9D8DDBB22566D8E5000916F5 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		9DB6C7B32583C65400F00223 /* ClassTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,10 +210,11 @@
 				91E5D661257999C400CCAB39 /* Elements.swift */,
 				9D25E8B62562E00F009AE332 /* Info.plist */,
 				91DB167525641DCA0060D3C8 /* progressView.swift */,
+				9DB6C7B32583C65400F00223 /* ClassTime.swift */,
 				91DB167E25641E110060D3C8 /* time.swift */,
+				9D8DDBB22566D8E5000916F5 /* Date.swift */,
 				91D7E7E125657D3F000E3AB3 /* APIStructs.swift */,
 				9117279B257A2F75001C107F /* APIRequests.swift */,
-				9D8DDBB22566D8E5000916F5 /* Date.swift */,
 				9D25E8B32562E00F009AE332 /* Preview Content */,
 			);
 			path = ephsapp2020;
@@ -357,6 +360,7 @@
 				9D25E8DF2562E261009AE332 /* MenuView.swift in Sources */,
 				9D25E8C02562E23B009AE332 /* AccountView.swift in Sources */,
 				91BF9935257FD761000B1270 /* GradesView.swift in Sources */,
+				9DB6C7B42583C65400F00223 /* ClassTime.swift in Sources */,
 				91DB167F25641E110060D3C8 /* time.swift in Sources */,
 				045EB0552582874E008C8189 /* ViewController.swift in Sources */,
 				9D25E8F42562E261009AE332 /* AssignmentView.swift in Sources */,
@@ -504,7 +508,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"ephsapp2020/Preview Content\"";
 				DEVELOPMENT_TEAM = 883DK65VTV;
 				ENABLE_PREVIEWS = YES;
@@ -528,7 +532,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"ephsapp2020/Preview Content\"";
 				DEVELOPMENT_TEAM = 883DK65VTV;
 				ENABLE_PREVIEWS = YES;
