@@ -22,19 +22,36 @@ struct NavMenuView: View {
                     viewRouter.homePage = "assignments"
                 }
             }) {
-                Image("assignments")
-                    .resizable()
-                    .frame(width: 57, height: 57)
-                    .padding(.leading, 20)
+                if !isGuest {
+                    Image("assignments")
+                        .resizable()
+                        .frame(width: 57, height: 57)
+                        .padding(.leading, 20)
+
+                } else {
+                    Image("DisabledAssignments")
+                        .resizable()
+                        .frame(width: 57, height: 57)
+                        .padding(.leading, 20)
+
+                }
             }
             Button(action: {
                 if !isGuest {
                     viewRouter.homePage = "announcements"
                 }
             }) {
-                Image("announcements")
-                    .resizable()
-                    .frame(width: 57, height: 57)
+                if !isGuest {
+                    Image("announcements")
+                        .resizable()
+                        .frame(width: 57, height: 57)
+
+                } else {
+                    Image("DisabledAnnouncements")
+                        .resizable()
+                        .frame(width: 57, height: 57)
+
+                }
             }
             Button(action: {viewRouter.homePage = "menu"}) {
                 Image("menu")
@@ -46,9 +63,15 @@ struct NavMenuView: View {
                     viewRouter.homePage = "grade"
                 }
             }) {
-                Image("grade")
-                    .resizable()
-                    .frame(width: 57, height: 57)
+                if !isGuest {
+                    Image("grade")
+                        .resizable()
+                        .frame(width: 57, height: 57)
+                } else {
+                    Image("DisabledGrade")
+                        .resizable()
+                        .frame(width: 57, height: 57)
+                }
             }
             Button(action: {viewRouter.homePage = "account"}) {
                 Image("account")
@@ -56,13 +79,22 @@ struct NavMenuView: View {
                     .frame(width: 57, height: 57)
             }
             Button(action: {
-                api.getInbox()
-                refreshAlert = true
+                if !isGuest {
+                    api.refresh()
+                    refreshAlert = true
+                }
             }) {
-                Image("refresh")
-                    .resizable()
-                    .frame(width: 57, height: 57)
-                    .padding(.trailing, 20)
+                if !isGuest {
+                    Image("refresh")
+                        .resizable()
+                        .frame(width: 57, height: 57)
+                        .padding(.trailing, 20)
+                } else {
+                    Image("DisabledRefresh")
+                        .resizable()
+                        .frame(width: 57, height: 57)
+                        .padding(.trailing, 20)
+                }
             }.alert(isPresented: $refreshAlert, content: {
                 Alert(title: Text("Refreshed"), dismissButton: nil)
             })
