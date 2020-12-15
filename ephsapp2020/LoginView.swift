@@ -28,9 +28,9 @@ struct LoginView: View {
                 .aspectRatio(contentMode: .fit)
                 .padding(.bottom, 75)
             
-            Text("You must only enter these once, skip if you've already entered")
+            Text("Copy and paste login information from link below; you must only do this once")
                 .foregroundColor(.red)
-            Link("API Credentials", destination: URL(string: "https://edenpr.schoology.com/api")!)
+            Link("Click Here for Login Info", destination: URL(string: "https://edenpr.schoology.com/api")!)
             
             SchoolidTextField(schoolid: $consumer_key)
             PasswordSecureField(password: $consumer_secret)

@@ -10,30 +10,16 @@ import Foundation
 
 //To return this method use the parameter minute/second/hour/current
 func getTime(timeType: String) -> Int {
-    let now = Date()
-   
-    let formatter = DateFormatter()
-    formatter.dateStyle = .none
-    formatter.timeStyle = .medium
+    let date = Date()
+    var calendar = Calendar.current
+
+    let Hour = calendar.component(.hour, from: date)
+    let minute = calendar.component(.minute, from: date)
+    let second = calendar.component(.second, from: date)
+
+    print("\(Hour):\(minute):\(second)")
     
     
-    let str = formatter.string(from: now)
-    
-    let start = str.index(str.startIndex, offsetBy: 6)
-    let end = str.index(str.endIndex, offsetBy: -3)
-    let range = start..<end
-    
-    let startMinute = str.index(str.startIndex, offsetBy: 3)
-    let endMinute = str.index(str.endIndex, offsetBy: -6)
-    let rangeMinute = startMinute..<endMinute
-    
-    let startHour = str.index(str.startIndex, offsetBy: 0)
-    let endHour = str.index(str.endIndex, offsetBy: -9)
-    let rangeHour = startHour..<endHour
-    
-    let second = Int(String(str[range])) ?? 0
-    let minute = Int(String(str[rangeMinute])) ?? 0
-    let Hour = Int(String(str[rangeHour])) ?? 0
     
     let currentTime = (Hour * 3600)+(minute * 60)+second
     
@@ -72,13 +58,23 @@ func getHour() -> Int {
     if (getAMPM() == "PM" && currentTime > ((14*3600)+(35*60))) || (getAMPM() == "AM" && currentTime < (8*3600)){
         return -1
     }
-    if currentTime > (8*3600) && currentTime < ((9*3600)+(20*60)){
+    if currentTime > (8*3600) && currentTime < ((9*3600)+(20*60)) && getDate(timeType: "day") != "Frid"{
         return 1
-    }else if currentTime > ((9*3600)+(35*60)) && currentTime < (11*3600){
+    }else if currentTime > ((9*3600)+(35*60)) && currentTime < (11*3600)  && getDate(timeType: "day") != "Frid"{
         return 2
-    }else if currentTime > ((11*3600)+(12*60)) && currentTime < ((12*3600)+(35*60)){
+    }else if currentTime > ((11*3600)+(12*60)) && currentTime < ((12*3600)+(35*60))  && getDate(timeType: "day") != "Frid"{
         return 3
-    }else if currentTime > ((13*3600)+(15*60)) && currentTime < ((14*3600)+(35*60)){
+    }else if currentTime > ((13*3600)+(15*60)) && currentTime < ((14*3600)+(35*60))  && getDate(timeType: "day") != "Frid"{
+        return 4
+    }else if getDate(timeType: "day") == "Frid" &&  currentTime > Int(firstHrStartTime()) && currentTime < Int(firstHrStartTime() + getClassLength()){
+        return 1
+    }
+    else if getDate(timeType: "day") == "Frid" &&  currentTime > Int(secondHrStartTime()) && currentTime < Int(secondHrStartTime() + getClassLength()){
+        return 2
+    }
+    else if getDate(timeType: "day") == "Frid" &&  currentTime > Int(thirdHrStartTime()) && currentTime < Int(thirdHrStartTime() + getClassLength()){
+        return 3
+    }else if getDate(timeType: "day") == "Frid" &&  currentTime > Int(fourthHrStartTime()) && currentTime < Int(fourthHrStartTime() + getClassLength()){
         return 4
     }
     else{
