@@ -169,7 +169,13 @@ class API {
                 }
             case .failure(let error):
                 printf("ERROR: \(error)")
-                return
+                if defaults.string(forKey: keys.consumer_key) ?? "" != "" {
+                    oauthswift = OAuth1Swift(
+                        consumerKey:    defaults.string(forKey: keys.consumer_key) ?? "",
+                        consumerSecret: defaults.string(forKey: keys.consumer_secret) ?? ""
+                    )
+                    self.getInbox()
+                }
             }
         }
     }
