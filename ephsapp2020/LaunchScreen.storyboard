@@ -17,15 +17,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="YU8-bQ-4qM">
-                                <rect key="frame" x="57" y="416" width="300" height="64"/>
+                                <rect key="frame" x="47" y="364" width="300" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="districtLogo" translatesAutoresizingMaskIntoConstraints="NO" id="pPX-Qc-t8G">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="districtLogo" translatesAutoresizingMaskIntoConstraints="NO" id="pPX-Qc-t8G">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="64"/>
                                     </imageView>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="Wv4-a7-fzf"/>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whiteBox" translatesAutoresizingMaskIntoConstraints="NO" id="M77-b4-eQn">
+                                <rect key="frame" x="20" y="89" width="374" height="641"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Eagles!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXY-hX-1O1">
                                 <rect key="frame" x="0.0" y="277" width="414" height="55.5"/>
                                 <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="45"/>
@@ -54,6 +58,7 @@
     </scenes>
     <resources>
         <image name="districtLogo" width="300" height="64"/>
+        <image name="whiteBox" width="1024" height="768"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
