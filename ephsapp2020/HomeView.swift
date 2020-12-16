@@ -28,8 +28,7 @@ struct HomeView: View {
             case "account":
                 AccountView(viewRouter: viewRouter)
             default:
-                AssignmentsView(cidAssignments: api.cidAssignments)
-                progressView()
+                MenuView()
             }
             Spacer()
             NavMenuView(viewRouter: viewRouter, api: api)
