@@ -35,7 +35,7 @@ struct AccountView: View {
                 defaults.set("login", forKey: keys.currentPage)
                 viewRouter.currentPage = "login"
             }, label: {
-                BigRedText(text: "Change API Keys")
+                BigRedText(text: "Log Out")
             })
             Button(action: {
                 defaults.set("tutorial", forKey: keys.currentPage)
