@@ -23,7 +23,6 @@ struct AssignmentsView: View {
             }
         }
         .padding(.all)
-        progressView()
     }
 }
 
