@@ -46,6 +46,7 @@ struct LoginView: View {
                 if consumer_key != "" && consumer_secret != "" {
                     defaults.set(consumer_key, forKey: keys.consumer_key)
                     defaults.set(consumer_secret, forKey: keys.consumer_secret)
+                 //   sleep(2)
                     viewRouter.currentPage = "tutorial"
                 } else {
                     authenticationDidFail = true

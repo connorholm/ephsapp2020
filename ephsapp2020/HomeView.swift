@@ -12,6 +12,7 @@ struct HomeView: View {
     @ObservedObject var viewRouter: ViewRouter
     var api: API
     @State var defaults = UserDefaults.standard
+
     
     var body: some View {
         VStack() {
@@ -27,6 +28,7 @@ struct HomeView: View {
             case "account":
                 AccountView(viewRouter: viewRouter)
             default:
+                AssignmentsView(cidAssignments: api.cidAssignments)
                 progressView()
             }
             Spacer()
