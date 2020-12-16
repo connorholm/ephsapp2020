@@ -18,23 +18,12 @@ struct NavMenuView: View {
         HStack {
             
             Button(action: {
-                if !isGuest {
-                    viewRouter.homePage = "assignments"
-                }
+                viewRouter.homePage = "assignments"
             }) {
-                if !isGuest {
-                    Image("assignments")
-                        .resizable()
-                        .frame(width: 57, height: 57)
-                        .padding(.leading, 20)
-
-                } else {
-                    Image("DisabledAssignments")
-                        .resizable()
-                        .frame(width: 57, height: 57)
-                        .padding(.leading, 20)
-
-                }
+                Image("assignments")
+                    .resizable()
+                    .frame(width: 57, height: 57)
+                    .padding(.leading, 20)
             }
             Button(action: {
                 if !isGuest {
