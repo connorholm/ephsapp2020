@@ -16,7 +16,7 @@ struct MotherView: View {
     
     init() {
         self.api.refresh()
-        sleep(2)
+      //  sleep(2)
     }
     var body: some View {
         VStack {
