@@ -12,6 +12,7 @@ var isGuest = false
 
 struct LoginView: View {
     @ObservedObject var viewRouter: ViewRouter
+    var api: API
     @State var defaults = UserDefaults.standard
     let keys = Keys()
     
@@ -46,6 +47,7 @@ struct LoginView: View {
                 if consumer_key != "" && consumer_secret != "" {
                     defaults.set(consumer_key, forKey: keys.consumer_key)
                     defaults.set(consumer_secret, forKey: keys.consumer_secret)
+                    api.refresh()
                     viewRouter.currentPage = "tutorial"
                 } else {
                     authenticationDidFail = true
@@ -67,7 +69,7 @@ struct LoginView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewRouter: ViewRouter(), defaults: UserDefaults())
+        LoginView(viewRouter: ViewRouter(), api: API(), defaults: UserDefaults())
     }
 }
 

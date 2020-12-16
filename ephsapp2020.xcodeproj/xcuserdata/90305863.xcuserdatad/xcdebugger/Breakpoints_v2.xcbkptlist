@@ -53,7 +53,7 @@
             <Locations>
                <Location
                   uuid = "D308E0E7-FBE3-4D55-A0F9-02EA9C77CDC7 - 801ec8eaaf9ceaa8"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "ephsapp2020.API.getGrades(class: ephsapp2020.ClassesSection, uid: Swift.Int) -&gt; ()"
@@ -68,7 +68,7 @@
                </Location>
                <Location
                   uuid = "D308E0E7-FBE3-4D55-A0F9-02EA9C77CDC7 - db7cf02dad17f7ad"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Result&lt;OAuthSwift.OAuthSwiftResponse, OAuthSwift.OAuthSwiftError&gt;) -&gt; () in ephsapp2020.API.getGrades(class: ephsapp2020.ClassesSection, uid: Swift.Int) -&gt; ()"
@@ -88,7 +88,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F0380DAB-2478-41FD-B38C-C5C9DB505481"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ephsapp2020/GradesView.swift"
@@ -98,38 +98,6 @@
             endingLineNumber = "16"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "F0380DAB-2478-41FD-B38C-C5C9DB505481 - cd4fe97d2ac19938"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer, SwiftUI.Text)&gt;&gt;&gt; in ephsapp2020.GradesView.body.getter : some"
-                  moduleName = "ephsapp2020"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/90305863/Developer/ephsapp2020/ephsapp2020/GradesView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "264">
-               </Location>
-               <Location
-                  uuid = "F0380DAB-2478-41FD-B38C-C5C9DB505481 - 39801dd37235aba0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int) -&gt; SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer, SwiftUI.Text)&gt;&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer, SwiftUI.Text)&gt;&gt;&gt; in ephsapp2020.GradesView.body.getter : some"
-                  moduleName = "ephsapp2020"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/90305863/Developer/ephsapp2020/ephsapp2020/GradesView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "152">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -152,7 +120,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "BE403E42-C650-4E64-A05E-5B2F77EF71CE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ephsapp2020/APIRequests.swift"
@@ -168,7 +136,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CCF62C83-6587-4A03-AFD6-AEC379D79B2C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ephsapp2020/APIRequests.swift"
@@ -178,6 +146,22 @@
             endingLineNumber = "131"
             landmarkName = "getAssignmnets(class:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E438F239-0F86-45D6-A1A5-A8C978BFA8F8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ephsapp2020/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

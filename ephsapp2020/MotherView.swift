@@ -25,7 +25,7 @@ struct MotherView: View {
             } else if viewRouter.currentPage == "tutorial" {
                 TutorialView(viewRouter: viewRouter)
             } else {
-                LoginView(viewRouter: viewRouter)
+                LoginView(viewRouter: viewRouter, api: api)
             }
         }
     }
