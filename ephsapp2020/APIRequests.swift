@@ -75,6 +75,7 @@ class API {
                     consumerKey:    defaults.string(forKey: keys.consumer_key) ?? "",
                     consumerSecret: defaults.string(forKey: keys.consumer_secret) ?? ""
                 )
+                self.refresh()
             }
         }
     }
