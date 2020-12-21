@@ -52,6 +52,7 @@ struct LoginView: View {
                     authenticationDidFail = true
                 }
                 isGuest = false
+                defaults.set(isGuest, forKey: keys.isGuestVar)
             }) {
                 BigRedText(text: "Login")
             }
@@ -59,6 +60,8 @@ struct LoginView: View {
             Button(action: {
                 viewRouter.currentPage = "tutorial"
                 isGuest = true
+                defaults.set(isGuest, forKey: keys.isGuestVar)
+
             }) {
                 BigRedText(text: "Guest login")
             }

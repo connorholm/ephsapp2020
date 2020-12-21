@@ -42,4 +42,5 @@ struct Keys {
     let consumer_secret = "consumerSecretString"
     let uid = "uidInt"
     let currentPage = "currentPageString"
+    let isGuestVar = "isGuestString"
 }

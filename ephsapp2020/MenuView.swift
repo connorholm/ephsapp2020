@@ -33,7 +33,8 @@ struct MenuView: View {
 
 struct Menu: View {
     @ObservedObject var menuPage: MenuPage
-    
+    @State var defaults = UserDefaults.standard
+    let keys = Keys()
     var body: some View {
         VStack {
             Text("Web Links")
@@ -47,6 +48,9 @@ struct Menu: View {
                 }
             }
         }.frame(alignment: .center)
+        if defaults.bool(forKey: keys.isGuestVar){
+            progressView()
+        }
     }
 }
 
