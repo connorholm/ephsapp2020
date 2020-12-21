@@ -10,7 +10,7 @@ import SwiftUI
 
 struct AssignmentsView: View {
     var cidAssignments: [CIDAssignments]
-    
+    let timer = Timer.publish(every: 20, on: .main, in: .common).autoconnect()
     var body: some View {
         VStack(alignment: .leading, spacing: 15){
             Text("Completed Schoology Assignments")
@@ -23,7 +23,11 @@ struct AssignmentsView: View {
             }
         }
         .padding(.all)
-        progressView()
+        progressView().onReceive(timer, perform: { _ in
+            print("updated timer")
+        })
+        
+
     }
 }
 

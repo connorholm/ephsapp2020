@@ -7,7 +7,6 @@
 
 
 import SwiftUI
-
 struct HomeView: View {
     @ObservedObject var viewRouter: ViewRouter
     var api: API

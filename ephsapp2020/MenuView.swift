@@ -35,6 +35,7 @@ struct Menu: View {
     @ObservedObject var menuPage: MenuPage
     @State var defaults = UserDefaults.standard
     let keys = Keys()
+    let timer = Timer.publish(every: 20, on: .main, in: .common).autoconnect()
     var body: some View {
         VStack {
             Text("Web Links")
@@ -49,7 +50,9 @@ struct Menu: View {
             }
         }.frame(alignment: .center)
         if defaults.bool(forKey: keys.isGuestVar){
-            progressView()
+            progressView().onReceive(timer, perform: { _ in
+                print("udated guest timer")
+            })
         }
     }
 }
