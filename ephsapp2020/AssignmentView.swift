@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct AssignmentsView: View {
+    var api : API
     var cidAssignments: [CIDAssignments]
     let timer = Timer.publish(every: 20, on: .main, in: .common).autoconnect()
     var body: some View {
@@ -25,6 +26,7 @@ struct AssignmentsView: View {
         .padding(.all)
         progressView().onReceive(timer, perform: { _ in
             print("updated timer")
+            api.refresh()
         })
         
 
@@ -33,7 +35,7 @@ struct AssignmentsView: View {
 
 struct AssignmentsView_Previews: PreviewProvider {
     static var previews: some View {
-        AssignmentsView(cidAssignments: [CIDAssignments]())
+        AssignmentsView(api: API(), cidAssignments: [CIDAssignments]())
     }
 }
 

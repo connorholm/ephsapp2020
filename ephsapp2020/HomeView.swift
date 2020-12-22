@@ -17,7 +17,7 @@ struct HomeView: View {
         VStack() {
             switch viewRouter.homePage {
             case "assignments":
-                AssignmentsView(cidAssignments: api.cidAssignments)
+                AssignmentsView(api:api, cidAssignments: api.cidAssignments)
             case "announcements":
                 AnnouncementsView(inbox: api.inbox)
             case "grade":
