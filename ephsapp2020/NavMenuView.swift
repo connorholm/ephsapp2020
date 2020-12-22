@@ -12,7 +12,7 @@ struct NavMenuView: View {
     @ObservedObject var viewRouter: ViewRouter
     @State private var refreshAlert = false
     
-    var api : API
+    //var api : API
     var body: some View {
         
         HStack {
@@ -80,7 +80,7 @@ struct NavMenuView: View {
             }
             Button(action: {
                 if !isGuest {
-                    api.refresh()
+                    //api.start()
                     refreshAlert = true
                 }
             }) {
@@ -107,6 +107,6 @@ struct NavMenuView: View {
 
 struct NavMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        NavMenuView(viewRouter: ViewRouter(), api: API())
+        NavMenuView(viewRouter: ViewRouter())
     }
 }

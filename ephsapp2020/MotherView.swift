@@ -8,24 +8,28 @@
 
 import SwiftUI
 
+let queue = OperationQueue()
+
 struct MotherView: View {
     @ObservedObject var viewRouter = ViewRouter()
-    var api = API()
+    var inbox = GetInbox()
     @State var defaults = UserDefaults.standard
     let keys = Keys()
     
     init() {
-        self.api.refresh()
+        let operation = self.inbox
+        queue.addOperations([operation], waitUntilFinished: true)
+        print("Operation Finished")
     }
     
     var body: some View {
         VStack {
             if defaults.string(forKey: keys.currentPage) == "home" {
-                HomeView(viewRouter: viewRouter, api: api)
+                HomeView(viewRouter: viewRouter, inbox: inbox)
             } else if viewRouter.currentPage == "tutorial" {
                 TutorialView(viewRouter: viewRouter)
             } else {
-                LoginView(viewRouter: viewRouter, api: api)
+                LoginView(viewRouter: viewRouter)
             }
         }
     }

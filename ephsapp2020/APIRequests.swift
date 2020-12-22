@@ -8,9 +8,19 @@
 import Foundation
 import OAuthSwift
 
-let printf:(String) -> () = { print("\t\($0)") }
 let defaults = UserDefaults.standard
 let keys = Keys()
+
+
+//           _____ _____   _____        _          _____      _        _                 _
+//     /\   |  __ \_   _| |  __ \      | |        |  __ \    | |      (_)               | |
+//    /  \  | |__) || |   | |  | | __ _| |_ __ _  | |__) |___| |_ _ __ _  _____   ____ _| |
+//   / /\ \ |  ___/ | |   | |  | |/ _` | __/ _` | |  _  // _ \ __| '__| |/ _ \ \ / / _` | |
+//  / ____ \| |    _| |_  | |__| | (_| | || (_| | | | \ \  __/ |_| |  | |  __/\ V / (_| | |
+// /_/    \_\_|   |_____| |_____/ \__,_|\__\__,_| |_|  \_\___|\__|_|  |_|\___| \_/ \__,_|_|
+
+var uid = 0
+var cid = [String : String]()
 let date = Date().timeIntervalSince1970
 
 var oauthswift = OAuth1Swift(
@@ -19,33 +29,14 @@ var oauthswift = OAuth1Swift(
 )
 let links = Links(self: "0")
 
-class API {
+
+class GetInbox: AsyncOperation {
     var inbox = Inbox(message: [Message](), links: links, unread_count: "0")
-    var classes = Classes(section: [ClassesSection](), links: links)
-    var cidAssignments = [CIDAssignments]()
-    var grades = [GradesSection]()
-    var uid = 0
-    var cid = [String : String]()
-    var firstRun = true
     
-    public func refresh() {
-        print("Clearing structs...")
-        clear()
-        
-        self.getInbox()
-    }
-    
-    func clear() {
+    override func main() {
         self.inbox = Inbox(message: [Message](), links: links, unread_count: "0")
-        self.classes = Classes(section: [ClassesSection](), links: links)
-        self.cidAssignments = [CIDAssignments]()
-        self.grades = [GradesSection]()
-    }
-    
-    private func getInbox() {
-        print("Getting Inbox...")
         
-        // do your HTTP request without authorize
+        print("Getting Inbox...")
         oauthswift.client.get("https://api.schoology.com/v1/messages/inbox") { result in
             switch result {
             case .success(let response):
@@ -57,17 +48,14 @@ class API {
                     printf("ERROR during JSON conversion: \(error)")
                     return
                 }
-                if self.firstRun {
-                    var uid = defaults.integer(forKey: keys.uid)
-                    if uid <= 1 {
-                        uid = getUserID(messages: result.message)
-                        defaults.set(uid, forKey: keys.uid)
-                    }
-                    self.uid = uid
-                    self.firstRun = false
+                var iuid = defaults.integer(forKey: keys.uid)
+                if iuid <= 1 {
+                    iuid = getUserID(messages: result.message)
+                    defaults.set(iuid, forKey: keys.uid)
                 }
+                uid = iuid
                 self.inbox = result
-                self.internalRefresh()
+                self.finish()
                 
             case .failure(let error):
                 printf("ERROR: \(error)")
@@ -75,14 +63,40 @@ class API {
                     consumerKey:    defaults.string(forKey: keys.consumer_key) ?? "",
                     consumerSecret: defaults.string(forKey: keys.consumer_secret) ?? ""
                 )
+                self.main()
             }
         }
+        //self.finish()
     }
     
+    override func cancel() {
+        oauthswift.cancel()
+        super.cancel()
+    }
+    
+    
+
+}
+
+class GetClasses: AsyncOperation {
+    var classes = Classes(section: [ClassesSection](), links: links)
+
+    override func main() {
+        self.classes = Classes(section: [ClassesSection](), links: links)
+        if uid <= 0 {
+            GetInbox().start()
+        }
+        self.getClasses(uid: uid)
+    }
+    
+    override func cancel() {
+        oauthswift.cancel()
+        super.cancel()
+    }
+    
+    // Gets all the active classes the user is in
     private func getClasses(uid: Int) {
         print("Getting classes...")
-        
-        // do your HTTP request without authorize
         oauthswift.client.get("https://api.schoology.com/v1/users/\(uid)/sections") { result in
             switch result {
             case .success(let response):
@@ -96,21 +110,34 @@ class API {
                 }
                 self.classes = result
                 for section in result.section {
-                    self.cid[section.id] = section.course_title
+                    cid[section.id] = section.course_title
                 }
-                self.afterClass()
+                self.finish()
             case .failure(let error):
                 printf("ERROR: \(error)")
-                return
+                self.finish()
             }
         }
     }
+}
+/*
+class GetAssignments: AsyncOperation {
+    var cidAssignments = [CIDAssignments]()
     
-    //Gets assignments for spesified course
+    override func main() {
+        self.cidAssignments = [CIDAssignments]()
+        self.getAssignmnets(class: <#T##ClassesSection#>)
+    }
+    
+    override func cancel() {
+        oauthswift.cancel()
+        super.cancel()
+    }
+
+    // Gets assignments for spesified course
     private func getAssignmnets(class: ClassesSection) {
         print("Getting Assignemts...")
         
-        // do your HTTP request without authorize
         oauthswift.client.get("https://api.schoology.com/v1/sections/\(`class`.id)/assignments?limit=80") { result in
             switch result {
             case .success(let response):
@@ -122,20 +149,14 @@ class API {
                     printf("ERROR during JSON conversion: \(error)")
                     return
                 }
+                
+                // Removes assignments older than one month, should probably be rewritten
                 for assignment in result.assignment {
                     if (convertDate(from: assignment.due) + 2629800) <= date {
                         let i = result.assignment.firstIndex(of: assignment)
                         result.assignment.remove(at: i ?? -1)
                     }
                 }
-                /* Removes completed assignments
-                for assignment in result.assignment {
-                    if assignment.completed == 1 {
-                        let i = result.assignment.firstIndex(of: assignment)
-                        result.assignment.remove(at: i ?? -1)
-                    }
-                }
-                 */
                 self.cidAssignments.append(CIDAssignments(course_title: `class`.course_title, assingments: result.assignment))
             case .failure(let error):
                 printf("ERROR: \(error)")
@@ -143,13 +164,37 @@ class API {
             }
         }
     }
+}
+
+class GetGrades: AsyncOperation {
+    //           _____ _____   _____        _
+    //     /\   |  __ \_   _| |  __ \      | |
+    //    /  \  | |__) || |   | |  | | __ _| |_ __ _
+    //   / /\ \ |  ___/ | |   | |  | |/ _` | __/ _` |
+    //  / ____ \| |    _| |_  | |__| | (_| | || (_| |
+    // /_/    \_\_|   |_____| |_____/ \__,_|\__\__,_|
+    var grades = [GradesSection]()
+    var firstRun = true
     
+    
+    // Resets all vars to avoid doubling
+    private func clear() {
+    }
+    
+    override func main() {
+        self.grades = [GradesSection]()
+        self.getGrades(class: <#T##ClassesSection#>)
+    }
+    
+    override func cancel() {
+        oauthswift.cancel()
+        super.cancel()
+    }
     
     //Gets grades for a spesific course
-    private func getGrades(class: ClassesSection, uid: Int) {
+    private func getGrades(class: ClassesSection) {
         print("Getting Grades...")
         
-        // do your HTTP request without authorize
         oauthswift.client.get("https://api.schoology.com/v1/users/\(uid)/grades?section_id=\(`class`.id)") { result in
             switch result {
             case .success(let response):
@@ -162,10 +207,9 @@ class API {
                     printf("ERROR during JSON conversion: \(error)")
                     return
                 }
-                //print(result)
                 if result.section.count >= 1 {
                     self.grades.append(result.section[0])
-                    self.cid[result.section[0].section_id ?? "0"] = `class`.course_title
+                    cid[result.section[0].section_id ?? "0"] = `class`.course_title
                 }
             case .failure(let error):
                 printf("ERROR: \(error)")
@@ -174,30 +218,18 @@ class API {
                         consumerKey:    defaults.string(forKey: keys.consumer_key) ?? "",
                         consumerSecret: defaults.string(forKey: keys.consumer_secret) ?? ""
                     )
-                    self.getInbox()
+                    self.getGrades(class: `class`)
                 }
             }
         }
     }
-    
-    private func internalRefresh() {
-        if uid <= 0 {
-            printf("ERROR: uid = \(uid)")
-            return
-        }
-        print("Getting classes")
-        getClasses(uid: uid)
-    }
-    private func afterClass() {
-
-        print("Getting assignments and grades")
-        for `class` in classes.section {
-            getAssignmnets(class: `class`)
-            getGrades(class: `class`, uid: uid)
-        }
-    }
 }
+*/
+// Prints with tab indent to signify parent
+let printf:(String) -> () = { print("\t\($0)") }
 
+// Takes all the messages from getInbox and finds the most common uid to use as the user's id
+// This is the only way I've figured out to get the user's id
 func getUserID(messages: [Message]) -> Int {
     printf("Finding User ID...")
     
@@ -218,10 +250,78 @@ func getUserID(messages: [Message]) -> Int {
     return sorted[0].key
 }
 
-//let df = DateFormatter()
+// Converts the date to Unix time for easy comparrison
 func convertDate(from: String) -> Double {
     df.dateFormat = "yyyy-MM-dd HH:mm:ss"
     let updated = df.date(from: from) ?? NSDate(timeIntervalSince1970: date) as Date
     
     return updated.timeIntervalSince1970
+}
+
+//                                      _          __  __
+//     /\                              | |        / _|/ _|
+//    /  \   ___ _   _ _ __   ___   ___| |_ _   _| |_| |_
+//   / /\ \ / __| | | | '_ \ / __| / __| __| | | |  _|  _|
+//  / ____ \\__ \ |_| | | | | (__  \__ \ |_| |_| | | | |
+// /_/    \_\___/\__, |_| |_|\___| |___/\__|\__,_|_| |_|
+//                __/ |
+//               |___/
+class AsyncOperation: Operation {
+    private let lockQueue = DispatchQueue(label: "edu.ephsapp2020.api", attributes: .concurrent)
+    
+    override var isAsynchronous: Bool {
+        return true
+    }
+    
+    private var _isExecuting: Bool = false
+    override private(set) var isExecuting: Bool {
+        get {
+            return lockQueue.sync { () -> Bool in
+                return _isExecuting
+            }
+        }
+        set {
+            willChangeValue(forKey: "isExecuting")
+            lockQueue.sync(flags: [.barrier]) {
+                _isExecuting = newValue
+            }
+            didChangeValue(forKey: "isExecuting")
+        }
+    }
+    
+    private var _isFinished: Bool = false
+    override private(set) var isFinished: Bool {
+        get {
+            return lockQueue.sync { () -> Bool in
+                return _isFinished
+            }
+        }
+        set {
+            willChangeValue(forKey: "isFinished")
+            lockQueue.sync(flags: [.barrier]) {
+                _isFinished = newValue
+            }
+            didChangeValue(forKey: "isFinished")
+        }
+    }
+    
+    override func start() {
+        print("API Async Starting...")
+        guard !isCancelled else {
+            finish()
+            return
+        }
+        isFinished = false
+        isExecuting = true
+        main()
+    }
+    
+    override func main() {
+        fatalError("Subclass must implement `main` without overriding super.")
+    }
+    
+    func finish() {
+        isExecuting = false
+        isFinished = true
+    }
 }
