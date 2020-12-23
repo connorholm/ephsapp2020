@@ -12,7 +12,7 @@ import Foundation
 func getClassLength() -> Float{
     var classLength = 0
     var totalLength = 0
-    if getDate(timeType: "day") == "frid"{
+    if getDate(timeType: "day") == "Frid"{
         classLength = 45
         totalLength = classLength * 60
     }
