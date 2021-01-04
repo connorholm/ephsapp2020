@@ -14,7 +14,7 @@ import Combine
 //
 var websites = [
     Website(name: "Counselor Appointments", url: "https://app.acuityscheduling.com/schedule.php?owner=20439951"),
-    Website(name: "Campus Login", url: "https://edenprairiemn.infinitecampus.org/campus/portal/eden_prairie.jsp"),
+    Website(name: "Campus Login", url: "https://edenprairiemn.infinitecampus.org/campus/portal/students/eden_prairie.jsp"),
     Website(name: "Eagle Vision News", url: "https://eaglevisionnews.com/"),
     Website(name: "EPHS Contacts", url: "https://www.edenpr.org/eden-prairie-high-school/contact"),
     Website(name: "EPHS Calender", url: "https://www.edenpr.org/eden-prairie-high-school/student-life/news-information/calendar")
