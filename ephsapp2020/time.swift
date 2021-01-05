@@ -11,7 +11,7 @@ import Foundation
 //To return this method use the parameter minute/second/hour/current
 func getTime(timeType: String) -> Int {
     let date = Date()
-    var calendar = Calendar.current
+    let calendar = Calendar.current
 
     let Hour = calendar.component(.hour, from: date)
     let minute = calendar.component(.minute, from: date)
