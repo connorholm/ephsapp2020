@@ -43,7 +43,7 @@ struct LoginView: View {
             
             Button(action: {
                 // Sends keys to viewRouter WITHOUT VERIFICATION
-                if consumer_key != "" && consumer_secret != "" {
+                if consumer_key.count == 41 && consumer_secret.count == 32 {
                     defaults.set(consumer_key, forKey: keys.consumer_key)
                     defaults.set(consumer_secret, forKey: keys.consumer_secret)
                  //   sleep(2)
