@@ -11,11 +11,35 @@ import SwiftUI
 struct AssignmentsView: View {
     var api : API
     var cidAssignments: [CIDAssignments]
+    @State var addItem: Bool = false
     let timer = Timer.publish(every: 20, on: .main, in: .common).autoconnect()
     var body: some View {
         VStack(alignment: .leading, spacing: 15){
-            Text("Completed Schoology Assignments")
-                .font(.largeTitle)
+            HStack{
+                Text("Completed Schoology Assignments")
+                                .font(.largeTitle)
+                Button(action: {
+                    addItem = true
+                }) {
+                    Text("+")
+                        .foregroundColor(.black)
+                        .bold()
+                        .padding(10)
+                        .overlay(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .stroke(Color.red, lineWidth: 5)
+                                )
+                }
+            }
+            if addItem == true{
+                //usersItemMenu()
+                Text("Add Assignment")
+                Button(action: {
+                   addItem = false
+                }) {
+                    Text("Add Item")
+                }
+            }
             
             List{
                 ForEach(0..<cidAssignments.count) { i in
@@ -32,7 +56,16 @@ struct AssignmentsView: View {
 
     }
 }
-
+struct usersItemMenu: View {
+    var body: some View{
+        Text("Add Assignment")
+        Button(action: {
+           
+        }) {
+            Text("Add Item")
+        }
+    }
+}
 struct AssignmentsView_Previews: PreviewProvider {
     static var previews: some View {
         AssignmentsView(api: API(), cidAssignments: [CIDAssignments]())

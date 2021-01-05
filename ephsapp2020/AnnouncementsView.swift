@@ -12,11 +12,41 @@ struct AnnouncementsView: View {
     var inbox: Inbox
     @State var defaults = UserDefaults.standard
     let keys = Keys()
-    
+    @State var addItem: Bool = false
+    @State var userAnnouncement: String = ""
+
     var body: some View {
         VStack {
-            Text("Announcements").font(.largeTitle)
-            
+            HStack{
+                Text("Announcements").font(.largeTitle)
+                Button(action: {
+                    addItem = true
+                }) {
+                    Text("+")
+                        .foregroundColor(.black)
+                        .bold()
+                        .padding(10)
+                        .overlay(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .stroke(Color.red, lineWidth: 5)
+                                )
+                }
+            }
+            if addItem == true{
+                //usersItemMenu()
+                Text("Add Assignment")
+                TextField("Enter Announcement", text: $userAnnouncement)
+                    .padding()
+                    .background(Color(.systemGray6))
+                    .cornerRadius(5.0)
+                    .padding(.bottom, 20)
+                Button(action: {
+                   addItem = false
+                    print(userAnnouncement)
+                }) {
+                    Text("Add Item")
+                }
+            }
             List {
                 ForEach(0..<inbox.message.count){ index in
                     MessageDisplay(message: inbox.message[index])
