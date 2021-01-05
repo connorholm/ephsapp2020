@@ -8,7 +8,7 @@
 import Foundation
 
 class MyDataProvider {
-    static func getRandomString() -> String {
+    static func WidgetGetHour() -> String {
         let currentClassHour = getHour()
         var hr: String = ""
         if currentClassHour == 1{

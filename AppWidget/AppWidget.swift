@@ -27,7 +27,7 @@ struct Provider: IntentTimelineProvider {
         for hourOffset in 0 ..< 5 {
             // Change time from one hour to 10 seconds
             let entryDate = Calendar.current.date(byAdding: .second, value: hourOffset * 10, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration, myString: MyDataProvider.getRandomString())
+            let entry = SimpleEntry(date: entryDate, configuration: configuration, myString: MyDataProvider.WidgetGetHour())
             entries.append(entry)
         }
 
