@@ -5,6 +5,7 @@ struct WebViews: View {
     @ObservedObject var webViewStateModel: WebViewStateModel = WebViewStateModel()
     let url: String
     var body: some View {
+        
         NavigationView {
             LoadingView(isShowing: .constant(webViewStateModel.loading)) { //loading logic taken from https://stackoverflow.com/a/56496896/9838937
                 //Add onNavigationAction if callback needed

@@ -20,17 +20,25 @@ struct NavMenuView: View {
             Button(action: {
                 viewRouter.homePage = "assignments"
             }) {
-                Image("assignments")
-                    .resizable()
-                    .frame(width: 57, height: 57)
-                    .padding(.leading, 20)
+                if !defaults.bool(forKey: keys.isGuestVar) {
+                    Image("assignments")
+                        .resizable()
+                        .frame(width: 57, height: 57)
+                        .padding(.leading, 20)
+
+                } else {
+                    Image("DisabledAssignments")
+                        .resizable()
+                        .frame(width: 57, height: 57)
+                        .padding(.leading, 20)
+                }
             }
             Button(action: {
-                if !isGuest {
+                if !defaults.bool(forKey: keys.isGuestVar) {
                     viewRouter.homePage = "announcements"
                 }
             }) {
-                if !isGuest {
+                if !defaults.bool(forKey: keys.isGuestVar) {
                     Image("announcements")
                         .resizable()
                         .frame(width: 57, height: 57)
@@ -48,11 +56,11 @@ struct NavMenuView: View {
                     .frame(width: 57, height: 57)
             }
             Button(action: {
-                if !isGuest {
+                if !defaults.bool(forKey: keys.isGuestVar) {
                     viewRouter.homePage = "grade"
                 }
             }) {
-                if !isGuest {
+                if !defaults.bool(forKey: keys.isGuestVar) {
                     Image("grade")
                         .resizable()
                         .frame(width: 57, height: 57)
@@ -68,12 +76,12 @@ struct NavMenuView: View {
                     .frame(width: 57, height: 57)
             }
             Button(action: {
-                if !isGuest {
+                if !defaults.bool(forKey: keys.isGuestVar) {
                     api.refresh()
                     refreshAlert = true
                 }
             }) {
-                if !isGuest {
+                if !defaults.bool(forKey: keys.isGuestVar) {
                     Image("refresh")
                         .resizable()
                         .frame(width: 57, height: 57)

@@ -16,8 +16,8 @@ struct MotherView: View {
     
     init() {
         self.api.refresh()
+      //  sleep(2)
     }
-    
     var body: some View {
         VStack {
             if defaults.string(forKey: keys.currentPage) == "home" {
@@ -42,4 +42,5 @@ struct Keys {
     let consumer_secret = "consumerSecretString"
     let uid = "uidInt"
     let currentPage = "currentPageString"
+    let isGuestVar = "isGuestString"
 }

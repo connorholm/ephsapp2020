@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct AssignmentsView: View {
+    var api : API
     var cidAssignments: [CIDAssignments]
-    
+    let timer = Timer.publish(every: 20, on: .main, in: .common).autoconnect()
     var body: some View {
         if !isGuest {
             VStack(alignment: .leading, spacing: 15){
@@ -28,13 +29,19 @@ struct AssignmentsView: View {
             Text("Class Time")
                 .font(.largeTitle)
         }
-        progressView()
+        .padding(.all)
+        progressView().onReceive(timer, perform: { _ in
+            print("updated timer")
+            api.refresh()
+        })
+        
+
     }
 }
 
 struct AssignmentsView_Previews: PreviewProvider {
     static var previews: some View {
-        AssignmentsView(cidAssignments: [CIDAssignments]())
+        AssignmentsView(api: API(), cidAssignments: [CIDAssignments]())
     }
 }
 

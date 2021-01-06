@@ -7,17 +7,17 @@
 
 
 import SwiftUI
-
 struct HomeView: View {
     @ObservedObject var viewRouter: ViewRouter
     var api: API
     @State var defaults = UserDefaults.standard
+
     
     var body: some View {
         VStack() {
             switch viewRouter.homePage {
             case "assignments":
-                AssignmentsView(cidAssignments: api.cidAssignments)
+                AssignmentsView(api:api, cidAssignments: api.cidAssignments)
             case "announcements":
                 AnnouncementsView(inbox: api.inbox)
             case "grade":
@@ -27,7 +27,7 @@ struct HomeView: View {
             case "account":
                 AccountView(viewRouter: viewRouter)
             default:
-                progressView()
+                MenuView()
             }
             Spacer()
             NavMenuView(viewRouter: viewRouter, api: api)

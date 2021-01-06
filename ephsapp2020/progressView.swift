@@ -30,7 +30,6 @@ struct progressView: View {
     var currentSecond = getTime(timeType: "second")
     var currentClassHour = getHour()
     
-    
     var body: some View {
         
         VStack(alignment: .leading) {
