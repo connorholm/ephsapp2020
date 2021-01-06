@@ -11,8 +11,11 @@ import SwiftUI
 struct NavMenuView: View {
     @ObservedObject var viewRouter: ViewRouter
     @State private var refreshAlert = false
+    var refreshAnimated = animatedImages(for: "refreshAnimated/d")
     
     var api : API
+    
+    
     var body: some View {
         
         HStack {
@@ -82,13 +85,11 @@ struct NavMenuView: View {
                 if !defaults.bool(forKey: keys.isGuestVar) {
                     api.refresh()
                     refreshAlert = true
+                    // Play animation
                 }
             }) {
                 if !defaults.bool(forKey: keys.isGuestVar) {
-                    Image("refresh")
-                        .resizable()
-                        .frame(width: 57, height: 57)
-                        .padding(.trailing, 20)
+                    // Animatable
                 } else {
                     Image("DisabledRefresh")
                         .resizable()
@@ -103,6 +104,17 @@ struct NavMenuView: View {
         .frame(minWidth: 0, maxWidth: 400, minHeight: 0, maxHeight: 50, alignment: .center)
         .border(Color(.systemGray), width: 1)
     }
+}
+
+func animatedImages(for name: String) -> [UIImage] {
+    var i = 0
+    var images = [UIImage]()
+    
+    while let image = UIImage(named: "\(name)\(i)") {
+        images.append(image)
+        i += 1
+    }
+    return images
 }
 
 struct NavMenuView_Previews: PreviewProvider {
