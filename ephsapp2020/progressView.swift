@@ -31,7 +31,6 @@ struct progressView: View {
     var currentClassHour = getHour()
     var classLength = getClassLength()
     
-    
     var body: some View {
         
         VStack(alignment: .leading) {
