@@ -20,8 +20,7 @@ func getDate(timeType: String) -> String {
     let dateSubstring = date[..<index]
     
     if timeType == "day" {
-        //return String(dateSubstring)
-        return "Frid"
+        return String(dateSubstring)
     }
     else{
         return "ERROR"

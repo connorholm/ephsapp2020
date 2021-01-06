@@ -13,21 +13,15 @@ struct AssignmentsView: View {
     var cidAssignments: [CIDAssignments]
     let timer = Timer.publish(every: 20, on: .main, in: .common).autoconnect()
     var body: some View {
-        if !isGuest {
-            VStack(alignment: .leading, spacing: 15){
-                Text("Completed Schoology Assignments")
-                    .font(.largeTitle)
-                
-                List{
-                    ForEach(0..<cidAssignments.count) { i in
-                        EachClass(className: cidAssignments[i].course_title, assignments: cidAssignments[i].assingments)
-                    }
+        VStack(alignment: .leading, spacing: 15){
+            Text("Completed Schoology Assignments")
+                .font(.largeTitle)
+            
+            List{
+                ForEach(0..<cidAssignments.count) { i in
+                    EachClass(className: cidAssignments[i].course_title, assignments: cidAssignments[i].assingments)
                 }
             }
-            .padding(.all)
-        } else {
-            Text("Class Time")
-                .font(.largeTitle)
         }
         .padding(.all)
         progressView().onReceive(timer, perform: { _ in
