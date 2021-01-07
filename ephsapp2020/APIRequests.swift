@@ -26,7 +26,6 @@ class API {
     var grades = [GradesSection]()
     var uid = 0
     var cid = [String : String]()
-    var firstRun = true
     
     public func refresh() {
         print("Clearing structs...")
@@ -40,6 +39,12 @@ class API {
         self.classes = Classes(section: [ClassesSection](), links: links)
         self.cidAssignments = [CIDAssignments]()
         self.grades = [GradesSection]()
+        self.uid = 0
+        
+        oauthswift = OAuth1Swift(
+            consumerKey:    defaults.string(forKey: keys.consumer_key) ?? "",
+            consumerSecret: defaults.string(forKey: keys.consumer_secret) ?? ""
+        )
     }
     
     private func getInbox() {
@@ -57,24 +62,16 @@ class API {
                     printf("ERROR during JSON conversion: \(error)")
                     return
                 }
-                if self.firstRun {
-                    var uid = defaults.integer(forKey: keys.uid)
-                    if uid <= 1 {
-                        uid = getUserID(messages: result.message)
-                        defaults.set(uid, forKey: keys.uid)
-                    }
-                    self.uid = uid
-                    self.firstRun = false
+                if self.uid == 0 {
+                    self.uid = getUserID(messages: result.message)
+                    defaults.set(self.uid, forKey: keys.uid)
                 }
                 self.inbox = result
                 self.internalRefresh()
                 
             case .failure(let error):
                 printf("ERROR: \(error)")
-                oauthswift = OAuth1Swift(
-                    consumerKey:    defaults.string(forKey: keys.consumer_key) ?? "",
-                    consumerSecret: defaults.string(forKey: keys.consumer_secret) ?? ""
-                )
+                sleep(1)
                 self.refresh()
             }
         }
@@ -175,6 +172,7 @@ class API {
                         consumerKey:    defaults.string(forKey: keys.consumer_key) ?? "",
                         consumerSecret: defaults.string(forKey: keys.consumer_secret) ?? ""
                     )
+                    sleep(1)
                     self.getInbox()
                 }
             }
