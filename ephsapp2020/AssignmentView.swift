@@ -12,6 +12,9 @@ struct AssignmentsView: View {
     var api : API
     var cidAssignments: [CIDAssignments]
     @State var addItem: Bool = false
+    @State var userItem = ""
+    var colors = ["Red", "Green", "Blue", "Tartan"]
+    @State private var selectedColor = 0
     let timer = Timer.publish(every: 20, on: .main, in: .common).autoconnect()
     var body: some View {
         VStack(alignment: .leading, spacing: 15){
@@ -34,7 +37,17 @@ struct AssignmentsView: View {
             if addItem == true{
                 //usersItemMenu()
                 Text("Add Assignment")
+                TextField("Type Assignment", text: $userItem)
+                VStack {
+                         Picker(selection: $selectedColor, label: Text("Please choose a color")) {
+                            ForEach(0 ..< colors.count) {
+                               Text(self.colors[$0])
+                            }
+                         }
+                         Text("You selected: \(colors[selectedColor])")
+                      }
                 Button(action: {
+                    print(userItem)
                    addItem = false
                 }) {
                     Text("Add Item")
