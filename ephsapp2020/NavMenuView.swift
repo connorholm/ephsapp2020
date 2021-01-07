@@ -18,7 +18,9 @@ struct NavMenuView: View {
         HStack {
             
             Button(action: {
-                viewRouter.homePage = "assignments"
+                if !defaults.bool(forKey: keys.isGuestVar) {
+                    viewRouter.homePage = "assignments"
+                }
             }) {
                 if !defaults.bool(forKey: keys.isGuestVar) {
                     Image("assignments")
