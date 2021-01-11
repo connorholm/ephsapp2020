@@ -223,6 +223,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		91A0BE4825ACAF6A001AB34F /* View Routing */ = {
+			isa = PBXGroup;
+			children = (
+				9D25E8CF2562E25E009AE332 /* AppDelegate.swift */,
+				9D25E8C62562E25C009AE332 /* SceneDelegate.swift */,
+				9D25E8C92562E25D009AE332 /* MotherView.swift */,
+				9D25E8D92562E260009AE332 /* ViewRouter.swift */,
+			);
+			path = "View Routing";
+			sourceTree = "<group>";
+		};
+		91A0BE5025ACAF7F001AB34F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D25E8D02562E25F009AE332 /* LoginView.swift */,
+				9D25E8D32562E25F009AE332 /* TutorialView.swift */,
+				9D25E8D52562E25F009AE332 /* HomeView.swift */,
+				9D25E8DA2562E261009AE332 /* AssignmentView.swift */,
+				9D25E8BD2562E23B009AE332 /* AnnouncementsView.swift */,
+				9D25E8C52562E25C009AE332 /* MenuView.swift */,
+				91BF9934257FD761000B1270 /* GradesView.swift */,
+				9D25E8BE2562E23B009AE332 /* AccountView.swift */,
+				9D25E8DB2562E261009AE332 /* ClubView.swift */,
+				9D25E8CC2562E25E009AE332 /* NavMenuView.swift */,
+				91DB168F256426280060D3C8 /* WebView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		91A0BE5125ACAFA3001AB34F /* API */ = {
+			isa = PBXGroup;
+			children = (
+				91D7E7E125657D3F000E3AB3 /* APIStructs.swift */,
+				9117279B257A2F75001C107F /* APIRequests.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		91A0BE5225ACAFAE001AB34F /* Progress Bar */ = {
+			isa = PBXGroup;
+			children = (
+				91DB167525641DCA0060D3C8 /* progressView.swift */,
+				9DB6C7B32583C65400F00223 /* ClassTime.swift */,
+				91DB167E25641E110060D3C8 /* time.swift */,
+				9D8DDBB22566D8E5000916F5 /* Date.swift */,
+			);
+			path = "Progress Bar";
+			sourceTree = "<group>";
+		};
 		9D25E8A12562E00A009AE332 = {
 			isa = PBXGroup;
 			children = (
@@ -246,31 +295,14 @@
 		9D25E8AC2562E00A009AE332 /* ephsapp2020 */ = {
 			isa = PBXGroup;
 			children = (
-				9D25E8CF2562E25E009AE332 /* AppDelegate.swift */,
-				9D25E8C62562E25C009AE332 /* SceneDelegate.swift */,
-				9D25E8C92562E25D009AE332 /* MotherView.swift */,
-				9D25E8D92562E260009AE332 /* ViewRouter.swift */,
-				9D25E8D52562E25F009AE332 /* HomeView.swift */,
-				9D25E8DB2562E261009AE332 /* ClubView.swift */,
-				9D25E8BE2562E23B009AE332 /* AccountView.swift */,
-				9D25E8C52562E25C009AE332 /* MenuView.swift */,
-				91BF9934257FD761000B1270 /* GradesView.swift */,
-				9D25E8CC2562E25E009AE332 /* NavMenuView.swift */,
-				9D25E8D32562E25F009AE332 /* TutorialView.swift */,
-				9D25E8D02562E25F009AE332 /* LoginView.swift */,
-				9D25E8BD2562E23B009AE332 /* AnnouncementsView.swift */,
-				9D25E8DA2562E261009AE332 /* AssignmentView.swift */,
-				91DB168F256426280060D3C8 /* WebView.swift */,
+				91A0BE4825ACAF6A001AB34F /* View Routing */,
+				91A0BE5025ACAF7F001AB34F /* Views */,
 				918E856225642B54001F879C /* LaunchScreen.storyboard */,
 				91DB16942564268F0060D3C8 /* Assets.xcassets */,
 				91E5D661257999C400CCAB39 /* Elements.swift */,
 				9D25E8B62562E00F009AE332 /* Info.plist */,
-				91DB167525641DCA0060D3C8 /* progressView.swift */,
-				9DB6C7B32583C65400F00223 /* ClassTime.swift */,
-				91DB167E25641E110060D3C8 /* time.swift */,
-				9D8DDBB22566D8E5000916F5 /* Date.swift */,
-				91D7E7E125657D3F000E3AB3 /* APIStructs.swift */,
-				9117279B257A2F75001C107F /* APIRequests.swift */,
+				91A0BE5225ACAFAE001AB34F /* Progress Bar */,
+				91A0BE5125ACAFA3001AB34F /* API */,
 				9D25E8B32562E00F009AE332 /* Preview Content */,
 			);
 			path = ephsapp2020;
