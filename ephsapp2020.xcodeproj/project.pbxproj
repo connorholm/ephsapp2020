@@ -14,7 +14,9 @@
 		2F10283125A4C289005AB502 /* AppWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2F10282D25A4C286005AB502 /* AppWidget.intentdefinition */; };
 		2F10283225A4C289005AB502 /* AppWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2F10282D25A4C286005AB502 /* AppWidget.intentdefinition */; };
 		2F10283525A4C289005AB502 /* AppWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2F10282525A4C286005AB502 /* AppWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2F10284B25A4C3D0005AB502 /* MyDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F10284225A4C3C0005AB502 /* MyDataProvider.swift */; };
+		2F7493D025A76B4E00A64A89 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8DDBB22566D8E5000916F5 /* Date.swift */; };
+		2F7493D925A76B9B00A64A89 /* ClassTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB6C7B32583C65400F00223 /* ClassTime.swift */; };
+		2F7493DB25A76B9F00A64A89 /* time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB167E25641E110060D3C8 /* time.swift */; };
 		91133B7E257A880D007BB6F5 /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 913ED49C256C18D10060059B /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		91133B7F257A8817007BB6F5 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 913ED49C256C18D10060059B /* OAuthSwift.framework */; };
 		9117279C257A2F75001C107F /* APIRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9117279B257A2F75001C107F /* APIRequests.swift */; };
@@ -136,7 +138,6 @@
 		2F10282D25A4C286005AB502 /* AppWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = AppWidget.intentdefinition; sourceTree = "<group>"; };
 		2F10282E25A4C289005AB502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F10283025A4C289005AB502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F10284225A4C3C0005AB502 /* MyDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataProvider.swift; sourceTree = "<group>"; };
 		9117279B257A2F75001C107F /* APIRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequests.swift; sourceTree = "<group>"; };
 		913ED491256C18D10060059B /* OAuthSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthSwift.xcodeproj; path = OAuthSwift/OAuthSwift.xcodeproj; sourceTree = "<group>"; };
 		918E856225642B54001F879C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -191,7 +192,6 @@
 		2F10282A25A4C286005AB502 /* AppWidget */ = {
 			isa = PBXGroup;
 			children = (
-				2F10284225A4C3C0005AB502 /* MyDataProvider.swift */,
 				2F10282B25A4C286005AB502 /* AppWidget.swift */,
 				2F10282D25A4C286005AB502 /* AppWidget.intentdefinition */,
 				2F10282E25A4C289005AB502 /* Assets.xcassets */,
@@ -478,7 +478,9 @@
 			files = (
 				2F10283125A4C289005AB502 /* AppWidget.intentdefinition in Sources */,
 				2F10282C25A4C286005AB502 /* AppWidget.swift in Sources */,
-				2F10284B25A4C3D0005AB502 /* MyDataProvider.swift in Sources */,
+				2F7493DB25A76B9F00A64A89 /* time.swift in Sources */,
+				2F7493D025A76B4E00A64A89 /* Date.swift in Sources */,
+				2F7493D925A76B9B00A64A89 /* ClassTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
