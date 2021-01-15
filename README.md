@@ -3,4 +3,5 @@ EPHS app is great app that allows for a user to be able to connect to their scho
 
 <img width=200 alt="logic screen" src="https://github.com/connorholm/ephsapp2020/blob/main/IMG_1017.PNG"> <img width=200 alt="announcements page" src="https://github.com/connorholm/ephsapp2020/blob/main/IMG_1016.PNG"> <img width=200 alt="assignments page" src="https://github.com/connorholm/ephsapp2020/blob/main/IMG_1015.PNG"> <img width=200 alt="web page" src="https://github.com/connorholm/ephsapp2020/blob/main/IMG_1014.PNG">
 
-
+</br>
+This is currently in the app store under EPHS app!
