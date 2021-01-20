@@ -80,7 +80,7 @@ struct AppWidget_Previews: PreviewProvider {
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
-
+//test
 func WidgetGetHour() -> String {
     let currentClassHour = getHour()
     var hr: String = ""
